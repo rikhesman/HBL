@@ -75,19 +75,25 @@
 </div>
   
 <div class="container text-center">
-  <h3>What We Do</h3><br>
+  <h3>Welkom op de website van “De Bijlesjuf“.</h3><br>
   <div class="row">
 
     <div class="col-sm-12">
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-      <div class="well">
-       <p>Some text..</p>
-      </div>
+      
+       <p>Ik verzorg bijlessen in: Rekenen, Spelling en Begrijpen Lezen aan basisschoolleerlingen.<br>
+Dyslectische kinderen kan ik begeleiden bij hun lees- en /of spellingproblemen. En
+leerlingen in groep 8 voorbereiden op hun Cito eindtoets.<br>
+Door allerlei omstandigheden kunnen leerlingen achterstanden / hiaten in het
+onderwijs oplopen.<br>
+Individuele hulp kan uitkomst bieden.<br> In een rustige omgeving kan deze “ 1 op 1”
+instructie, hulp juist dat zetje geven dat uw kind nodig heeft om weer aan te sluiten bij
+de groep.</p>
+      
+    
+      
     </div>
   </div>
-</div><br>
+</div>
 
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
