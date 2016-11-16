@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>De Bijlesjuf</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./css/bootstrap.css">
   <link rel="stylesheet" href="./css/bootstrap1.css">
+  <link rel="shortcut icon" href="./foto/logosonnega.ico">
   <script src="./js/javascript.js"></script>
   <script src="./js/javascript1.js"></script>
 
@@ -20,7 +21,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="#">Bijlesjuf</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -47,7 +48,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image">
+        <img src="./foto/kamer12.jpg" alt="Image">
         <div class="carousel-caption">
           <h3>Sell $</h3>
           <p>Money Money.</p>
@@ -55,7 +56,7 @@
       </div>
 
       <div class="item">
-        <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+        <img src="./foto/kamer5.jpg" alt="Image">
         <div class="carousel-caption">
           <h3>More Sell $</h3>
           <p>Lorem ipsum...</p>
@@ -75,19 +76,25 @@
 </div>
   
 <div class="container text-center">
-  <h3>What We Do</h3><br>
+  <h3>Welkom op de website van “De Bijlesjuf“.</h3><br>
   <div class="row">
 
     <div class="col-sm-12">
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-      <div class="well">
-       <p>Some text..</p>
-      </div>
+      
+       <p>Ik verzorg bijlessen in: Rekenen, Spelling en Begrijpen Lezen aan basisschoolleerlingen.<br>
+Dyslectische kinderen kan ik begeleiden bij hun lees- en /of spellingproblemen. En
+leerlingen in groep 8 voorbereiden op hun Cito eindtoets.<br>
+Door allerlei omstandigheden kunnen leerlingen achterstanden / hiaten in het
+onderwijs oplopen.<br>
+Individuele hulp kan uitkomst bieden.<br> In een rustige omgeving kan deze “ 1 op 1”
+instructie, hulp juist dat zetje geven dat uw kind nodig heeft om weer aan te sluiten bij
+de groep.</p>
+      
+    
+      
     </div>
   </div>
-</div><br>
+</div>
 
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
