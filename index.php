@@ -26,17 +26,15 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="#"><a href="index.php">Home</a></li>
-        <li><a href="overmij.php">Over mij</a></li>
-        <li><a href="werkwijze.php">Werkwijze</a></li>
-        <li><a href="inschrijfpagina.php">Inschrijfpagina</a></li>
+        <li><a href="information.php">Informatie</a></li>
         <li><a href="contact.php">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
       </ul>
     </div>
   </div>
-</nav>
+    </nav>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
