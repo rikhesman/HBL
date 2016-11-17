@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>De Bijlesjuf</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./css/bootstrap.css">
   <link rel="stylesheet" href="./css/bootstrap1.css">
+     <link rel="shortcut icon" href="./foto/logosonnega.ico">
   <script src="./js/javascript.js"></script>
   <script src="./js/javascript1.js"></script>
 
@@ -20,7 +21,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand">Bijlesjuf</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -38,16 +39,34 @@
 </nav>
 
 <div class="container text-center">
-  <h3>Werkwijze</h3><br>
+  <h3>Werkwijze en vakken:</h3><br>
   <div class="row">
 
     <div class="col-sm-12">
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-      <div class="well">
-       <p>Some text..</p>
-      </div>
+    
+       <p>
+De bijlessen worden gegeven in de R.T. kamer op de 1 e verdieping aan de
+Harlingerstraatweg 6a te Leeuwarden ( dichtbij het centrum)<br>
+Voorafgaand vindt een intakegesprek ( gratis) plaats met ouder(s) en kind.<br>
+Vaak vindt er een gesprek plaats met de groepsleerkracht ( indien ouders hier
+toestemming voor geven)<br>
+Het uurtarief is euro 25, 00 ( na 4 lessen factuur)<br>
+           <br>
+
+Vakken:<br>
+
+ -Spelling ( regels en werkwoord spelling )<br>
+-Begrijpend Lezen<br>
+-Woordenschat ontwikkeling<br>
+-Rekenen<br>
+-Cito eindtoets oefening<br>
+-Dyslexie begeleiding<br>
+Voor wie ?<br>
+-basischoolleerlingen<br>
+-kinderen met dyslexie<br>
+        </p>
+      
+  
     </div>
   </div>
 </div><br>
