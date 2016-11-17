@@ -21,7 +21,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Bijlesjuf</a>
+      <a class="navbar-brand">Bijlesjuf</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -46,21 +46,14 @@
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner" >
       <div class="item active">
         <img src="./foto/kamer12.jpg" alt="Image">
-        <div class="carousel-caption">
-          <h3>Sell $</h3>
-          <p>Money Money.</p>
-        </div>
+        
       </div>
 
       <div class="item">
         <img src="./foto/kamer5.jpg" alt="Image">
-        <div class="carousel-caption">
-          <h3>More Sell $</h3>
-          <p>Lorem ipsum...</p>
-        </div>
       </div>
     </div>
 
@@ -90,15 +83,20 @@ Individuele hulp kan uitkomst bieden.<br> In een rustige omgeving kan deze “ 1
 instructie, hulp juist dat zetje geven dat uw kind nodig heeft om weer aan te sluiten bij
 de groep.</p>
       
-    
+        <h3>Waarom bijles:</h3>
+
+<p>Sommige kinderen missen de instructie in de groep door bijv. De groepsgrootte, te
+snelle tempo, afwezigheid / afdwalen of begrijpen het niet.<br> Wanneer er dan niets aan
+gedaan wordt, kunnen deze hiaten alleen maar groter worden.<br> Op school ontbreekt het
+vaak aan tijd en / of middelen om dit te verhelpen.<br>
+Door tijdelijk hulp van buitenaf te geven , in een 1 op 1 situatie, komt de instructie beter
+    aan.</p>
+        
       
     </div>
   </div>
 </div>
 
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
 
 </body>
 </html>
