@@ -25,7 +25,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="#"><a href="index.php">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="information.php">Informatie</a></li>
         <li><a href="contact.php">Contact</a></li>
       </ul>
@@ -66,11 +66,13 @@
     </a>
 </div>
   
-<div class="container text-center">
+    <div class="row">
+<div class="col-md-4"><!--Linker kant--></div>
+<div class="col-md-4">
   <h3>Welkom op de website van “De Bijlesjuf“.</h3><br>
-  <div class="row">
+  
 
-    <div class="col-sm-12">
+   
       
        <p>Ik verzorg bijlessen in: Rekenen, Spelling en Begrijpen Lezen aan basisschoolleerlingen.<br>
 Dyslectische kinderen kan ik begeleiden bij hun lees- en /of spellingproblemen. En
@@ -89,11 +91,10 @@ gedaan wordt, kunnen deze hiaten alleen maar groter worden.<br> Op school ontbre
 vaak aan tijd en / of middelen om dit te verhelpen.<br>
 Door tijdelijk hulp van buitenaf te geven , in een 1 op 1 situatie, komt de instructie beter
     aan.</p>
-        
-      
     </div>
+     <div class="col-md-4"><!--Rechter kant--></div>  
   </div>
-</div>
+
 
 
 </body>

@@ -25,7 +25,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="#"><a href="index.php">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="information.php">Informatie</a></li>
         <li><a href="contact.php">Contact</a></li>
       </ul>
@@ -37,7 +37,7 @@
     </nav>
     
     <div class="row">
-  <div class="col-md-4"><!--Linker kant--></div>
+        <div class="col-md-4"><!--Linker kant--></div>
   <div class="col-md-4">
     <h1>Inschrijfformulier</h1>
         <form>

@@ -25,7 +25,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="#"><a href="index.php">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="information.php">Informatie</a></li>
         <li><a href="contact.php">Contact</a></li>
       </ul>
@@ -37,25 +37,26 @@
     </nav>
 
 
-  
-<div class="container text-center">
-  <h3>login</h3><br>
-  <div class="row">
-
-    <div class="col-sm-12">
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-      <div class="well">
-       <p>Some text..</p>
-      </div>
+<div class="row"> 
+  <div class="col-md-4"><!--Linker kant--></div>
+    <div class="col-md-4">
+             <h3>Inloggen op de website van “De Bijlesjuf“.</h3><br>
+            <form method="POST" action="" enctype="text/plain">
+                
+                <div class="form-group">Email/Gebruikersnaam
+                    <input type="text" class="form-control" placeholder="Vul hier in" name="naam"   value=""></div>
+                <div class="form-group">Wachtwoord
+                    <input type="text" class="form-control" placeholder="Vul hier in" name="achternaam"   value=""></div>
+                <div class="form-group"><input type="submit" name="verstuur" value="Login">
+                <input type="reset" name="annuleren" value="Annuleren"></div>
+            </form> 
+    
+    
+</div>
+    
+    <div class="col-md-4"><!--Rechter kant--></div> 
     </div>
-  </div>
-</div><br>
 
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
 
 </body>
 </html>

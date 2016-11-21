@@ -25,7 +25,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="#"><a href="index.php">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="information.php">Informatie</a></li>
         <li><a href="contact.php">Contact</a></li>
       </ul>
@@ -37,56 +37,48 @@
     </nav>
 
 
-  
-<div class="container text-center">
-  <h3>Wie is “de bijlesjuf“ ?</h3><br>
   <div class="row">
+    <div class="col-md-4"><!--Linker kant--></div>
+    <div class="col-md-4">
+  <h3>Wie is “de bijlesjuf“ ?</h3><br>
+  
 
-    <div class="col-sm-12">
+   
        <p>
 Mijn naam is Marjan Sonnega. Ik heb ruim 30 jaar gewerkt in het basisonderwijs.<br>
 Als groepsleerkracht en de laatste 10 jaar als Remedial Teacher. Tevens ben ik “ dyslexie
-specialist” .<br>
+specialist”.<br>
 Ik help graag kinderen, in een 1 op 1 situatie, met hun problemen / hiaten op het gebied
 van o.a. rekenen, spelling en begrijpend lezen.<br>
 De kinderen krijgen door de vakkundige hulp vaak meer zelfvertrouwen.</p>
     
-    
+     Werkwijze en vakken:
+
+De bijlessen worden gegeven in de R.T. kamer op de 1 e verdieping aan de Harlingerstraatweg 6a te Leeuwarden ( dichtbij het centrum)
+Voorafgaand vindt een intakegesprek ( gratis) plaats met ouder(s) en kind.
+Vaak vindt er een gesprek plaats met de groepsleerkracht ( indien ouders hier toestemming voor geven)
+Het uurtarief is euro 25, 00 ( na 4 lessen factuur)
+
+Vakken:
+-Spelling ( regels en werkwoord spelling )
+-Begrijpend Lezen
+-Woordenschat ontwikkeling
+-Rekenen
+-Cito eindtoets oefening
+-Dyslexie begeleiding
+Voor wie ?
+-basischoolleerlingen
+-kinderen met dyslexie
      
     </div>
+      <div class="col-md-4"><!--Rechter kant--></div> 
   </div>
     
-      <h3>Werkwijze en vakken:</h3><br>
-  <div class="row">
-
-    <div class="col-sm-12">
-    
-       <p>
-De bijlessen worden gegeven in de R.T. kamer op de 1 e verdieping aan de
-Harlingerstraatweg 6a te Leeuwarden ( dichtbij het centrum)<br>
-Voorafgaand vindt een intakegesprek ( gratis) plaats met ouder(s) en kind.<br>
-Vaak vindt er een gesprek plaats met de groepsleerkracht ( indien ouders hier
-toestemming voor geven)<br>
-Het uurtarief is euro 25, 00 ( na 4 lessen factuur)<br>
-           <br>
-
-Vakken:<br>
-
- -Spelling ( regels en werkwoord spelling )<br>
--Begrijpend Lezen<br>
--Woordenschat ontwikkeling<br>
--Rekenen<br>
--Cito eindtoets oefening<br>
--Dyslexie begeleiding<br>
-Voor wie ?<br>
--basischoolleerlingen<br>
--kinderen met dyslexie<br>
-        </p>
+     
       
   
-    </div>
-  </div>
-</div><br>
+
+
 
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
