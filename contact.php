@@ -25,21 +25,20 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="#"><a href="index.php">Home</a></li>
-        <li><a href="overmij.php">Over mij</a></li>
-        <li><a href="werkwijze.php">Werkwijze</a></li>
-        <li><a href="inschrijfpagina.php">Inschrijfpagina</a></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="information.php">Informatie</a></li>
         <li><a href="contact.php">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
       </ul>
     </div>
   </div>
-</nav>
+    </nav>
 
-  
-<div class="container text-center">
+   <div class="row"> 
+  <div class="col-md-4"><!--Linker kant--></div>
+    <div class="col-md-4">
             
     <table class="table">
     <thead>
@@ -69,70 +68,27 @@
   </table>
     
     
-        <?php
-        if (isset($_POST["verstuur"])) {
-            if ($_POST["email"] == "" || $_POST["onderwerp"] == "" || $_POST["naam"] == "" || $_POST["achternaam"] == "") {
-                //print("<h2>Zorg dat de verplichte velden ingevuld zijn!!</h2>");
-                ?><form method="POST" action="contact.php">
-                   Naam:<input type="text" name="naam" value="<?php print($_POST["naam"]) ?>">
-                    <?php
-                    if ($_POST["email"] == "") {
-                        print("Verplicht!");
-                    }
-                    ?>
-                    <br>
-                    Achternaam:<input type="text" name="achternaam" value="<?php print($_POST["achternaam"]) ?>">
-                    <?php
-                    if ($_POST["email"] == "") {
-                        print("Verplicht!");
-                    }
-                    ?>
-                    <br>
-                    E-mailadres: <input type="text" name="email" value="<?php print($_POST["email"]) ?>">
-                    <?php
-                    if ($_POST["email"] == "") {
-                        print("Verplicht!");
-                    }
-                    ?>
-                    <br>
-                    Onderwerp: <input type="text" name="onderwerp" value="<?php print($_POST["onderwerp"]) ?>">
-                    <?php
-                    if ($_POST["onderwerp"] == "") {
-                        print("Verplicht!");
-                    }
-                    ?>
-                    <br>
-                    Bericht: <textarea name="bericht" rows="4" ><?php print($_POST["bericht"]) ?></textarea>
-                    <?php
-                    if ($_POST["bericht"] == "") {
-                        print("Verplicht!");
-                    }
-                    ?>
-                    <br>
-                    <input type="submit" name="verstuur" value="Verstuur berichtje!">
-                </form><?php
-            } else {
-                print("Bericht wordt verzonden!!!");
-            }
-        } else  {
-            ?> 
             <form method="POST" action="" enctype="text/plain">
-                Naam: <input type="text" name="naam"><br>
-                Achternaam: <input type="text" name="naam"><br>
-                E-mailadres: <input type="text" name="email"><br>
-                Onderwerp: <input type="text" name="onderwerp"><br>
-                Bericht: <textarea name="bericht" rows="4"></textarea><br>
-                <br>
-                <input type="submit" name="verstuur" value="Verstuur bericht">
-                <input type="reset" name="annuleren" value="Annuleren">
+                
+                <div class="form-group">Naam:
+                    <input type="text" class="form-control" placeholder="Vul hier in" name="naam"   value=""></div>
+                <div class="form-group">Achternaam: 
+                    <input type="text" class="form-control" placeholder="Vul hier in" name="achternaam"   value=""></div>
+                <div class="form-group">E-mailadres: 
+                    <input type="text" class="form-control" placeholder="Vul hier in" name="email"   value=""></div>
+                <div class="form-group">Onderwerp: 
+                    <input type="text" class="form-control" placeholder="Vul hier in" name="onderwerp"   value=""></div>
+                <div class="form-group">Bericht: 
+                    <textarea rows="5" class="form-control" placeholder="Vul hier in" cols="22" name="bericht"></textarea></div>
+                <div class="form-group"><input type="submit" name="verstuur" value="Verstuur bericht">
+                <input type="reset" name="annuleren" value="Annuleren"></div>
             </form> 
-            <?php
-        } 
-        ?>
     
     
-</div><br>
-
+</div>
+    
+    <div class="col-md-4"><!--Rechter kant--></div> 
+    </div>
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
