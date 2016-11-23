@@ -59,17 +59,17 @@ Voorafgaand vindt een intakegesprek ( gratis) plaats met ouder(s) en kind.
 Vaak vindt er een gesprek plaats met de groepsleerkracht ( indien ouders hier toestemming voor geven)
 Het uurtarief is euro 25, 00 ( na 4 lessen factuur)
 
-Vakken:
--Spelling ( regels en werkwoord spelling )
--Begrijpend Lezen
--Woordenschat ontwikkeling
--Rekenen
--Cito eindtoets oefening
--Dyslexie begeleiding
-Voor wie ?
--basischoolleerlingen
--kinderen met dyslexie
-     
+<ul><br>Vakken:
+<li>Spelling ( regels en werkwoord spelling )</li>
+<li>Begrijpend Lezen</li>
+<li>Woordenschat ontwikkeling</li>
+<li>Rekenen</li>
+<li>Cito eindtoets oefening</li>
+<li>Dyslexie begeleiding</li></ul>
+<ul><br>Voor wie ?
+<li>basischoolleerlingen</li>
+<li>kinderen met dyslexie</li>
+     </ul>
     </div>
       <div class="col-md-4"><!--Rechter kant--></div> 
   </div>
@@ -80,9 +80,6 @@ Voor wie ?
 
 
 
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
 
 </body>
 </html>

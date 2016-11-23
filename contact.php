@@ -39,7 +39,7 @@
    <div class="row"> 
   <div class="col-md-4"><!--Linker kant--></div>
     <div class="col-md-4">
-            
+    <h3>Beschikbaarheid van “De Bijlesjuf“</h3>
     <table class="table">
     <thead>
       <tr>
@@ -89,9 +89,7 @@
     
     <div class="col-md-4"><!--Rechter kant--></div> 
     </div>
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
+
 
 </body>
 </html>

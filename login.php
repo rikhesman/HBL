@@ -43,10 +43,10 @@
              <h3>Inloggen op de website van “De Bijlesjuf“.</h3><br>
             <form method="POST" action="" enctype="text/plain">
                 
-                <div class="form-group">Email/Gebruikersnaam
+                <div class="form-group">Gebruikersnaam
                     <input type="text" class="form-control" placeholder="Vul hier in" name="naam"   value=""></div>
                 <div class="form-group">Wachtwoord
-                    <input type="text" class="form-control" placeholder="Vul hier in" name="achternaam"   value=""></div>
+                    <input type="password" class="form-control" placeholder="Vul hier in" name="wachtwoord"   value=""></div>
                 <div class="form-group"><input type="submit" name="verstuur" value="Login">
                 <input type="reset" name="annuleren" value="Annuleren"></div>
             </form> 
