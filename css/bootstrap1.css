@@ -2,8 +2,24 @@
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
-      background-color: purple;
-    }
+      border: 0;
+      background-color: #82422D;
+      color: #FFFFFF;
+   }
+   
+   .navbar-inverse .navbar-nav li a {
+   		color: #FFF;
+   }
+   
+   .navbar-inverse .navbar-nav li a:hover {
+   		box-shadow: 0px 0px 10px #FFF;
+   }
+   
+   .navbar-inverse .navbar-brand {
+   		color: #FFF;
+   }   
+   
+    
     
     /* Add a gray background color and some padding to the footer */
     footer {
