@@ -169,7 +169,6 @@ Bericht:	'.$_POST['comment'].'
     }    
             
 } else {
-            $message ="";
 
         if (empty($_POST["name"])) {
     $nameErr = "Naam is verplicht";
@@ -237,12 +236,13 @@ Bericht:	'.$_POST['comment'].'
         }
  
 }
-}
+} else {
+    $message = "";
+    }
 ?>
 
 <h3>Contact formulier "De bijlesjuf"</h3>
 <p><span class="error">* Verplicht veld.</span></p>
-        
         <h3 class="error"><?php echo $message;?></h3>
 <form method="post" action="contact.php">
     <div class="form-group">Naam:  <span class="error">* <?php echo $nameErr;?></span><input type="text" class="form-control" placeholder="Vul hier in" name="name" value="<?php echo $name;?>"></div>
