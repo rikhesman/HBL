@@ -86,7 +86,7 @@ if(isset($_POST['submit']) && !empty($_POST['submit'])) {
   } else {
     $lastname = input($_POST["lastname"]);
     // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+    if (!preg_match("/^[a-zA-Z ]*$/",$lastname)) {
       $lastnameErr = "Alleen letters en witregels toegestaan";
     }
          else {
@@ -112,7 +112,7 @@ if(isset($_POST['submit']) && !empty($_POST['submit'])) {
   } else {
     $subject = input($_POST["subject"]);
     // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+    if (!preg_match("/^[a-zA-Z ]*$/",$subject)) {
       $subjectErr = "Alleen letters en witregels toegestaan";
     }
     else {
@@ -163,7 +163,7 @@ Bericht:	'.$_POST['comment'].'
     $result = $mail->Send();		// Send!  
 	$message = $result ? 'Successfully Sent!' : 'Sending Failed!';      
 	unset($mail);
-    if($message === 'Successfully Sent!'){
+    if($message == 'Successfully Sent!'){
        $message = "Bericht is verzonden!";
         $name = $lastname = $email = $subject = $comment  = "";
     }    
@@ -189,7 +189,7 @@ Bericht:	'.$_POST['comment'].'
   } else {
     $lastname = input($_POST["lastname"]);
     // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+    if (!preg_match("/^[a-zA-Z ]*$/",$lastname)) {
       $lastnameErr = "Alleen letters en witregels toegestaan";
     }
     else {
@@ -205,6 +205,9 @@ Bericht:	'.$_POST['comment'].'
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $emailErr = "Ongeldig email formaat"; 
     }
+    else {
+        $email = $email;
+    }
   }
 
    if (empty($_POST["subject"])) {
@@ -212,7 +215,7 @@ Bericht:	'.$_POST['comment'].'
   } else {
     $subject = input($_POST["subject"]);
     // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+    if (!preg_match("/^[a-zA-Z ]*$/",$subject)) {
       $subjectErr = "Alleen letters en witregels toegestaan";
     }
     else {
@@ -239,7 +242,7 @@ Bericht:	'.$_POST['comment'].'
 
 <h3>Contact formulier "De bijlesjuf"</h3>
 <p><span class="error">* Verplicht veld.</span></p>
-        <?php $message ="";?>
+        
         <h3 class="error"><?php echo $message;?></h3>
 <form method="post" action="contact.php">
     <div class="form-group">Naam:  <span class="error">* <?php echo $nameErr;?></span><input type="text" class="form-control" placeholder="Vul hier in" name="name" value="<?php echo $name;?>"></div>
