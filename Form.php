@@ -1,68 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>De Bijlesjuf</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="Css_Form.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-    
-  .carousel-inner img {
-      width: 100%; /* Set width to 100% */
-      margin: auto;
-      min-height:200px;
-  }
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap1.css">
+  <link rel="shortcut icon" href="./foto/logosonnega.ico">
+  <script src="./js/javascript.js"></script>
+  <script src="./js/javascript1.js"></script>
 
-  /* Hide the carousel text when the screen is less than 600 pixels wide */
-  @media (max-width: 600px) {
-    .carousel-caption {
-      display: none;
-    }
-  }
-  </style>
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Logo</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<?php include('build/navbar.php'); ?>
     
     <div class="row">
-  <div class="col-md-4"><!--Linker kant--></div>
+        <div class="col-md-4"><!--Linker kant--></div>
   <div class="col-md-4">
     <h1>Inschrijfformulier</h1>
         <form>
@@ -76,7 +30,7 @@
                 Voornaam ouder 2
                 <input type="text" class="form-control" placeholder="Vul hier in" name="first_name_m"  value="">
                 </div><div class="form-group">
-                Achternaam ouder 2</td>
+                Achternaam ouder 2
                 <input type="text" class="form-control" placeholder="Vul hier in" name="last_name_m"   value="">
                 </div><div class="form-group">
                 Email 1
@@ -116,7 +70,7 @@
                 <input type="radio" name="dyslexie"     value="ja"> Ja
                 <input type="radio" name="dyslexie"     value="nee"> Nee
                 </div><div class="form-group">
-                Extra opmerkingen</td>
+                Extra opmerkingen
                 <textarea rows="5" class="form-control" placeholder="Vul hier in" cols="22" name="opmerking"></textarea>
                 </div><div class="form-group">
                 <input type="button" class="btn btn-primary" name="opslaan" value="Opslaan">
