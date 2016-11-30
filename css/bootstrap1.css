@@ -44,3 +44,6 @@
 .table thead tr th {
     text-align: center;
 }
+.error {
+    color:red;
+}
