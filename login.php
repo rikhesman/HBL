@@ -12,25 +12,24 @@
 
 </head>
 <body>
-
-<?php include('build/navbar.php'); ?>
-
-
 <div class="row"> 
   <div class="col-md-4"><!--Linker kant--></div>
     <div class="col-md-4">
-             <h3>Inloggen op de website van “De Bijlesjuf“.</h3><br>
+    	<div class="panel panel-default login">
+    	<div class="panel-body">
+             <h3>Inloggen op de website van HBL</h3><br>
             <form method="POST" action="" enctype="text/plain">
                 
                 <div class="form-group">Gebruikersnaam
                     <input type="text" class="form-control" placeholder="Vul hier in" name="naam"   value=""></div>
                 <div class="form-group">Wachtwoord
                     <input type="password" class="form-control" placeholder="Vul hier in" name="wachtwoord"   value=""></div>
-                <div class="form-group"><input type="submit" name="verstuur" value="Login">
-                <input type="reset" name="annuleren" value="Annuleren"></div>
+                <div class="form-group"><input type="submit" class="btn btn-primary" name="verstuur" value="Login">               
+                	<input type="submit" name="annuleren" class="btn btn-danger" value="Terug" onclick="window.location='index.php';">
+                </div>                
             </form> 
-    
-    
+    	</div>
+    </div>
 </div>
     
     <div class="col-md-4"><!--Rechter kant--></div> 
