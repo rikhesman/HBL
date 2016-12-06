@@ -1,8 +1,10 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include('build/head.php');
-    session_start();?>
+   <?php include('build/head.php');?>
 </head>
 <body>
 
