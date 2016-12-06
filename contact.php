@@ -18,6 +18,7 @@
    <div class="row"> 
   <div class="col-md-4"><!--Linker kant--></div>
     <div class="col-md-4">
+        <!--
     <h3>Beschikbaarheid van “De Bijlesjuf“</h3>
     <table class="table">
     <thead>
@@ -45,12 +46,12 @@
 </tr>
     </tbody>
   </table>
-   
+ -->
         <?php
-// define variables and set to empty values
+// Alle variables worden hier leeg gemaakt
 $nameErr = $lastnameErr = $emailErr = $subjectErr = $commentErr = $captchaErr =  "";
 $name = $lastname = $email = $subject = $comment  = $secret = "";
-
+// checkt of de methode wel "POST" is
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     function input($data) {
   $data = trim($data);
@@ -58,21 +59,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $data = htmlspecialchars($data);
   return $data;
 }
-
+// Als je op de knop drukt kijkt of captcha is ingevuld
 if(isset($_POST['submit']) && !empty($_POST['submit'])) {
- 
+ //  captcha wordt ingevuld
      if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) 
-        //your site secret key
+        //De site secret sleutel
         $secret = "6LeUJQ0UAAAAAHkfZ2HWa2ppNkkYXTK1ln-WAAYZ";
-        //get verify response data
+        //Checkt de response
         $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
         $responseData = json_decode($verifyResponse);
+        // als de response success is volgt die dit pad
         if($responseData->success) {
   if (empty($_POST["name"])) {
     $nameErr = "Naam is verplicht";
   } else {
     $name = input($_POST["name"]);
-    // check if name only contains letters and whitespace
+      //check of de naam letters en witteregels bevat
     if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
       $nameErr = "Alleen letters en witregels toegestaan";
        
@@ -85,7 +87,7 @@ if(isset($_POST['submit']) && !empty($_POST['submit'])) {
     $lastnameErr = "Achternaam is verplicht";
   } else {
     $lastname = input($_POST["lastname"]);
-    // check if name only contains letters and whitespace
+        // check of de naam letters en witteregels bevat
     if (!preg_match("/^[a-zA-Z ]*$/",$lastname)) {
       $lastnameErr = "Alleen letters en witregels toegestaan";
     }
@@ -98,7 +100,7 @@ if(isset($_POST['submit']) && !empty($_POST['submit'])) {
     $emailErr = "Email is verplicht";
   } else {
     $email = input($_POST["email"]);
-    // check if e-mail address is well-formed
+      // checkt of e-mail adres wel goed is geformuleerd
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $emailErr = "Ongeldig email formaat"; 
     }
@@ -111,7 +113,7 @@ if(isset($_POST['submit']) && !empty($_POST['submit'])) {
     $subjectErr = "Onderwerp is verplicht";
   } else {
     $subject = input($_POST["subject"]);
-    // check if name only contains letters and whitespace
+      // check of de naam letters en witteregels bevat
     if (!preg_match("/^[a-zA-Z ]*$/",$subject)) {
       $subjectErr = "Alleen letters en witregels toegestaan";
     }
@@ -140,41 +142,41 @@ Bericht:	'.$_POST['comment'].'
     // Instantiate Class  
     $mail = new PHPMailer();  
       
-    // Set up SMTP  
-    $mail->IsSMTP();                // Sets up a SMTP connection  
-    $mail->SMTPAuth = true;         // Connection with the SMTP does require authorization    
-    $mail->SMTPSecure = "ssl";      // Connect using a TLS connection  
-    $mail->Host = "smtp.gmail.com";  //Gmail SMTP server address
-    $mail->Port = 465;  //Gmail SMTP port
+    // Setup SMTP  
+    $mail->IsSMTP();                //  opzetten van SMTP connectie 
+    $mail->SMTPAuth = true;         //  connectie met SMTP heeft geen authorisatie nodig    
+    $mail->SMTPSecure = "ssl";      //  connectie gebruikt een TLS
+    $mail->Host = "smtp.gmail.com";  //Gmail SMTP server adres
+    $mail->Port = 465;  //Gmail SMTP poort
     $mail->Encoding = '7bit';
     
     // Authentication  
-    $mail->Username   = "hesmantest@gmail.com"; // Your full Gmail address
-    $mail->Password   = "DitisheelGeheim!"; // Your Gmail password
+    $mail->Username   = "hesmantest@gmail.com"; //  Gmail adres
+    $mail->Password   = "DitisheelGeheim!"; //  Gmail Wachtwoord
       
-    // Compose
+    // Samenstellen
     $mail->SetFrom($_POST['email'], $_POST['name']);
     $mail->AddReplyTo($_POST['email'], $_POST['lastname']);
-    $mail->Subject = "Contactformulier via de website!";      // Subject (which isn't required)  
+    $mail->Subject = "Contactformulier via de website!";      
     $mail->MsgHTML($message);
  
-    // Send To  
-    $mail->AddAddress("h3sm4n@hotmail.nl", "Recipient Name"); // Where to send it - Recipient
-    $result = $mail->Send();		// Send!  
+    // Verzenden naar 
+    $mail->AddAddress("ramon.kerpershoek@gmail.com", "Recipient Name"); // Where to send it - Recipient
+    $result = $mail->Send();		// zenden!  
 	$message = $result ? 'Successfully Sent!' : 'Sending Failed!';      
 	unset($mail);
     if($message == 'Successfully Sent!'){
        $message = "Bericht is verzonden!";
         $name = $lastname = $email = $subject = $comment  = "";
     }    
-            
+       // als captcha niet successfull is dan volgt dit pad     
 } else {
 
         if (empty($_POST["name"])) {
     $nameErr = "Naam is verplicht";
   } else {
     $name = input($_POST["name"]);
-    // check if name only contains letters and whitespace
+    //  check of de naam letters en witteregels bevat
     if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
       $nameErr = "Alleen letters en witregels toegestaan";
        
@@ -187,7 +189,7 @@ Bericht:	'.$_POST['comment'].'
     $lastnameErr = "Achternaam is verplicht";
   } else {
     $lastname = input($_POST["lastname"]);
-    // check if name only contains letters and whitespace
+    // check of de naam letters en witteregels bevat
     if (!preg_match("/^[a-zA-Z ]*$/",$lastname)) {
       $lastnameErr = "Alleen letters en witregels toegestaan";
     }
@@ -200,7 +202,7 @@ Bericht:	'.$_POST['comment'].'
     $emailErr = "Email is verplicht";
   } else {
     $email = input($_POST["email"]);
-    // check if e-mail address is well-formed
+    // checkt of e-mail adres wel goed is geformuleerd
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $emailErr = "Ongeldig email formaat"; 
     }
@@ -213,7 +215,7 @@ Bericht:	'.$_POST['comment'].'
     $subjectErr = "Onderwerp is verplicht";
   } else {
     $subject = input($_POST["subject"]);
-    // check if name only contains letters and whitespace
+    // check of de naam letters en witteregels bevat
     if (!preg_match("/^[a-zA-Z ]*$/",$subject)) {
       $subjectErr = "Alleen letters en witregels toegestaan";
     }
@@ -228,14 +230,16 @@ Bericht:	'.$_POST['comment'].'
     $comment = input($_POST["comment"]);
   }  else {
         $comment = $comment;
+    $message = "";
+
     }
 
-             
+        $message = "";     
         $captchaErr = "Captcha niet ingevuld";
         
         }
  
-}
+} 
 } else {
     $message = "";
     }
