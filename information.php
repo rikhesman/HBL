@@ -7,8 +7,15 @@ session_start();
    <?php include('build/head.php');?>
 </head>
 <body>
+<?php
+      if(!isset($_SESSION['admin'])){ // If session is not set that redirect to Login Page
+          include('build/navbar.php');
+           //header("Location:information.php");  
+       } else {
+          include('build/navbarlogout.php');
+      }
+?>
 
-<?php include('build/navbar.php'); ?>
 
 
   <div class="row">
