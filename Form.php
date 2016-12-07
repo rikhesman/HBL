@@ -7,8 +7,13 @@ session_start();
    <?php include('build/head.php');?>
 </head>
 <body>
-
-<?php include('build/navbar.php'); ?>
+<?php
+      if(!isset($_SESSION['admin'])){ // If session is not set that redirect to Login Page 
+          include('build/navbar.php');  
+       } else {
+          include('build/navbarlogout.php');
+      }
+?>
     
     <div class="row">
         <div class="col-md-4"><!--Linker kant--></div>
