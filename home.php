@@ -7,8 +7,22 @@ session_start();
    <?php include('build/head.php');?>
 </head>
 <body>
+<?php
+      
+      if(!isset($_SESSION['admin'])){
+          header("Location:login.php");  }  else {
+          include('build/navbarlogout.php');
+      }
+   /*if(!isset($_SESSION['parent'])){
+          header("Location:login.php");  }  else {
+          include('build/navbarlogout.php');
+      }*/
+    
+   
+   
+         
+?>
 
-<?php include('build/navbar.php'); ?>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
