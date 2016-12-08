@@ -1,55 +1,40 @@
+<?php
+session_start();
+
+include('includes/autoloader.php'); 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>De Bijlesjuf</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./css/bootstrap.css">
-  <link rel="stylesheet" href="./css/bootstrap1.css">
-  <link rel="shortcut icon" href="./foto/logosonnega.ico">
-  <script src="./js/javascript.js"></script>
-  <script src="./js/javascript1.js"></script>
-
+   <?php include('build/head.php');?>
 </head>
 <body>
-
-<?php include('build/navbar.php'); ?>
+<?php
+      if(!isset($_SESSION['admin'])){ // If session is not set that redirect to Login Page 
+          include('build/navbar.php');  
+       } else {
+          include('build/navbarlogout.php');
+      }
+?>
     
     <div class="row">
         <div class="col-md-4"><!--Linker kant--></div>
   <div class="col-md-4">
     <h1>Inschrijfformulier</h1>
-        <form>
+        <form method='post'>
             <div class="form-group">
-                <label for="title">Voornaam ouder 1</label>
+                Voornaam ouder/begeleider
                 <input type="text" class="form-control" placeholder="Vul hier in" name="first_name_v"  value="">
                 </div><div class="form-group">
-                Achternaam ouder 1
-                <input type="text" class="form-control" placeholder="Vul hier in" name="last_name_v"   value="">
-                </div><div class="form-group">
-                Voornaam ouder 2
+                Achternaam ouder/begeleider
                 <input type="text" class="form-control" placeholder="Vul hier in" name="first_name_m"  value="">
                 </div><div class="form-group">
-                Achternaam ouder 2
-                <input type="text" class="form-control" placeholder="Vul hier in" name="last_name_m"   value="">
-                </div><div class="form-group">
-                Email 1
+                Email
                 <input type="text" class="form-control" placeholder="Vul hier in" name="email_1"       value="">
                 </div><div class="form-group">
-                Email 2
-                <input type="text" class="form-control" placeholder="Vul hier in" name="email_2"       value="">
-                </div><div class="form-group">
-                Email kind
-                <input type="text" class="form-control" placeholder="Vul hier in" name="email_k"       value="">
-                </div><div class="form-group">
-                Telefoon 1
+                Telefoon
                 <input type="text" class="form-control" placeholder="Vul hier in" name="telefoon_1"  value="">
-                </div><div class="form-group">
-                Telefoon 2
-                <input type="text" class="form-control" placeholder="Vul hier in" name="telefoon_2"  value="">
-                </div><div class="form-group">
-                Telefoon 3
-                <input type="text" class="form-control" placeholder="Vul hier in" name="telefoon_k"  value="">
                 </div><div class="form-group">
                 Voornaam kind
                 <input type="text" class="form-control" placeholder="Vul hier in" name="first_name_k"  value="">
@@ -73,7 +58,7 @@
                 Extra opmerkingen
                 <textarea rows="5" class="form-control" placeholder="Vul hier in" cols="22" name="opmerking"></textarea>
                 </div><div class="form-group">
-                <input type="button" class="btn btn-primary" name="opslaan" value="Opslaan">
+                <input type="submit" class="btn btn-primary" name="opslaan" value="Opslaan">
             </div>
     </form>
   </div>
