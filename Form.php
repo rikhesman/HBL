@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+include('includes/autoloader.php'); 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +22,7 @@ session_start();
         <div class="col-md-4"><!--Linker kant--></div>
   <div class="col-md-4">
     <h1>Inschrijfformulier</h1>
-        <form>
+        <form method='post'>
             <div class="form-group">
                 Voornaam ouder/begeleider
                 <input type="text" class="form-control" placeholder="Vul hier in" name="first_name_v"  value="">
@@ -55,7 +58,7 @@ session_start();
                 Extra opmerkingen
                 <textarea rows="5" class="form-control" placeholder="Vul hier in" cols="22" name="opmerking"></textarea>
                 </div><div class="form-group">
-                <input type="button" class="btn btn-primary" name="opslaan" value="Opslaan">
+                <input type="submit" class="btn btn-primary" name="opslaan" value="Opslaan">
             </div>
     </form>
   </div>
