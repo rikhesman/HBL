@@ -1,25 +1,28 @@
+<?php
+session_start();
+
+include('includes/autoloader.php'); 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>De Bijlesjuf</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./css/bootstrap.css">
-  <link rel="stylesheet" href="./css/bootstrap1.css">
-  <link rel="shortcut icon" href="./foto/logosonnega.ico">
-  <script src="./js/javascript.js"></script>
-  <script src="./js/javascript1.js"></script>
-
+   <?php include('build/head.php');?>
 </head>
 <body>
-
-<?php include('build/navbar.php'); ?>
+<?php
+      if(!isset($_SESSION['admin'])){ // If session is not set that redirect to Login Page 
+          include('build/navbar.php');  
+       } else {
+          include('build/navbarlogout.php');
+      }
+?>
     
     <div class="row">
         <div class="col-md-4"><!--Linker kant--></div>
   <div class="col-md-4">
     <h1>Inschrijfformulier</h1>
-        <form>
+        <form method='post'>
             <div class="form-group">
                 Voornaam ouder/begeleider
                 <input type="text" class="form-control" placeholder="Vul hier in" name="first_name_v"  value="">
@@ -55,7 +58,7 @@
                 Extra opmerkingen
                 <textarea rows="5" class="form-control" placeholder="Vul hier in" cols="22" name="opmerking"></textarea>
                 </div><div class="form-group">
-                <input type="button" class="btn btn-primary" name="opslaan" value="Opslaan">
+                <input type="submit" class="btn btn-primary" name="opslaan" value="Opslaan">
             </div>
     </form>
   </div>

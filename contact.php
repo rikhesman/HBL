@@ -1,19 +1,20 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>De Bijlesjuf</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./css/bootstrap.css">
-  <link rel="stylesheet" href="./css/bootstrap1.css">
-     <link rel="shortcut icon" href="./foto/logosonnega.ico">
-  <script src="./js/javascript.js"></script>
-  <script src="./js/javascript1.js"></script>
-  <script src='https://www.google.com/recaptcha/api.js'></script>
+   <?php include('build/head.php');?>
 </head>
 <body>
-
-<?php include('build/navbar.php'); ?>
+<?php
+      if(!isset($_SESSION['admin'])){ // If session is not set that redirect to Login Page 
+          include('build/navbar.php');  
+       } else {
+          include('build/navbarlogout.php');
+      }
+?>
 
    <div class="row"> 
   <div class="col-md-4"><!--Linker kant--></div>
@@ -58,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $data = stripslashes($data);
   $data = htmlspecialchars($data);
   return $data;
-}
+    }
 // Als je op de knop drukt kijkt of captcha is ingevuld
 if(isset($_POST['submit']) && !empty($_POST['submit'])) {
  //  captcha wordt ingevuld
@@ -184,7 +185,7 @@ Bericht:	'.$_POST['comment'].'
     } else {
         $name = $name;
     }
-  }
+        }
     if (empty($_POST["lastname"])) {
     $lastnameErr = "Achternaam is verplicht";
   } else {
@@ -245,7 +246,7 @@ Bericht:	'.$_POST['comment'].'
     }
 ?>
 
-<h3>Contact formulier "De bijlesjuf"</h3>
+        <h3>Contact formulier "De bijlesjuf"</h3>
 <p><span class="error">* Verplicht veld.</span></p>
         <h3 class="error"><?php echo $message;?></h3>
 <form method="post" action="contact.php">
