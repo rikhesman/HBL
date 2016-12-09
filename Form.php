@@ -39,7 +39,7 @@ include('includes/autoloader.php');
                 <input type="text" class="form-control" placeholder="Vul hier in" name="l_name"  		value="">
                 </div><div class="form-group">
                 Rol*
-                <select required name="rol">
+                <select required class="form-control" name="rol">
                 	<option value="choose">Kies een rol</option>
                 	<option value="child">Kind</option>
                 	<option value="parent">Ouder</option>
