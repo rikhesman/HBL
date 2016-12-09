@@ -19,7 +19,7 @@ class accountManagement
 		$date      = Input::get('join_date');
 
 	
-		if ($register->setRegister($nameP1, $nameP2, $email,$tel,$fName,$lName,$bDate,$school,$class,$dys,$comment)) {
+		if ($register->setRegister($username,$password,$fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date)) {
 			echo 'Succesvol aangemaakt';
 		} else {
 			echo "error";

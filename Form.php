@@ -27,7 +27,7 @@ include('includes/autoloader.php');
                 <input type="text" class="form-control" placeholder="Vul hier in" name="username"  	value="">
                 </div><div class="form-group">
                 Wachtwoord*
-                <input type="text" class="form-control" placeholder="Vul hier in" name="password"  	value="">
+                <input type="password" class="form-control" placeholder="Vul hier in" name="password"  	value="">
                 </div><div class="form-group">
                 Voornaam*
                 <input type="text" class="form-control" placeholder="Vul hier in" name="f_name"    value="">
@@ -43,6 +43,7 @@ include('includes/autoloader.php');
                 	<option value="choose">Kies een rol</option>
                 	<option value="child">Kind</option>
                 	<option value="parent">Ouder</option>
+                	<option value="admin">Beheerder</option>
                 </select>
                 </div><div class="form-group">
                 Email
