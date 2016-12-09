@@ -19,35 +19,7 @@ session_start();
    <div class="row"> 
   <div class="col-md-4"><!--Linker kant--></div>
     <div class="col-md-4">
-        <!--
-    <h3>Beschikbaarheid van “De Bijlesjuf“</h3>
-    <table class="table">
-    <thead>
-      <tr>
-        <th>Dag</th>
-        <th>Tijd</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Maandag</td>
-        <td>15.30 - 17.30</td>
-      </tr>
-        <tr>
-  <td>Dinsdag</td>
-  <td>15.30 - 17.30</td>
-</tr>
-        <tr>
-  <td>Woensdag</td>
-  <td>15.30 - 17.30</td>
-</tr>
-        <tr>
-  <td>Donderdag</td>
-  <td>15.30 - 17.30</td>
-</tr>
-    </tbody>
-  </table>
- -->
+ 
         <?php
 // Alle variables worden hier leeg gemaakt
 $nameErr = $lastnameErr = $emailErr = $subjectErr = $commentErr = $captchaErr =  "";
