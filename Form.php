@@ -41,9 +41,8 @@ include('includes/autoloader.php');
                 Rol*
                 <select required class="form-control" name="rol">
                 	<option value="choose">Kies een rol</option>
-                	<option value="child">Kind</option>
-                	<option value="parent">Ouder</option>
-                	<option value="admin">Beheerder</option>
+                	<option value="Kind">Kind</option>
+                	<option value="Ouder">Ouder</option>
                 </select>
                 </div><div class="form-group">
                 Email
@@ -57,7 +56,7 @@ include('includes/autoloader.php');
                 <input type="radio" name="dys"     value="nee"> Nee
                 </div><div class="form-group">
                 Inschrijfdatum*
-                <input type="date" class="form-control" placeholder="dd/mm/jjjj" name="join_date" 			value="">
+                <input type="date" class="form-control" placeholder="dd/mm/jjjj" name="join_date" 	value="">
                 </div><div class="form-group">
                 Extra opmerkingen 
                 <textarea rows="5" class="form-control" placeholder="Vul hier in" cols="22" name="comment"></textarea>
