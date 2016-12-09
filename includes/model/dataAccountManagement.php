@@ -26,5 +26,15 @@ class dataAccountManagement extends connection {
 		return true;
 	}
 	
+	public function login($username, $password) {
+		$sql = "SELECT username, password FROM users WHERE username = :username AND password = :password"; 		
+		$q = $this -> conn -> prepare($sql);
+		$q -> bindValue(':username', $username, PDO::PARAM_STR);		
+		$q -> bindValue(':password', $password, PDO::PARAM_STR);			
+		$q -> execute();
+		
+		return true;
+	}
+	
 	
 }
