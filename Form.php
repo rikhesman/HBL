@@ -1,4 +1,5 @@
 <?php
+//session_start();
 
 include('includes/autoloader.php'); 
 
@@ -23,47 +24,41 @@ include('includes/autoloader.php');
     <h1>Inschrijfformulier</h1>
         <form method='post'>
             <div class="form-group">
-                Gebruikersnaam*
-                <input type="text" class="form-control" placeholder="Vul hier in" name="username"  	value="">
+                Voornaam ouder/begeleider
+                <input type="text" class="form-control" placeholder="Vul hier in" name="first_name_v"  value="">
                 </div><div class="form-group">
-                Wachtwoord*
-                <input type="text" class="form-control" placeholder="Vul hier in" name="password"  	value="">
-                </div><div class="form-group">
-                Voornaam*
-                <input type="text" class="form-control" placeholder="Vul hier in" name="f_name"    value="">
-                </div><div class="form-group">
-                Tussenvoegsel
-                <input type="text" class="form-control" placeholder="Vul hier in" name="insertion"    value="">
-                </div><div class="form-group">
-                Achternaam*
-                <input type="text" class="form-control" placeholder="Vul hier in" name="l_name"  		value="">
-                </div><div class="form-group">
-                Rol*
-                <select required class="form-control" name="rol">
-                	<option value="choose">Kies een rol</option>
-                	<option value="child">Kind</option>
-                	<option value="parent">Ouder</option>
-                </select>
+                Achternaam ouder/begeleider
+                <input type="text" class="form-control" placeholder="Vul hier in" name="first_name_m"  value="">
                 </div><div class="form-group">
                 Email
-                <input type="text" class="form-control" placeholder="Vul hier in" name="email"		value="">
+                <input type="text" class="form-control" placeholder="Vul hier in" name="email_1"       value="">
                 </div><div class="form-group">
-                Telefoonnummer
-                <input type="text" class="form-control" placeholder="Vul hier in" name="tel"		value="">
+                Telefoon
+                <input type="text" class="form-control" placeholder="Vul hier in" name="telefoon_1"  value="">
+                </div><div class="form-group">
+                Voornaam kind
+                <input type="text" class="form-control" placeholder="Vul hier in" name="first_name_k"  value="">
+                </div><div class="form-group">
+                Achternaam kind
+                <input type="text" class="form-control" placeholder="Vul hier in" name="last_name_k"   value="">
+                </div><div class="form-group">
+                Geboortedatum
+                <input type="text" class="form-control" placeholder="Vul hier in" name="birth_date"    value="">
+                </div><div class="form-group">
+                School
+                <input type="text" class="form-control" placeholder="Vul hier in" name="school"        value="">
+                </div><div class="form-group">
+                Vak(ken)
+                <input type="text" class="form-control" placeholder="Vul hier in" name="vak"           value="">
                 </div><div class="form-group">
                 Dyslexie
-                <input type="radio" name="dys"     value="ja"> Ja
-                <input type="radio" name="dys"     value="nee"> Nee
+                <input type="radio" name="dyslexie"     value="ja"> Ja
+                <input type="radio" name="dyslexie"     value="nee"> Nee
                 </div><div class="form-group">
-                Inschrijfdatum*
-                <input type="date" class="form-control" placeholder="dd/mm/jjjj" name="join_date" 			value="">
+                Extra opmerkingen
+                <textarea rows="5" class="form-control" placeholder="Vul hier in" cols="22" name="opmerking"></textarea>
                 </div><div class="form-group">
-                Extra opmerkingen 
-                <textarea rows="5" class="form-control" placeholder="Vul hier in" cols="22" name="comment"></textarea>
-                </div><div class="form-group">
-                <p>* = Verplicht</p>
-                
-                <input type="submit" class="btn btn-primary" name="save" value="Opslaan">
+                <input type="submit" class="btn btn-primary" name="opslaan" value="Opslaan">
             </div>
     </form>
   </div>
