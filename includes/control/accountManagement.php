@@ -28,5 +28,20 @@ class accountManagement
 		}			
 		
 	}
+	
+	public static function login()
+	{
+		$login  = new dataAccountManagement;
+		$username  = Input::get('username');
+		$password  = Input::get('password');
+			
+		if ($login->login($username, password_verify($password, PASSWORD_DEFAULT))) {
+			$_SESSION['some'] = $username;
+			
+		} else {
+			echo "error";
+		}			
+		
+	}
 
 }

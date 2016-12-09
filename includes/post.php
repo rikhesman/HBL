@@ -8,6 +8,8 @@
  * 
  */
  
- if (Input::has('save')) accountManagement::register();
- 
+
+ //Account management
+ if (Input::has('save')) accountManagement::register(); //registreren
+ if (Input::has('login')) accountManagement::login(); // In loggen
 

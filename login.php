@@ -58,7 +58,8 @@ if(isset($_POST['submit']))   // it checks whether the user clicked login button
             <form method="POST" action="login.php">
                 <div class="form-group">Gebruikersnaam <span class="error">* <?php echo $loginErr;?></span><input type="text" class="form-control" placeholder="Vul hier in" name="username" value=""></div>
                 <div class="form-group">Wachtwoord <span class="error">* <?php echo $loginErr;?></span><input type="password" class="form-control" placeholder="Vul hier in" name="password"   value=""></div>
-                <div class="form-group"><input type="submit" class="btn btn-primary" name="submit" value="Login">               
+                <div class="form-group">
+                	<input type="submit" class="btn btn-primary" name="login" value="Login">               
                 	<input type="reset" name="annuleren" class="btn btn-danger" value="Terug" onclick="window.location='index.php';">
                 </div>                
             </form> 
