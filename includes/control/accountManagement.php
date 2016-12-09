@@ -18,8 +18,10 @@ class accountManagement
 		$comment   = Input::get('comment');
 		$date      = Input::get('join_date');
 
-	$password = password_hash($password, PASSWORD_DEFAULT);
-		if ($register->setRegister($nameP1, $nameP2, $email,$tel,$fName,$lName,$bDate,$school,$class,$dys,$comment)) {
+			
+		$password = password_hash($password, PASSWORD_DEFAULT);
+	
+		if ($register->setRegister($username,$password,$fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date)) {
 			echo 'Succesvol aangemaakt';
 		} else {
 			echo "error";

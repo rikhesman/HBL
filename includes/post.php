@@ -8,6 +8,6 @@
  * 
  */
  
- if (Input::has('opslaan')) accountManagement::register();
+ if (Input::has('save')) accountManagement::register();
  
 

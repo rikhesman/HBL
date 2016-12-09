@@ -7,7 +7,7 @@ class dataAccountManagement extends connection {
 	
 	// Registreren
 	public function setRegister($username, $password, $fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date) {
-		$sql = "INSERT INTO users (username, password, f_name, insertioon, l_name, rol, email, tel, dys, comment, join_date) 
+		$sql = "INSERT INTO users (username, password, f_name, insertion, l_name, rol, email, tel, dys, comment, join_date) 
 		VALUES (:username,:password, :f_name, :insertion, :l_name, :rol, :email, :tel, :dys, :comment, :join_date);"; 		
 		$q = $this -> conn -> prepare($sql);
 		$q -> bindValue(':username', $username, PDO::PARAM_STR);		
