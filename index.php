@@ -1,6 +1,9 @@
-﻿<?php
-session_start();
+
+<?php
+include('includes/autoloader.php'); 
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,12 +23,12 @@ session_start();
     <!-- Wrapper for slides -->
     <div class="carousel-inner" >
       <div class="item active">
-        <img src="./foto/kamer12.jpg" alt="Image">
+        <img class="img-responsive center-block" src="./foto/kamer12.jpg" alt="Image">
         
       </div>
 
       <div class="item">
-        <img src="./foto/kamer5.jpg" alt="Image">
+        <img class="img-responsive center-block" src="./foto/kamer5.jpg" alt="Image">
       </div>
     </div>
 
