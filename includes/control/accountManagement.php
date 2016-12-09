@@ -4,8 +4,6 @@ class accountManagement
 
 //Registreren gebruiker
 	public static function register()
-	
-		// variabelen voor het opslaan van de gegevens
 	{
 		$register  = new dataAccountManagement;
 		$username  = Input::get('username');
@@ -20,10 +18,8 @@ class accountManagement
 		$comment   = Input::get('comment');
 		$date      = Input::get('join_date');
 			
-		// password hash
 		$password = password_hash($password, PASSWORD_DEFAULT);
-		
-		// geeft aan dat registratie gelukt is
+	
 		if ($register->setRegister($username,$password,$fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date)) {
 			echo 'Succesvol aangemaakt';
 		} else {

@@ -21,8 +21,6 @@ include('includes/autoloader.php');
         <div class="col-md-4"><!--Linker kant--></div>
   <div class="col-md-4">
     <h1>Inschrijfformulier</h1>
-    
-    	<!-- Begin formulier -->
         <form method='post'>
             <div class="form-group">
                 Gebruikersnaam*
@@ -45,6 +43,7 @@ include('includes/autoloader.php');
                 	<option value="choose">Kies een rol</option>
                 	<option value="child">Kind</option>
                 	<option value="parent">Ouder</option>
+                	<option value="admin">Beheerder</option>
                 </select>
                 </div><div class="form-group">
                 Email
@@ -65,18 +64,17 @@ include('includes/autoloader.php');
                 </div><div class="form-group">
                 <p>* = Verplicht</p>
                 
-                <!-- Opslaan Knop -->
                 <input type="submit" class="btn btn-primary" name="save" value="Opslaan">
             </div>
     </form>
-    
-    	<!--Zorgt ervoor dat het mooi in het midden staat-->
   </div>
   <div class="col-md-4"><!--Rechter kant--></div>  
   </div>    
 
 
-
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
 
 </body>
 </html>
