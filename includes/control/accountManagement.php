@@ -17,7 +17,8 @@ class accountManagement
 		$dys       = Input::get('dys');
 		$comment   = Input::get('comment');
 		$date      = Input::get('join_date');
-
+			
+		$password = password_hash($password, PASSWORD_DEFAULT);
 	
 		if ($register->setRegister($username,$password,$fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date)) {
 			echo 'Succesvol aangemaakt';
