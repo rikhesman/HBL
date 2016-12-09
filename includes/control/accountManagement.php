@@ -17,6 +17,7 @@ class accountManagement
 		$dys       = Input::get('dys');
 		$comment   = Input::get('comment');
 		$date      = Input::get('join_date');
+
 			
 		$password = password_hash($password, PASSWORD_DEFAULT);
 	
