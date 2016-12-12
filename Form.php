@@ -26,20 +26,23 @@ include('includes/autoloader.php');
     $usernameError = $passwordError = $fnameError = $lnameError = $rolError = $dateError = "";
     
     
-if(isset($_POST['save'])) {
+if(isset($_POST['submit'])) {
 	
 	//Gebruikersnaam    
     if (empty($_POST["username"])) {
     	$usernameError = "Gebruikersnaam is verplicht";
   	} else {
-    	$username = ($_POST["username"]);
+
+    	$username = input($_POST["username"]);
   	}
     
 	//Wachtwoord
 	if (empty($_POST['password'])) {
 		$passwordError = "Wachtwoord is verplicht";
 	} else {
-		$password = ($_POST["password"]);
+
+		$password = input($_POST["password"]);
+
 	}
     
 	//Voornaam
@@ -56,6 +59,7 @@ if(isset($_POST['save'])) {
 	}
 	}
 
+<<<<<<< HEAD
     //Achternaam
     if (empty($_POST['l_name'])) {
 		$lnameError = "Achternaam is verplicht";
@@ -75,13 +79,22 @@ if(isset($_POST['save'])) {
 		$rolError = "Rol is verplicht";
 	} else {
 		$rol = ($_POST["rol"]);
+
+	//Achternaam
+	if (empty($_POST['rol'])) {
+		$rolError = "Rol is verplicht";
+	} else {
+		$rol = input($_POST["rol"]);
 	}
 
 	if (empty($_POST['join_date'])) {
 		$dateError = "Datum is verplicht";
 	} else {
-		$date = ($_POST["join_date"]);
+		$date = input($_POST["join_date"]);
 	}
+
+
+
 
 }
     ?>
@@ -92,7 +105,7 @@ if(isset($_POST['save'])) {
     <h1>Inschrijfformulier</h1>
     <!--laat zien dat * betekent verplicht veld -->
     <p><span class="error">* Verplicht</span></p>
-        <form method='post' action="Form.php">
+        <form method='post'>
             <div class="form-group">
                 Gebruikersnaam
                 <span class="error">* <?php echo $usernameError;?></span>
