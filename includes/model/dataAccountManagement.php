@@ -7,7 +7,7 @@ class dataAccountManagement extends connection {
 	
 	// Registreren
 	public function setRegister($username, $password, $fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date) {
-		$sql = "INSERT INTO users (username, password, f_name, insertion, l_name, rol, email, tel, join_date, dys, comment) 
+		$sql = "INSERT INTO users (username, password, f_name, insertion, l_name, rol, email, tel, dys, comment, join_date) 
 		VALUES (:username,:password, :f_name, :insertion, :l_name, :rol, :email, :tel, :dys, :comment, :join_date);"; 		
 		$q = $this -> conn -> prepare($sql);
 		$q -> bindValue(':username', $username, PDO::PARAM_STR);		
@@ -21,6 +21,16 @@ class dataAccountManagement extends connection {
 		$q -> bindValue(':dys', $dys, PDO::PARAM_STR);	
 		$q -> bindValue(':comment', $comment, PDO::PARAM_STR);	
 		$q -> bindValue(':join_date', $date, PDO::PARAM_STR);				
+		$q -> execute();
+		
+		return true;
+	}
+	
+	public function login($username, $password) {
+		$sql = "SELECT username, password FROM users WHERE username = :username AND password = :password"; 		
+		$q = $this -> conn -> prepare($sql);
+		$q -> bindValue(':username', $username, PDO::PARAM_STR);		
+		$q -> bindValue(':password', $password, PDO::PARAM_STR);			
 		$q -> execute();
 		
 		return true;

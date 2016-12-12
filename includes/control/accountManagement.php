@@ -18,9 +18,26 @@ class accountManagement
 		$comment   = Input::get('comment');
 		$date      = Input::get('join_date');
 
+			
+		$password = password_hash($password, PASSWORD_DEFAULT);
 	
-		if ($register->setRegister($nameP1, $nameP2, $email,$tel,$fName,$lName,$bDate,$school,$class,$dys,$comment)) {
+		if ($register->setRegister($username,$password,$fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date)) {
 			echo 'Succesvol aangemaakt';
+		} else {
+			echo "error";
+		}			
+		
+	}
+	
+	public static function login()
+	{
+		$login  = new dataAccountManagement;
+		$username  = Input::get('username');
+		$password  = Input::get('password');
+			
+		if ($login->login($username, password_verify($password, PASSWORD_DEFAULT))) {
+			$_SESSION['some'] = $username;
+			
 		} else {
 			echo "error";
 		}			

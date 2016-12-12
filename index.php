@@ -1,6 +1,9 @@
+
 <?php
-session_start();
+include('includes/autoloader.php'); 
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,27 +46,27 @@ session_start();
     <div class="row">
 <div class="col-md-4"><!--Linker kant--></div>
 <div class="col-md-4">
-  <h3>Welkom op de website van “De Bijlesjuf“.</h3><br>
+  <h3>Welkom op de website van “De Bijlesjuf”.</h3><br>
   
 
    
       
-       <p>Ik verzorg bijlessen in: Rekenen, Spelling en Begrijpen Lezen aan basisschoolleerlingen.<br>
-Dyslectische kinderen kan ik begeleiden bij hun lees- en /of spellingproblemen. En
+       <p>Ik verzorg bijlessen in rekenen, spelling en begrijpend lezen aan basisschoolleerlingen.<br>
+Ik kan dyslectische kinderen begeleiden bij hun lees- en /of spellingproblemen, en
 leerlingen in groep 8 voorbereiden op hun Cito eindtoets.<br>
 Door allerlei omstandigheden kunnen leerlingen achterstanden / hiaten in het
 onderwijs oplopen.<br>
-Individuele hulp kan uitkomst bieden.<br> In een rustige omgeving kan deze “ 1 op 1”
-instructie, hulp juist dat zetje geven dat uw kind nodig heeft om weer aan te sluiten bij
+Individuele hulp kan uitkomst bieden.<br> In een rustige omgeving kunnen ze “1 op 1”
+instructie krijgen, wat juist dat zetje zal geven dat uw kind nodig heeft om weer aan te sluiten bij
 de groep.</p>
       
         <h3>Waarom bijles:</h3>
 
-<p>Sommige kinderen missen de instructie in de groep door bijv. De groepsgrootte, te
-snelle tempo, afwezigheid / afdwalen of begrijpen het niet.<br> Wanneer er dan niets aan
+<p>Sommige kinderen krijgen de instructie in de groep niet mee, wat kan komen door de groepsgrootte, het te
+snelle tempo, een leerachterstand, concentratieproblemen of het niet begrijpen van de stof.<br> Wanneer er dan niets aan
 gedaan wordt, kunnen deze hiaten alleen maar groter worden.<br> Op school ontbreekt het
-vaak aan tijd en / of middelen om dit te verhelpen.<br>
-Door tijdelijk hulp van buitenaf te geven , in een 1 op 1 situatie, komt de instructie beter
+vaak aan de tijd en de middelen om dit te verhelpen.<br>
+Door tijdelijk hulp van buitenaf te geven, in een 1 op 1 situatie, komt de instructie beter
     aan.</p>
     </div>
      <div class="col-md-4"><!--Rechter kant--></div>  
