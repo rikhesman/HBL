@@ -34,14 +34,33 @@ class accountManagement
 		$login  = new dataAccountManagement;
 		$username  = Input::get('username');
 		$password  = Input::get('password');
-			
+        
+       
 		if ($login->login($username, password_verify($password, PASSWORD_DEFAULT))) {
 			$_SESSION['some'] = $username;
+            header("location: index.php");
 			
 		} else {
 			echo "error";
 		}			
-		
 	}
+    
+    	public static function rol()
+	{
+		$rol  = new dataAccountManagement;
+		$username  = Input::get('username');
+		$password  = Input::get('password');
+        $role = Input::get('rol');
+        
+       
+		if ($rol->login($username,$password && )  ) {
+			$_SESSION['admin'] = $username;
+            header("location: index.php");
+			
+		} else {
+			echo "error";
+		}			
+	}
+    
 
 }
