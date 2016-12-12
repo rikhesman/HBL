@@ -109,26 +109,26 @@ if(isset($_POST['submit'])) {
             <div class="form-group">
                 Gebruikersnaam
                 <span class="error">* <?php echo $usernameError;?></span>
-                <input type="text" class="form-control" placeholder="Vul hier in" name="username"  	value="<?php echo $username;?>">
+                <input type="text" class="form-control" placeholder="Vul hier in" name="username"  	value="" required="Gebruikersnaam is verplicht">
                 </div><div class="form-group">
                 Wachtwoord
                 <span class="error">* <?php echo $passwordError;?></span>
-                <input type="password" class="form-control" placeholder="Vul hier in" name="password"  	value="">
+                <input type="password" class="form-control" placeholder="Vul hier in" name="password"  	value="" required="Wachtwoord is verplicht">
                 </div><div class="form-group">
                 Voornaam
                 <span class="error">* <?php echo $fnameError;?></span>
-                <input type="text" class="form-control" placeholder="Vul hier in" name="f_name"    value="">
+                <input type="text" class="form-control" placeholder="Vul hier in" name="f_name"    value="" required="Voornaam is verplicht">
                 </div><div class="form-group">
                 Tussenvoegsel
                 <input type="text" class="form-control" placeholder="Vul hier in" name="insertion"    value="">
                 </div><div class="form-group">
                 Achternaam
                 <span class="error">* <?php echo $lnameError;?></span>
-                <input type="text" class="form-control" placeholder="Vul hier in" name="l_name"  		value="">
+                <input type="text" class="form-control" placeholder="Vul hier in" name="l_name"  		value="" required="Achternaam is verplicht">
                 </div><div class="form-group">
                 Rol
                 <span class="error">* <?php echo $rolError;?></span>
-                <select required class="form-control" name="rol">
+                <select required class="form-control" name="rol" required="Rol is verplicht">
                 	<option value="choose">Kies een rol</option>
                 	<option value="Kind">Kind</option>
                 	<option value="Ouder">Ouder</option>
@@ -146,7 +146,7 @@ if(isset($_POST['submit'])) {
                 </div><div class="form-group">
                 Inschrijfdatum
                 <span class="error">* <?php echo $dateError;?></span>
-                <input type="date" class="form-control" placeholder="dd/mm/jjjj" name="join_date" 	value="">
+                <input type="date" class="form-control" placeholder="dd/mm/jjjj" name="join_date" 	value="" required="Inschrijfdatum is verplicht">
                 </div><div class="form-group">
                 Extra opmerkingen 
                 <textarea rows="5" class="form-control" placeholder="Vul hier in" cols="22" name="comment"></textarea>
