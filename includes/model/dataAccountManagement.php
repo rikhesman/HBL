@@ -36,5 +36,13 @@ class dataAccountManagement extends connection {
 		return true;
 	}
 	
+    	public function rol($username) {
+		$sql = "SELECT rol FROM users WHERE username = :username"; 		
+		$q = $this -> conn -> prepare($sql);
+		$q -> bindValue(':username', $username, PDO::PARAM_STR);					
+		$q -> execute();
+		
+		return true;
+	}
 	
 }

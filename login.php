@@ -16,25 +16,6 @@ if(isset($_POST['submit']))   // it checks whether the user clicked login button
 {
      $admin = $_POST['username'];
      $pass = $_POST['password'];
-    
-    
-
-      if($admin == "admin" && $pass == "1234")  // username is  set to "admin"  and Password   
-         {                                   // is 1234 by default     
-
-          $_SESSION['admin']=$admin;
-
-
-         echo '<script type="text/javascript"> window.open("home.php","_self");</script>';            //  On Successfull Login redirects to home.php
-
-        }
-
-        else
-        {
-            $loginErr = "Verkeerde gebruikersnaam of wachtwoord";        
-        }
-     
-   
 } 
 
 
