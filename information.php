@@ -19,10 +19,12 @@ include('includes/autoloader.php');
     <div class="row">
         <div class="col-md-4"><!--Linker kant--></div>
         <div class="col-md-4">
+            <h3>Wie is &ldquo;De Bijlesjuf&rdquo;?</h3><br>
 
             <p>
                 Mijn naam is Marjan Sonnega. Ik heb ruim 30 jaar gewerkt als groepsleerkracht
                 in het basisonderwijs, en de laatste 10 jaar als Remedial Teacher. Tevens
+                ben ik &ldquo;dyslexie specialist&rdquo;.<br>
                 Ik help graag kinderen, in een 1 op 1 situatie, met hun problemen en/of
                 hiaten op het gebied van o.a. rekenen, spelling en begrijpend lezen.<br>
                 De kinderen krijgen door de vakkundige hulp vaak meer zelfvertrouwen.
@@ -35,6 +37,7 @@ include('includes/autoloader.php');
                 en het kind.<br>
                 Vaak vindt er een gesprek plaats met de groepsleerkracht, indien ouders
                 hier toestemming voor geven.<br>
+                Het uurtarief is &euro;25,00 (na 4 lessen factuur)
             </p>
 
             <ul><br>Vakken:
@@ -49,7 +52,7 @@ include('includes/autoloader.php');
                 <li>basischoolleerlingen</li>
                 <li>kinderen met dyslexie</li>
             </ul><br>
-            <h3>Beschikbaarheid van �De Bijlesjuf�</h3>
+            <h3>Beschikbaarheid van &ldquo;De Bijlesjuf&rdquo;</h3>
             
             <table class="table">
                 <thead>
