@@ -20,7 +20,7 @@ include('includes/autoloader.php');
    <div class="row"> 
   <div class="col-md-4"><!--Linker kant--></div>
     <div class="col-md-4">
-<form action="thispage.php" method="post" accept-charset="utf-8">
+<form method="post" accept-charset="utf-8">
     <fieldset>
     	<h3>Review This Product</h3>	
     	<!-- Rating -->
@@ -38,8 +38,7 @@ include('includes/autoloader.php');
     	<textarea name="review" placeholder="Geef ons uw mening" rows="8" cols="40"></textarea>	
     
     <p>
-    	<input type="submit" value="Submit Review"></p>
-    	
+    	<input type="submit" value="Plaats Review" name="save_review">
 	</fieldset>
 </form>
     <div class="col-md-4"><!--Rechter kant--></div> 

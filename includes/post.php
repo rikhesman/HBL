@@ -8,7 +8,9 @@
  * 
  */
  
- if (Input::has('save')){
+ 
+ //Registratieformulier
+ if (Input::has('save_user')){
  	If	(Input::get('username')==''	||
  		Input::get('password')==''	||
  		Input::get('f_name')==''	||
@@ -23,5 +25,8 @@
  	}
  	
  }
+ 
+ //Review
+ if (Input::has('save_review')) reviewManagement::reviewRegister();
  
 
