@@ -32,6 +32,7 @@ if(isset($_POST['submit'])) {
     if (empty($_POST["username"])) {
     	$usernameError = "Gebruikersnaam is verplicht";
   	} else {
+
     	$username = input($_POST["username"]);
   	}
     
@@ -39,7 +40,9 @@ if(isset($_POST['submit'])) {
 	if (empty($_POST['password'])) {
 		$passwordError = "Wachtwoord is verplicht";
 	} else {
+
 		$password = input($_POST["password"]);
+
 	}
     
 	//Voornaam
@@ -56,7 +59,26 @@ if(isset($_POST['submit'])) {
 	}
 	}
 
-
+<<<<<<< HEAD
+    //Achternaam
+    if (empty($_POST['l_name'])) {
+		$lnameError = "Achternaam is verplicht";
+	} else {
+		$fname = ($_POST["l_name"]);
+	  if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+      $nameErr = "Alleen letters en witregels toegestaan";
+       
+     
+    } else {
+        $name = $name;
+	}
+	}
+    
+	//Rol
+	if ($_POST['rol'] == "choose") {
+		$rolError = "Rol is verplicht";
+	} else {
+		$rol = ($_POST["rol"]);
 
 	//Achternaam
 	if (empty($_POST['rol'])) {
@@ -70,6 +92,7 @@ if(isset($_POST['submit'])) {
 	} else {
 		$date = input($_POST["join_date"]);
 	}
+
 
 
 
