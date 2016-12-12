@@ -8,8 +8,20 @@
  * 
  */
  
-
- //Account management
- if (Input::has('save')) accountManagement::register(); //registreren
- if (Input::has('login')) accountManagement::login(); // In loggen
+ if (Input::has('save')){
+ 	If	(Input::get('username')==''	||
+ 		Input::get('password')==''	||
+ 		Input::get('f_name')==''	||
+ 		Input::get('l_name')==''	||
+ 		Input::get('rol')=='choose'	||
+ 		Input::get('rol')==''		||
+ 		Input::get('join_date')=='')
+ 	{
+ 		echo("Niet alles is ingevuld");
+ 	}else{
+ 		accountManagement::register();
+ 	}
+ 	
+ }
+ 
 
