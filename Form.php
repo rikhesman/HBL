@@ -59,7 +59,6 @@ if(isset($_POST['submit'])) {
 	}
 	}
 
-<<<<<<< HEAD
     //Achternaam
     if (empty($_POST['l_name'])) {
 		$lnameError = "Achternaam is verplicht";
@@ -96,6 +95,7 @@ if(isset($_POST['submit'])) {
 
 
 
+}
 }
     ?>
 
