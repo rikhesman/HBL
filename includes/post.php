@@ -9,7 +9,7 @@
  */
  
 
- if (Input::has('save')) accountManagement::register();
+ if (Input::has('save_user')) accountManagement::register();
  if (Input::has('login')) accountManagement::login();	
 
  	
