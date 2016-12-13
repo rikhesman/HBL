@@ -1,14 +1,12 @@
 <?php
+include('../includes/autoloader.php');
 
-session_start();
+if($_SESSION['user']['role'] == 'admin') {
+	echo 'hoi';
+	
+} else {
+	header('location: ../index.php');
+}
 
-include_once('../includes/connection.php');
 
-
-    if (isset($_SESSION['logged_in1'])) {
-    
-
-    } else {
-      
-    }
 ?>
