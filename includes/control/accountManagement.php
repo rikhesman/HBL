@@ -33,12 +33,16 @@ class accountManagement
 	{
 		$login  = new dataAccountManagement;
 		$username  = Input::get('username');
-		$password  = Input::get('password');
-        
-       
-		if ($login->login($username, password_verify($password, PASSWORD_DEFAULT))) {
-			$_SESSION['some'] = $username;
-            //header("location: home.php");
+		$password  = Input::get('password');        
+
+       	
+		if (password_verify($password, $login->login($username)) == true) {
+			$_SESSION['user']['loggedin'] = true;
+			$_SESSION['user']['username'] = Input::get('username');
+			$role = $login->getRole(Input::get('username'));				
+			$_SESSION['user']['role'] = $role[0]['rol'];				
+			header('Location: admin/index.php');			
+
 		} else {
 			echo "error";
 		}			
