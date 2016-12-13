@@ -7,7 +7,7 @@ class accountManagement
 	{
 		$register  = new dataAccountManagement;
 		$username  = Input::get('username');
-		$password  = password_hash(Input::get('password'), PASSWORD_DEFAULT);
+		$password  = Input::get('password');
 		$fname     = Input::get('f_name');
 		$insertion = Input::get('insertion');
 		$lname     = Input::get('l_name');
@@ -19,7 +19,7 @@ class accountManagement
 		$date      = Input::get('join_date');
 
 			
-		
+		$password = password_hash($password, PASSWORD_DEFAULT);
 	
 		if ($register->setRegister($username,$password,$fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date)) {
 			echo 'Succesvol aangemaakt';
@@ -33,8 +33,8 @@ class accountManagement
 	{
 		$login  = new dataAccountManagement;
 		$username  = Input::get('username');
-		$password  = Input::get('password');
-        
+		$password  = Input::get('password');        
+
        	
 		if (password_verify($password, $login->login($username)) == true) {
 			$_SESSION['user']['loggedin'] = true;
@@ -42,6 +42,7 @@ class accountManagement
 			$role = $login->getRole(Input::get('username'));				
 			$_SESSION['user']['role'] = $role[0]['rol'];				
 			header('Location: admin/index.php');			
+
 		} else {
 			echo "error";
 		}			
@@ -51,14 +52,12 @@ class accountManagement
 	{
 		$rol  = new dataAccountManagement;
 		$username  = Input::get('username');
-		$password  = Input::get('password');
         $role = Input::get('rol');
         
        
-		if ($rol->login($username,$password && $role)) {
-			$_SESSION['admin'] = $username;
-            header("location: index.php");
-			
+		if ($rol->login($username,$role)) {
+			$_SESSION[$role] === "admin";
+            header("location: home.php");
 		} else {
 			echo "error";
 		}			
