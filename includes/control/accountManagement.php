@@ -37,12 +37,12 @@ class accountManagement
         
        	
 		if (password_verify($password, $login->login($username)) == true) {
-			exit('hoi');
-			$_SESSION['some'] = $username;
-            header("location: index.php");
-			
+			$_SESSION['user']['loggedin'] = true;
+			$_SESSION['user']['username'] = Input::get('username');
+			$role = $login->getRole(Input::get('username'));				
+			$_SESSION['user']['role'] = $role[0]['rol'];				
+			header('Location: admin/index.php');			
 		} else {
-			exit('kut');
 			echo "error";
 		}			
 	}
