@@ -38,8 +38,7 @@ class accountManagement
        
 		if ($login->login($username, password_verify($password, PASSWORD_DEFAULT))) {
 			$_SESSION['some'] = $username;
-            header("location: index.php");
-			
+            //header("location: home.php");
 		} else {
 			echo "error";
 		}			
@@ -49,14 +48,12 @@ class accountManagement
 	{
 		$rol  = new dataAccountManagement;
 		$username  = Input::get('username');
-		$password  = Input::get('password');
         $role = Input::get('rol');
         
        
-		if ($rol->login($username,$password && )  ) {
-			$_SESSION['admin'] = $username;
-            header("location: index.php");
-			
+		if ($rol->login($username,$role)) {
+			$_SESSION[$role] === "admin";
+            header("location: home.php");
 		} else {
 			echo "error";
 		}			

@@ -21,7 +21,7 @@ include('includes/autoloader.php');
   <div class="col-md-4"><!--Linker kant--></div>
     <div class="col-md-4">
 <form method="post" accept-charset="utf-8">
-    <fieldset>
+   
     	<h3>Review This Product</h3>	
     	<!-- Rating -->
     <p>
@@ -39,7 +39,7 @@ include('includes/autoloader.php');
     
     <p>
     	<input type="submit" value="Plaats Review" name="save_review">
-	</fieldset>
+	
 </form>
     <div class="col-md-4"><!--Rechter kant--></div> 
     </div>

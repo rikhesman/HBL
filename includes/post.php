@@ -8,23 +8,12 @@
  * 
  */
  
- 
- //Registratieformulier
- if (Input::has('save_user')){
- 	If	(Input::get('username')==''	||
- 		Input::get('password')==''	||
- 		Input::get('f_name')==''	||
- 		Input::get('l_name')==''	||
- 		Input::get('rol')=='choose'	||
- 		Input::get('rol')==''		||
- 		Input::get('join_date')=='')
- 	{
- 		echo("Niet alles is ingevuld");
- 	}else{
- 		accountManagement::register();
- 	}
+
+ if (Input::has('save')) accountManagement::register();
+ if (Input::has('login')) accountManagement::login();	
+
  	
- }
+ 
  
  //Review
  if (Input::has('save_review')) reviewManagement::reviewRegister();

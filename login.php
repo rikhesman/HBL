@@ -4,23 +4,8 @@ include('includes/autoloader.php');
 ?>
 
 <?php
-//
 $loginErr = "";
-if(isset($_SESSION['admin'] ))   // Checking whether the session is already there or not if 
-                              // true that header redirect it to the home page directly 
- {
-    header("Location:home.php"); 
- }
-
-if(isset($_POST['submit']))   // it checks whether the user clicked login button or not 
-{
-     $admin = $_POST['username'];
-     $pass = $_POST['password'];
-} 
-
-
- 
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
