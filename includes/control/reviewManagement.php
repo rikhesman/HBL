@@ -9,14 +9,15 @@ class reviewManagement
 		$rating  	= Input::get('rating');
 		$rtext  	= Input::get('review');
 		
-		var_dump($rating,$rtext);
+		
+		$username = $_SESSION['user']['username'];
 		
 		if(Input::has('rating') OR Input::has('review')) {
 			if (Input::has('rating')){
 				$rating = $rating;
 				if (Input::has('review')){
 					$rtext = $rtext;
-					if ($register->setRegister($rating,$rtext)) {
+					if ($register->setRegister($username,$rating,$rtext)) {
 						echo 'Succesvol aangemaakt';
 					} else {
 						echo "error";
