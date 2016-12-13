@@ -24,7 +24,7 @@ if(empty($_SESSION['user']['role'])) {
       </ul>
       <ul class="nav navbar-nav navbar-right">
       	 <?php if($_SESSION['user']['role'] == 'Ouder' OR $_SESSION['user']['role'] == 'Kind') { ?>
-      	 <li><a><span class="glyphicon glyphicon-ok"></span> U bent Ingelogd</a></li>
+      	 <li><a href="logout.php"><span class="glyphicon glyphicon-ok"></span> U bent Ingelogd, Log hier uit</a></li>
       	 <?php } else { ?>
         <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <?php } ?>

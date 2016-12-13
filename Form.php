@@ -153,7 +153,7 @@ if(isset($_POST['submit'])) {
                 </div><div class="form-group">
                 
                 
-                <input type="submit" class="btn btn-primary" name="save" value="Opslaan">
+                <input type="submit" class="btn btn-primary" name="save_user" value="Opslaan">
             </div>
     </form>
   </div>
