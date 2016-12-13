@@ -135,7 +135,7 @@ Bericht:	'.$_POST['comment'].'
     $mail->MsgHTML($message);
  
     // Verzenden naar 
-    $mail->AddAddress("ramon.kerpershoek@gmail.com", "Recipient Name"); // Where to send it - Recipient
+    $mail->AddAddress("rikheesink@hotmail.com", "Recipient Name"); // Where to send it - Recipient
     $result = $mail->Send();		// zenden!  
 	$message = $result ? 'Successfully Sent!' : 'Sending Failed!';      
 	unset($mail);
