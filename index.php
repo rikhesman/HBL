@@ -22,14 +22,15 @@ include('includes/autoloader.php');
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" >
-      <div class="item active">
-        <img class="img-responsive center-block" src="./foto/kamer12.jpg" alt="Image">
+        <div class="item active">
+            <img class="img-responsive center-block" src="./foto/Slideshow/kamer12.jpg" alt="Image">
         
       </div>
 
       <div class="item">
-        <img class="img-responsive center-block" src="./foto/kamer5.jpg" alt="Image">
+          <img class="img-responsive center-block" src="./foto/Slideshow/kamer5.jpg" alt="Image">
       </div>
+    
     </div>
 
     <!-- Left and right controls -->
@@ -46,7 +47,7 @@ include('includes/autoloader.php');
     <div class="row">
 <div class="col-md-4"><!--Linker kant--></div>
 <div class="col-md-4">
-  <h3>Welkom op de website van “De Bijlesjuf”.</h3><br>
+  <h3>Welkom op de website van "De Bijlesjuf".</h3><br>
   
 
    
@@ -56,7 +57,7 @@ Ik kan dyslectische kinderen begeleiden bij hun lees- en /of spellingproblemen, 
 leerlingen in groep 8 voorbereiden op hun Cito eindtoets.<br>
 Door allerlei omstandigheden kunnen leerlingen achterstanden / hiaten in het
 onderwijs oplopen.<br>
-Individuele hulp kan uitkomst bieden.<br> In een rustige omgeving kunnen ze “1 op 1”
+Individuele hulp kan uitkomst bieden.<br> In een rustige omgeving kunnen ze "1 op 1"
 instructie krijgen, wat juist dat zetje zal geven dat uw kind nodig heeft om weer aan te sluiten bij
 de groep.</p>
       
