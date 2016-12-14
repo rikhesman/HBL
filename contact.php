@@ -10,11 +10,7 @@ include('includes/autoloader.php');
 </head>
 <body>
 <?php
-      if(!isset($_SESSION['admin'])){ // If session is not set that redirect to Login Page 
-          include('build/navbar.php');  
-       } else {
-          include('build/navbarlogout.php');
-      }
+    include('build/navbar.php');
 ?>
 
    <div class="row"> 
