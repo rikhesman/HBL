@@ -140,7 +140,7 @@ if(isset($_POST['submit'])) {
                 Telefoonnummer
                 <input type="text" class="form-control" placeholder="Vul hier in" name="tel"		value="">
                 </div><div class="form-group">
-                Dyslexie
+                Dyslexie	
                 <input type="radio" name="dys"     value="ja"> Ja
                 <input type="radio" name="dys"     value="nee"> Nee
                 </div><div class="form-group">
@@ -159,11 +159,6 @@ if(isset($_POST['submit'])) {
   </div>
   <div class="col-md-4"><!--Rechter kant--></div>  
   </div>    
-
-
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
-
+	
 </body>
 </html>
