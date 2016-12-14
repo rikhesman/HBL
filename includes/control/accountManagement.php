@@ -22,7 +22,7 @@ class accountManagement
 		$password = password_hash($password, PASSWORD_DEFAULT);
 	
 		if ($register->setRegister($username,$password,$fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date)) {
-			echo 'Succesvol aangemaakt';
+			echo "Gebruiker succesvol opgeslagen";
 		} else {
 			echo "error";
 		}			
