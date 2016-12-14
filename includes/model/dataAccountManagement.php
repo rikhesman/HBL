@@ -40,7 +40,7 @@ class dataAccountManagement extends connection {
 		}
 	}
 	
-    	public function getRole($username) {
+    public function getRole($username) {
 		$sql = "SELECT rol FROM users WHERE username = :username";	
 		$q = $this -> conn -> prepare($sql);
 		$q -> bindValue(':username', $username, PDO::PARAM_STR);
@@ -48,4 +48,17 @@ class dataAccountManagement extends connection {
 		return $q->fetchAll();
 	}
 	
+	public function getParents(){
+		$sql = "SELECT * FROM users WHERE rol = 'Ouder' ";
+		$q = $this->conn->prepare($sql);
+		$q -> execute();
+		return $q->fetchAll();
+	}
+	
+	public function getChild(){
+		$sql = "SELECT * FROM users WHERE rol = 'Kind' ";
+		$q = $this->conn->prepare($sql);
+		$q -> execute();
+		return $q->fetchAll();
+	}
 }
