@@ -14,9 +14,7 @@ if(empty($_SESSION['user']['role'])) {
                 <li><a href="information.php">Informatie</a></li>
                 <li><a href="contact.php">Contact</a></li>
                 <li><a href="review.php">Review</a></li>
-                <?php if($_SESSION['user']['role'] == 'admin') { ?>
-                <li><a href="form.php">Inschrijven</a></li>
-                <?php } ?>
+              
             </ul>
             <ul class="nav navbar-nav navbar-right">
       	        <?php if($_SESSION['user']['role'] == 'Ouder' || $_SESSION['user']['role'] == 'Kind' || $_SESSION['user']['role'] == 'admin') { ?>
