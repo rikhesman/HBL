@@ -10,7 +10,11 @@ include('includes/autoloader.php');
 </head>
 <body>
 <?php
-    include('build/navbar.php');
+      if(!isset($_SESSION['admin'])){ // If session is not set that redirect to Login Page 
+          include('build/navbar.php');  
+       } else {
+          include('build/navbarlogout.php');
+      }
 ?>
 
    <div class="row"> 
@@ -131,7 +135,7 @@ Bericht:	'.$_POST['comment'].'
     $mail->MsgHTML($message);
  
     // Verzenden naar 
-    $mail->AddAddress("rikheesink@hotmail.com", "Recipient Name"); // Where to send it - Recipient
+    $mail->AddAddress("ramon.kerpershoek@gmail.com", "Recipient Name"); // Where to send it - Recipient
     $result = $mail->Send();		// zenden!  
 	$message = $result ? 'Successfully Sent!' : 'Sending Failed!';      
 	unset($mail);
@@ -241,5 +245,3 @@ Bericht:	'.$_POST['comment'].'
 
 </body>
 </html>
-
-

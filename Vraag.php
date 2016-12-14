@@ -10,7 +10,11 @@ include('includes/autoloader.php');
 </head>
 <body>
 <?php
-    include('build/navbar.php');
+      if(!isset($_SESSION['admin'])){ // If session is not set that redirect to Login Page 
+          include('build/navbar.php');  
+       } else {
+          include('build/navbarlogout.php');
+      }
 ?>
 
    <div class="row"> 
@@ -40,57 +44,8 @@ if(isset($_POST['submit']) && !empty($_POST['submit'])) {
         $responseData = json_decode($verifyResponse);
         // als de response success is volgt die dit pad
         if($responseData->success) {
-  if (empty($_POST["name"])) {
-    $nameErr = "Naam is verplicht";
-  } else {
-    $name = input($_POST["name"]);
-      //check of de naam letters en witteregels bevat
-    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-      $nameErr = "Alleen letters en witregels toegestaan";
-       
-     
-    } else {
-        $name = $name;
-    }
-  }
-    if (empty($_POST["lastname"])) {
-    $lastnameErr = "Achternaam is verplicht";
-  } else {
-    $lastname = input($_POST["lastname"]);
-        // check of de naam letters en witteregels bevat
-    if (!preg_match("/^[a-zA-Z ]*$/",$lastname)) {
-      $lastnameErr = "Alleen letters en witregels toegestaan";
-    }
-         else {
-        $lastname = $lastname;
-    }
-  }
   
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is verplicht";
-  } else {
-    $email = input($_POST["email"]);
-      // checkt of e-mail adres wel goed is geformuleerd
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Ongeldig email formaat"; 
-    }
-            else {
-        $email = $email;
-    }
-  }
-            
-   if (empty($_POST["subject"])) {
-    $subjectErr = "Onderwerp is verplicht";
-  } else {
-    $subject = input($_POST["subject"]);
-      // check of de naam letters en witteregels bevat
-    if (!preg_match("/^[a-zA-Z ]*$/",$subject)) {
-      $subjectErr = "Alleen letters en witregels toegestaan";
-    }
-    else {
-        $subject = $subject;
-    }
-  }         
+ 
 
   if (empty($_POST["comment"])) {
     $commentErr = "Bericht is verplicht";
@@ -131,7 +86,7 @@ Bericht:	'.$_POST['comment'].'
     $mail->MsgHTML($message);
  
     // Verzenden naar 
-    $mail->AddAddress("rikheesink@hotmail.com", "Recipient Name"); // Where to send it - Recipient
+    $mail->AddAddress("ramon.kerpershoek@gmail.com", "Recipient Name"); // Where to send it - Recipient
     $result = $mail->Send();		// zenden!  
 	$message = $result ? 'Successfully Sent!' : 'Sending Failed!';      
 	unset($mail);
@@ -215,14 +170,10 @@ Bericht:	'.$_POST['comment'].'
     }
 ?>
 
-        <h3>Contact formulier "De bijlesjuf"</h3>
+        <h3>Vraagformulier</h3>
 <p><span class="error">* Verplicht veld.</span></p>
         <h3 class="error"><?php echo $message;?></h3>
 <form method="post" action="contact.php">
-    <div class="form-group">Naam:  <span class="error">* <?php echo $nameErr;?></span><input type="text" class="form-control" placeholder="Vul hier in" name="name" value="<?php echo $name;?>"></div>
-    <div class="form-group">Achternaam:  <span class="error">* <?php echo $lastnameErr;?></span><input type="text" class="form-control" placeholder="Vul hier in" name="lastname" value="<?php echo $lastname;?>"></div>
-    <div class="form-group">Email:  <span class="error">* <?php echo $emailErr;?></span><input type="text" class="form-control" placeholder="Vul hier in" name="email" value="<?php echo $email;?>"></div>
-    <div class="form-group">Onderwerp:  <span class="error">* <?php echo $subjectErr;?></span><input type="text" class="form-control" placeholder="Vul hier in" name="subject" value="<?php echo $subject;?>"></div>
     <div class="form-group">Bericht:  <span class="error">* <?php echo $commentErr;?></span><textarea rows="5" class="form-control" placeholder="Vul hier in" cols="22" name="comment"><?php print($comment)?></textarea></div>
     <span class="error"><?php echo $captchaErr;?></span>
 <div class="g-recaptcha" data-sitekey="6LeUJQ0UAAAAACQBpeqfD9zojgpKWbqV9ToIBRYk"></div>
@@ -241,5 +192,3 @@ Bericht:	'.$_POST['comment'].'
 
 </body>
 </html>
-
-
