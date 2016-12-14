@@ -22,7 +22,7 @@ class accountManagement
 		$password = password_hash($password, PASSWORD_DEFAULT);
 	
 		if ($register->setRegister($username,$password,$fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date)) {
-			echo 'Succesvol aangemaakt';
+			echo "Gebruiker succesvol opgeslagen";
 		} else {
 			echo "error";
 		}			
@@ -62,6 +62,12 @@ class accountManagement
 			echo "error";
 		}			
 	}
-    
-
+	public static function getParents(){
+		$getOuder = new dataAccountManagement;
+		return $getOuder->getParents();
+	}
+	public static function getChild(){
+		$getKind = new dataAccountManagement;
+		return $getKind->getChild();
+	}
 }
