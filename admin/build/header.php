@@ -43,7 +43,7 @@ if($_SESSION['user']['role'] == 'admin') {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../index.php">Bijles Juf</a>
+                <a class="navbar-brand" href="index.php">Bijles Juf</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -56,10 +56,13 @@ if($_SESSION['user']['role'] == 'admin') {
                 <ul class="nav navbar-nav side-nav">
                     <?php $file = basename($_SERVER['PHP_SELF'] , '.php'); ?>
                     <li <?php if($file == 'index'){?> class="active" <?php } ?>>
-                        <a href="index.php"><i class="fa fa-fw fa-home"></i> Startpagina</a>
+                        <a href="index.php"> Startpagina</a>
                     </li>
                     <li <?php if($file == 'form'){?> class="active" <?php } ?>>
-                        <a href="form.php"><i class="fa fa-fw fa-file"></i> Inschrijven</a>
+                        <a href="form.php"> Inschrijven</a>
+                    </li>
+                    <li <?php if($file == 'form'){?> class="active" <?php } ?>>
+                        <a href="ouderschap.php"> Ouderschap</a>
                     </li>
                     <!-- <li <?php if($file == 'lease_article'){?> class="active" <?php } ?>>
                         <a href="lease_article.php"><i class="fa fa-fw fa-shopping-cart"></i> Verhuur beheer</a>

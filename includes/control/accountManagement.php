@@ -62,6 +62,12 @@ class accountManagement
 			echo "error";
 		}			
 	}
-    
-
+	public static function getParents(){
+		$getOuder = new dataAccountManagement;
+		return $getOuder->getParents();
+	}
+	public static function getChild(){
+		$getKind = new dataAccountManagement;
+		return $getKind->getChild();
+	}
 }
