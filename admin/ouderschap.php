@@ -1,31 +1,16 @@
 <?php
-include ('../includes/autoloader.php');
+include ('build/header.php');
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<?php
-		include ('../build/head.php');
-		?>
-	</head>
-	<body>
-		<?php
-		if (!isset($_SESSION['use'])) {// If session is not set that redirect to Login Page
-			include ('../build/navbar.php');
-		} else {
-			include ('../build/navbarlogout.php');
-		}
-		?>
-
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-2">
 				<!--Linker kant-->
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-6">
+				<h1>Ouderschap koppelen</h1>
 				<form method="post" accept-charset="utf-8">
-
-					<p>
+					
+					<div class="form-group">
+						Ouder
 						<select required class="form-control" name="Ouder">
 							<?php
 							foreach (accountManagement::getParents() as $parent) {
@@ -34,7 +19,10 @@ include ('../includes/autoloader.php');
 							}
 							?>
 						</select>
-
+						</div>
+						
+						<div class="form-group">
+						Kind
 						<select required class="form-control" name="Kind">
 							<?php
 							foreach (accountManagement::getChild() as $child) {
@@ -43,8 +31,9 @@ include ('../includes/autoloader.php');
 							}
 							?>
 						</select>
-
+						</div>
+						<input type="submit" class="btn btn-primary" name="save_parentship" value="Koppelen">
+					</form>
 					</p>
-			</div>
 	</body>
 </html>
