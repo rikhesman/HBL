@@ -43,7 +43,7 @@ if($_SESSION['user']['role'] == 'admin') {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../index.php">Bijles Juf</a>
+                <a class="navbar-brand" href="index.php">Bijles Juf</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
