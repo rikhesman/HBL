@@ -8,9 +8,10 @@
  * 
  */
  
- if (Input::has('save')) accountManagement::register();
+// account 
+ if (Input::has('save_user')) accountManagement::register();
  if (Input::has('login')) accountManagement::login();	
- 	
  
+ // Review
+ if (Input::has('save_review')) reviewManagement::reviewRegister();
  
-
