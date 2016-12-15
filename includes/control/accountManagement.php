@@ -70,4 +70,19 @@ class accountManagement
 		$getKind = new dataAccountManagement;
 		return $getKind->getChild();
 	}
+	
+	
+	public static function parenthood()
+	{
+		$register  	= new dataAccountManagement;
+		$child  	= Input::get('child');
+		$parent  	= Input::get('parent');
+		
+		if ($register->setParenthood($child,$parent)) {
+			echo "Gebruiker succesvol opgeslagen";
+		} else {
+			echo "error";
+		}			
+	}
+	
 }
