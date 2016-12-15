@@ -11,7 +11,9 @@
 // account 
  if (Input::has('save_user')) accountManagement::register();
  if (Input::has('login')) accountManagement::login();	
+ if (Input::has('save_parentship')) accountManagement::parenthood(); 
  
  // Review
  if (Input::has('save_review')) reviewManagement::reviewRegister();
+
  
