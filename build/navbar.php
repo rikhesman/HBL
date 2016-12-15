@@ -18,13 +18,13 @@ if(empty($_SESSION['user']['role'])) {
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-            	
-                <li><a href="index.php">Home</a></li>
-                <li><a href="information.php">Informatie</a></li>
-                <li><a href="contact.php">Contact</a></li>
-                <li><a href="review.php">Review</a></li>
+            	<?php $file = basename($_SERVER['PHP_SELF'] , '.php'); ?>
+                <li <?php if($file == 'index'){?> class="active" <?php } ?>><a href="index.php">Home</a></li>
+                <li <?php if($file == 'information'){?> class="active" <?php } ?>><a href="information.php">Informatie</a></li>
+                <li <?php if($file == 'contact'){?> class="active" <?php } ?>><a href="contact.php">Contact</a></li>
+                <li <?php if($file == 'review'){?> class="active" <?php } ?>><a href="review.php">Review</a></li>
                 <?php if($_SESSION['user']['role'] == 'Ouder' || $_SESSION['user']['role'] == 'Kind'){ ?>
-      	        <li><a href="calendar.php">Agenda</a></li>
+      	        <li <?php if($file == 'calendar'){?> class="active" <?php } ?>><a href="calendar.php">Agenda</a></li>
       	        <?php } ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
