@@ -47,7 +47,7 @@ include('includes/autoloader.php');
     <div class="row">
 <div class="col-md-4"><!--Linker kant--></div>
 <div class="col-md-4">
-  <h3>Welkom op de website van "De Bijlesjuf".</h3><br>
+  <h3>Welkom op de website van &ldquo;De Bijlesjuf&rdquo;.</h3><br>
   
 
    
@@ -57,7 +57,7 @@ Ik kan dyslectische kinderen begeleiden bij hun lees- en /of spellingproblemen, 
 leerlingen in groep 8 voorbereiden op hun Cito eindtoets.<br>
 Door allerlei omstandigheden kunnen leerlingen achterstanden / hiaten in het
 onderwijs oplopen.<br>
-Individuele hulp kan uitkomst bieden.<br> In een rustige omgeving kunnen ze "1 op 1"
+Individuele hulp kan uitkomst bieden.<br> In een rustige omgeving kunnen ze &ldquo;1 op 1&rdquo;
 instructie krijgen, wat juist dat zetje zal geven dat uw kind nodig heeft om weer aan te sluiten bij
 de groep.</p>
       
