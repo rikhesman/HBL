@@ -8,8 +8,12 @@
       font-weight: bold;
    }
    
-   .navbar-nav li:active {
-   	background-color: #FF9609;!Important
+   .navbar-inverse .navbar-nav .active a {
+   		background-color: #FF9609;!important
+   }
+   
+   .navbar-inverse .navbar-nav .active a:hover {
+   		background-color: #FF9609;!important
    }
    
    .navbar-inverse .navbar-nav li a {
