@@ -1,4 +1,7 @@
 <?php 
+session_start();
+?>
+<?php 
 if(empty($_SESSION['user']['role'])) {
 	$_SESSION['user']['role'] = 'gast';
 }
@@ -19,7 +22,9 @@ if(empty($_SESSION['user']['role'])) {
                 <li><a href="information.php">Informatie</a></li>
                 <li><a href="contact.php">Contact</a></li>
                 <li><a href="review.php">Review</a></li>
-              
+                <?php if($_SESSION['user']['role'] == 'Ouder' || $_SESSION['user']['role'] == 'Kind'){ ?>
+      	        <li><a href="calendar.php">Agenda</a></li>
+      	        <?php } ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
       	        <?php if($_SESSION['user']['role'] == 'Ouder' || $_SESSION['user']['role'] == 'Kind' || $_SESSION['user']['role'] == 'admin') { ?>
@@ -27,6 +32,9 @@ if(empty($_SESSION['user']['role'])) {
       	        <?php } else { ?>
                 <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 <?php } ?>
+                
+                
+                
             </ul>
         </div>
     </div>
