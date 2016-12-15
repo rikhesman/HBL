@@ -1,7 +1,4 @@
 <?php 
-session_start();
-?>
-<?php 
 if(empty($_SESSION['user']['role'])) {
 	$_SESSION['user']['role'] = 'gast';
 }
@@ -23,6 +20,7 @@ if(empty($_SESSION['user']['role'])) {
                 <li <?php if($file == 'information'){?> class="active" <?php } ?>><a href="information.php">Informatie</a></li>
                 <li <?php if($file == 'contact'){?> class="active" <?php } ?>><a href="contact.php">Contact</a></li>
                 <li <?php if($file == 'review'){?> class="active" <?php } ?>><a href="review.php">Review</a></li>
+
                 <?php if($_SESSION['user']['role'] == 'Ouder' || $_SESSION['user']['role'] == 'Kind'){ ?>
       	        <li <?php if($file == 'calendar'){?> class="active" <?php } ?>><a href="calendar.php">Agenda</a></li>
       	        <?php } ?>
