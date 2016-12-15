@@ -11,7 +11,7 @@ include ('build/header.php');
 					
 					<div class="form-group">
 						Ouder
-						<select required class="form-control" name="Ouder">
+						<select required class="form-control" name="parent">
 							<?php
 							foreach (accountManagement::getParents() as $parent) {
 								echo'
@@ -23,7 +23,7 @@ include ('build/header.php');
 						
 						<div class="form-group">
 						Kind
-						<select required class="form-control" name="Kind">
+						<select required class="form-control" name="child">
 							<?php
 							foreach (accountManagement::getChild() as $child) {
 								echo'

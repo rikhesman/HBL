@@ -18,6 +18,7 @@ if(empty($_SESSION['user']['role'])) {
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
+            	
                 <li><a href="index.php">Home</a></li>
                 <li><a href="information.php">Informatie</a></li>
                 <li><a href="contact.php">Contact</a></li>
