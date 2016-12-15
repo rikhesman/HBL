@@ -146,8 +146,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     unset($mail);
                     if($message == 'Successfully Sent!'){
                        $message = "Bericht is verzonden!";
-                        $name = $lastname = $email = $subject = $comment  = "";
-                    } 
+                        $name = $lastname = $email = $subject = $checkcomment = "";
+                        
+                    }
             }
         
             if($response["success"] === true && $name = $Errname || $lastname = $Errlastname || $email = $Erremail || $subject = $Errsubject) {
@@ -163,11 +164,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $Esubject = "";
             $Esubject = $Errsubject;
             $subject = $checksubject;
+            $checkcomment = $checkcomment;
             }
-            else {
-                $captchaErr = "Captcha niet ingevuld";
-            }
-        
             }
 } else {
     $message = $Ename = $Elastname = $Eemail = $Esubject = "";
@@ -182,8 +180,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="form-group">Achternaam:  <span class="error">* <?php echo $lastnameErr;?></span><input type="text" class="form-control" placeholder="Vul hier in" name="lastname" value="<?php echo $lastname,$Elastname;?>"></div>
     <div class="form-group">Email:  <span class="error">* <?php echo $emailErr;?></span><input type="text" class="form-control" placeholder="Vul hier in" name="email" value="<?php echo $email,$Eemail;?>"></div>
     <div class="form-group">Onderwerp:  <span class="error">* <?php echo $subjectErr;?></span><input type="text" class="form-control" placeholder="Vul hier in" name="subject" value="<?php echo $subject,$Esubject;?>"></div>
-    <div class="form-group">Bericht:  <span class="error">* <?php echo $commentErr;?></span><textarea rows="5" class="form-control" placeholder="Vul hier in" cols="22" name="comment"><?php print($comment)?></textarea></div>
-    <span class="error"><?php echo $captchaErr;?></span>
+    <div class="form-group">Bericht:  <span class="error">* <?php echo $commentErr;?></span><textarea rows="5" class="form-control" placeholder="Vul hier in" cols="22" name="comment"><?php print($checkcomment)?></textarea></div>
 <div class="g-recaptcha" data-sitekey="6LeUJQ0UAAAAACQBpeqfD9zojgpKWbqV9ToIBRYk"></div>
     <br>
      <div class="form-group"><input type="submit" name="submit" value="Verstuur bericht"></div>
