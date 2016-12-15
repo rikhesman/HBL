@@ -49,8 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
             $checkname = $name;
             }
-                //var_dump($Errname);
-                //exit;
             }
         
              if (empty($_POST["lastname"])) {
@@ -106,8 +104,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$recaptcha_secret."&response=".$_POST['g-recaptcha-response']);
         $response = json_decode($response, true);
         if($response["success"] === true && $name = $checkname && $lastname = $checklastname && $email = $checkemail && $subject = $checksubject && $checkcomment){
-            //var_dump($Errname);
-            //exit;
             // als de response success is volgt die dit pad
                       $message=
                       'Naam: '.$_POST['name'].'<br />
