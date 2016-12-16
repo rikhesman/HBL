@@ -14,8 +14,12 @@ include('includes/autoloader.php');
    <div class="row"> 
   <div class="col-md-4"><!--Linker kant--></div>
     <div class="col-md-4">
+
+
         
         
+
+
 <form method="post" accept-charset="utf-8">
         <?php if($_SESSION['user']['role'] == 'Ouder' ){        
       	 echo '         
@@ -33,13 +37,14 @@ include('includes/autoloader.php');
     
     	<label for="review">Review</label>
     	<textarea name="review" placeholder="Geef ons uw mening" rows="8" cols="40"></textarea>	
-    
-    <p>
+
     	<input type="submit" value="Plaats Review" name="save_review">
 	
 </form>
+
             ';}
         ?>
+
     <div class="col-md-4"><!--Rechter kant--></div> 
     </div>
 
