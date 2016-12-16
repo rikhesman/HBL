@@ -9,20 +9,17 @@ include('includes/autoloader.php');
    <?php include('build/head.php');?>
 </head>
 <body>
-<?php
-      if(!isset($_SESSION['use'])){ // If session is not set that redirect to Login Page 
-          include('build/navbar.php');  
-       } else {
-          include('build/navbarlogout.php');
-      }
-?>
+<?php include('build/navbar.php'); ?>
 
    <div class="row"> 
   <div class="col-md-4"><!--Linker kant--></div>
     <div class="col-md-4">
+        
+        
 <form method="post" accept-charset="utf-8">
-   
-    	<h3>Review This Product</h3>	
+        <?php if($_SESSION['user']['role'] == 'Ouder' ){        
+      	 echo '         
+    	<h3>Schrijf hier uw review</h3>	
     	<!-- Rating -->
     <p>
     	<label for="rating">Rating</label>
@@ -41,6 +38,8 @@ include('includes/autoloader.php');
     	<input type="submit" value="Plaats Review" name="save_review">
 	
 </form>
+            ';}
+        ?>
     <div class="col-md-4"><!--Rechter kant--></div> 
     </div>
 

@@ -25,6 +25,8 @@ if($_SESSION['user']['role'] == 'admin') {
     <link href="https://bootswatch.com/cerulean/bootstrap.min.css" rel="stylesheet">
     <link href="../css/admin.css" rel="stylesheet">    	
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.0/cropper.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
     <!-- Custom Fonts -->
@@ -43,12 +45,12 @@ if($_SESSION['user']['role'] == 'admin') {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../index.php">Bijles Juf</a>
+                <a class="navbar-brand" href="index.php">Bijles Juf</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
-                    <a href="logout.php" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo "Welkom ". $_SESSION['user']['username'].", Log hier uit";  ?></a>                    
+                    <a href="logout.php"> <?php echo "Welkom ". $_SESSION['user']['username'].", Log hier uit";  ?></a>                    
                 </li>
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
@@ -56,10 +58,13 @@ if($_SESSION['user']['role'] == 'admin') {
                 <ul class="nav navbar-nav side-nav">
                     <?php $file = basename($_SERVER['PHP_SELF'] , '.php'); ?>
                     <li <?php if($file == 'index'){?> class="active" <?php } ?>>
-                        <a href="index.php"><i class="fa fa-fw fa-home"></i> Startpagina</a>
+                        <a href="index.php"><span class="glyphicon glyphicon-home"></span> Startpagina</a>
                     </li>
                     <li <?php if($file == 'form'){?> class="active" <?php } ?>>
-                        <a href="form.php"><i class="fa fa-fw fa-file"></i> Inschrijven</a>
+                        <a href="form.php"><span class="glyphicon glyphicon-user"></span> Inschrijven</a>
+                    </li>
+                    <li <?php if($file == 'form'){?> class="active" <?php } ?>>
+                        <a href="ouderschap.php"><span class="glyphicon glyphicon-magnet"></span> Ouderschap</a>
                     </li>
                     <!-- <li <?php if($file == 'lease_article'){?> class="active" <?php } ?>>
                         <a href="lease_article.php"><i class="fa fa-fw fa-shopping-cart"></i> Verhuur beheer</a>

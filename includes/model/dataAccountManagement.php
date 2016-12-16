@@ -8,7 +8,7 @@ class dataAccountManagement extends connection {
 	// Registreren
 	public function setRegister($username, $password, $fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date) {
 		$sql = "INSERT INTO users (username, password, f_name, insertion, l_name, rol, email, tel, dys, comment, join_date) 
-		VALUES (:username,:password, :f_name, :insertion, :l_name, :rol, :email, :tel, :dys, :comment, :join_date);"; 		
+		VALUES (:username,:password, :f_name, :insertion, :l_name, :rol, :email, :tel, :dys, :comment, :join_date)"; 		
 		$q = $this -> conn -> prepare($sql);
 		$q -> bindValue(':username', $username, PDO::PARAM_STR);		
 		$q -> bindValue(':password', $password, PDO::PARAM_STR);		
@@ -40,7 +40,7 @@ class dataAccountManagement extends connection {
 		}
 	}
 	
-    	public function getRole($username) {
+    public function getRole($username) {
 		$sql = "SELECT rol FROM users WHERE username = :username";	
 		$q = $this -> conn -> prepare($sql);
 		$q -> bindValue(':username', $username, PDO::PARAM_STR);
@@ -48,4 +48,27 @@ class dataAccountManagement extends connection {
 		return $q->fetchAll();
 	}
 	
+	public function getParents(){
+		$sql = "SELECT * FROM users WHERE rol = 'Ouder' ";
+		$q = $this->conn->prepare($sql);
+		$q -> execute();
+		return $q->fetchAll();
+	}
+	
+	public function getChild(){
+		$sql = "SELECT * FROM users WHERE rol = 'Kind' ";
+		$q = $this->conn->prepare($sql);
+		$q -> execute();
+		return $q->fetchAll();
+	}
+	
+	public function setParenthood($child, $parent) {
+		$sql = "INSERT INTO parent (user_child, user_parent)
+		VALUES (:child, :parent)";
+		$q = $this -> conn -> prepare($sql);
+		$q -> bindValue(':child', $child, PDO::PARAM_STR);
+		$q -> bindValue(':parent', $parent, PDO::PARAM_STR);
+		$q -> execute();	
+		return true;
+	}
 }
