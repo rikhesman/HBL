@@ -18,19 +18,20 @@ include('includes/autoloader.php');
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" >
-        <div class="item active">
-            <img class="img-responsive center-block" src="./foto/Slideshow/kamer12.jpg" alt="Image">
-        
+      <div class="item active">
+          <img class="img-responsive center-block" src="./foto/Slideshow/foto1.jpg" alt="Image">        
       </div>
-
       <div class="item">
-          <img class="img-responsive center-block" src="./foto/Slideshow/kamer5.jpg" alt="Image">
+          <img class="img-responsive center-block" src="./foto/Slideshow/foto2.jpg" alt="Image">
       </div>
-    
+      <div class="item">
+          <img class="img-responsive center-block" src="./foto/Slideshow/foto3.jpg" alt="Image">
+      </div>    
     </div>
 
     <!-- Left and right controls -->
