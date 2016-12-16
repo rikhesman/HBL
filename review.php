@@ -37,7 +37,7 @@ include('includes/autoloader.php');
 </form>
 	
 		<?php
-		} foreach (reviewMAnagement::getReview() as $review) {
+		 foreach (reviewMAnagement::getReview() as $review) {
 			echo'
 			<div class="review_block">
 				<h2>Gebruiker: '.$review['username'].'</h2>
