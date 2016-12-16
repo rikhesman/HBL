@@ -53,6 +53,11 @@
     position:relative;
     height:100%;
 }
+
+.item img{
+	width: 100%;	
+}
+
   .carousel-inner{
       /* Set width to 100%  max-height: 500px;*/
       width:100%;
