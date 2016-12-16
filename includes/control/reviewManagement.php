@@ -33,4 +33,8 @@ class reviewManagement
 		}
 		
 	}
+	public static function getReview(){
+		$getReview = new dataReview;
+		return $getReview->getReview();
+	}
 }
