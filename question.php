@@ -8,13 +8,7 @@ include('includes/autoloader.php');
    <?php include('build/head.php');?>
 </head>
 <body>
-<?php
-      if(!isset($_SESSION['admin'])){ // If session is not set that redirect to Login Page 
-          include('build/navbar.php');  
-       } else {
-          include('build/navbarlogout.php');
-      }
-?>
+<?php include('build/navbar.php'); ?>
 
    <div class="row"> 
   <div class="col-md-4"><!--Linker kant--></div>
