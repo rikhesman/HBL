@@ -15,9 +15,13 @@ include('includes/autoloader.php');
   <div class="col-md-4"><!--Linker kant--></div>
     <div class="col-md-4">
 
+        
+        
+
 <form method="post" accept-charset="utf-8">
-   
-    	<h3>Review This Product</h3>	
+        <?php if($_SESSION['user']['role'] == 'Ouder' ){        
+      	 echo '         
+    	<h3>Schrijf hier uw review</h3>	
     	<!-- Rating -->
     <p>
     	<label for="rating">Rating</label>
@@ -35,17 +39,9 @@ include('includes/autoloader.php');
     	<input type="submit" value="Plaats Review" name="save_review">
 	
 </form>
-	
-		<?php
-		 foreach (reviewMAnagement::getReview() as $review) {
-			echo'
-			<div class="review_block">
-				<h2>Gebruiker: '.$review['username'].'</h2>
-				<p>Rating: '.$review['rating'].'/5</p>
-				<p>Review:<br>'.$review['review'].'</p>
-			</div>';
-		}
-		?>
+
+            ';}
+        ?>
 
     <div class="col-md-4"><!--Rechter kant--></div> 
     </div>
