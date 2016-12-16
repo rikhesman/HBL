@@ -88,6 +88,11 @@
     color:red;
 }
 
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 .responsive-iframe-container {
     position: relative;
     padding-bottom: 56.25%;
