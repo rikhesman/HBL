@@ -12,5 +12,12 @@ public function setRegister($username, $rating, $rtext){
 		$q -> execute();
 		
 		return true;
-}
-}
+	}
+
+public function getReview(){
+		$sql = "SELECT * FROM review";
+		$q = $this->conn->prepare($sql);
+		$q -> execute();
+		return $q->fetchAll();
+	}
+}	
