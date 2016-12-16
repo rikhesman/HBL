@@ -16,5 +16,5 @@ $_SESSION['message'] = "";
  
  // Review
  if (Input::has('save_review')) reviewManagement::reviewRegister();
- if (Input::has('tocontact')) contactManagement::contactform1();
+ if (Input::has('tocontact')) contactManagement::contactform2();
  
