@@ -15,8 +15,10 @@ include('includes/autoloader.php');
   <div class="col-md-4"><!--Linker kant--></div>
     <div class="col-md-4">
 
+
         
         
+
 
 <form method="post" accept-charset="utf-8">
         <?php if($_SESSION['user']['role'] == 'Ouder' ){        
