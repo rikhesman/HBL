@@ -26,7 +26,12 @@ include('includes/autoloader.php');
     	<div class="panel-body">
              <h3>Inloggen op de website van HBL</h3>
             <p><span class="error">* Verplicht veld.</span></p>
-            <form method="POST" action="login.php">
+             <?php
+        if($_SESSION['alert']) {
+           echo $_SESSION['message']; 
+        }
+            ?>
+            <form method="POST">
                 <div class="form-group">Gebruikersnaam <span class="error">* </span><input type="text" class="form-control" placeholder="Vul hier in" name="username" value=""></div>
                 <div class="form-group">Wachtwoord <span class="error">* </span><input type="password" class="form-control" placeholder="Vul hier in" name="password"   value=""></div>
                 <div class="form-group">

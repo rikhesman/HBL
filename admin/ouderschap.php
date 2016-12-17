@@ -34,6 +34,6 @@ include ('build/header.php');
 						</div>
 						<input type="submit" class="btn btn-primary" name="save_parentship" value="Koppelen">
 					</form>
-					</p>
+					
 	</body>
 </html>
