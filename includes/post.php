@@ -1,5 +1,6 @@
 <?php
-
+$_SESSION['alert'] = false; 
+$_SESSION['message'] = "";
 /*
  * Post alle functies hier
  * 
@@ -15,5 +16,4 @@
  
  // Review
  if (Input::has('save_review')) reviewManagement::reviewRegister();
-
- 
+ if (Input::has('tocontact')) contactManagement::contactform2();
