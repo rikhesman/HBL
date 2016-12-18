@@ -22,8 +22,11 @@ class accountManagement
 		$password = password_hash($password, PASSWORD_DEFAULT);
 	
 		if ($register->setRegister($username,$password,$fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date)) {
-			echo "Gebruiker succesvol opgeslagen";
+			 $_SESSION['alert'] = true; 
+             $_SESSION['message'] = '<div class="alert alert-danger">Gebruiker succesvol opgeslagen!</div>';
+            //echo "Gebruiker succesvol opgeslagen";
 		} else {
+            
 			echo "error";
 		}			
 		
@@ -44,7 +47,9 @@ class accountManagement
 			header('Location: admin/index.php');			
 
 		} else {
-			echo "error";
+             $_SESSION['alert'] = true; 
+             $_SESSION['message'] = '<div class="alert alert-danger">Gebruikersnaam of wachtwoord verkeerd!</div>';
+            
 		}			
 	}
     
@@ -57,7 +62,7 @@ class accountManagement
        
 		if ($rol->login($username,$role)) {
 			$_SESSION[$role] === "admin";
-            header("location: home.php");
+            //header("location: home.php");
 		} else {
 			echo "error";
 		}			

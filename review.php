@@ -42,8 +42,19 @@ include('includes/autoloader.php');
 	
 </form>
 
-            ';}
+  ';}
         ?>
+        
+<?php
+		 foreach (reviewMAnagement::getReview() as $review) {
+			echo'
+			<div class="review_block">
+				<h2>Gebruiker: '.$review['username'].'</h2>
+				<p>Rating: '.$review['rating'].'/5</p>
+				<p>Review:<br>'.$review['review'].'</p>
+			</div>';
+		}
+		?>
 
     <div class="col-md-4"><!--Rechter kant--></div> 
     </div>
