@@ -99,6 +99,11 @@ if(isset($_POST['submit'])) {
     <h1>Inschrijfformulier</h1>
     <!--laat zien dat * betekent verplicht veld -->
     <p><span class="error">* Verplicht</span></p>
+         <?php
+        if($_SESSION['alert']) {
+           echo $_SESSION['message']; 
+        }
+        ?>
         <form method='post'>
             <div class="form-group">
                 Gebruikersnaam
