@@ -22,7 +22,7 @@ class dataAccountManagement extends connection {
 		$q -> bindValue(':comment', $comment, PDO::PARAM_STR);	
 		$q -> bindValue(':join_date', $date, PDO::PARAM_STR);				
 		$q -> execute();
-		
+        
 		return true;
 	}
 	
