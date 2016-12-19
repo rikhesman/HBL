@@ -66,6 +66,9 @@ if($_SESSION['user']['role'] == 'admin') {
                     <li <?php if($file == 'ouderschap'){?> class="active" <?php } ?>>
                         <a href="ouderschap.php"><span class="glyphicon glyphicon-magnet"></span> Ouderschap</a>
                     </li>
+                    <li <?php if($file == 'form'){?> class="active" <?php } ?>>
+                        <a href="subject.php"><span class="glyphicon glyphicon-magnet"></span> Vakken</a>
+                    </li>
                     <!-- <li <?php if($file == 'lease_article'){?> class="active" <?php } ?>>
                         <a href="lease_article.php"><i class="fa fa-fw fa-shopping-cart"></i> Verhuur beheer</a>
                     </li> -->              
