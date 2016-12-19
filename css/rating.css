@@ -49,11 +49,12 @@
 .rating-show { 
   border: none;
   float: left;
+  
 }
 
 .rating-show > input { display: none; } 
 .rating-show > label:before { 
-  margin: 5px;
+  margin: 0px 2px;
   font-size: 1.25em;
   font-family: FontAwesome;
   display: inline-block;
@@ -67,7 +68,7 @@
 
 .rating-show > label { 
   color: #ddd; 
- float: right; 
+  float: right; 
 }
 
 .rating-show > .show {

@@ -61,7 +61,7 @@ include('includes/autoloader.php');
 		 foreach (reviewMAnagement::getReview() as $review) {
 			echo'
 			<div class="review_block">
-				<h2>Gebruiker: '.$review['username'].'</h2>
+				<h3>Door: '.$review['username'].'</h3>
 				
 				<fieldset class="rating-show form-control">
 				Rating:
@@ -76,8 +76,8 @@ include('includes/autoloader.php');
 					<label class="full '.($review['rating'] >= 1.0 ? 'show' : '') .'"></label>
 					<label class="half '.($review['rating'] >= 0.5 ? 'show' : '') .'"></label>				
 				</fieldset>
-				<div class="form-group">
-				<p><br>Review:<br>'.$review['review'].'</p>
+				<div class="form-group left">
+				<label for="review">Review:</label><p>'.$review['review'].'</p>
 				</div>
 			</div>';
 		}
