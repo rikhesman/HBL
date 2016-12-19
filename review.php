@@ -6,42 +6,57 @@ include('includes/autoloader.php');
 <html lang="en">
 <head>
    <?php include('build/head.php');?>
+   <link rel="stylesheet" href="./css/rating.css">
 </head>
 <body>
 <?php include('build/navbar.php'); ?>
-
-   <div class="row"> 
-  <div class="col-md-4"><!--Linker kant--></div>
-    <div class="col-md-4">
-
-
-        
-        
-
-
-<form method="post" accept-charset="utf-8">
-        <?php if($_SESSION['user']['role'] == 'Ouder' ){        
-      	 echo '         
-    	<h3>Schrijf hier uw review</h3>	
-    	<!-- Rating -->
-    <p>
-    	<label for="rating">Rating</label>
-    	<input type="radio" name="rating" value="1" /> 1 
-      	<input type="radio" name="rating" value="2" /> 2
-      	<input type="radio" name="rating" value="3" /> 3 
-      	<input type="radio" name="rating" value="4" /> 4 
-      	<input type="radio" name="rating" value="5" /> 5
-    </p>
-    
-    
-    	<label for="review">Review</label>
-    	<textarea name="review" placeholder="Geef ons uw mening" rows="8" cols="40"></textarea>	
-    	<input type="submit" value="Plaats Review" name="save_review">
+<div class="container-fluid">
+  <div class="row"> 
+	  <div class="col-md-4 center">
+	  	<form method="post" accept-charset="utf-8">		
+	        <?php
+	        if($_SESSION['alert']) {
+	           echo $_SESSION['message']; 
+	        } 
+	        ?><?php if($_SESSION['user']['role'] == 'gast' ){      
+	        	echo '<h4>U moet ingelogd zijn om een review te schrijven!</h4>';
+			}
+	        ?>
+	        
+	       
+	        <?php if($_SESSION['user']['role'] == 'Ouder' ){        
+	      	 echo ' 
+	      	         
+	    	<h3>Schrijf hier uw review</h3>	
+	    	<!-- Rating -->  	
+	    	
+	    	<fieldset class="rating form-control">
+	    	Rating:	    		    
+			    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+			    <input type="radio" id="star4half" name="rating" value="4.5" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+			    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+			    <input type="radio" id="star3half" name="rating" value="3.5" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+			    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+			    <input type="radio" id="star2half" name="rating" value="2.5" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+			    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+			    <input type="radio" id="star1half" name="rating" value="1.5" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+			    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+			    <input type="radio" id="starhalf" name="rating" value="0.5" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+			</fieldset>
+	    	 	
+	    	<div class="form-group">    
+		    	Review
+		    	<textarea name="review" class="form-control" placeholder="Geef ons uw mening" rows="8" cols="40"></textarea>	
+		    </div>
+		    <div class="form-group">
+		    	<input type="submit" class="btn btn-primary" value="Plaats Review" name="save_review">
+			</div>
 	
-</form>
-  ';}
-        ?>
-        
+	  		';}  ?>
+	  	</form>    
+	  </div>
+   <div class="col-md-8">		
+
 <?php
 		 foreach (reviewMAnagement::getReview() as $review) {
 			echo'
@@ -53,8 +68,9 @@ include('includes/autoloader.php');
 		}
 		?>
 
-    <div class="col-md-4"><!--Rechter kant--></div> 
+    
     </div>
+   </div>
 
 
 </body>

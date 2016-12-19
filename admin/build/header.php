@@ -63,7 +63,7 @@ if($_SESSION['user']['role'] == 'admin') {
                     <li <?php if($file == 'form'){?> class="active" <?php } ?>>
                         <a href="form.php"><span class="glyphicon glyphicon-user"></span> Inschrijven</a>
                     </li>
-                    <li <?php if($file == 'form'){?> class="active" <?php } ?>>
+                    <li <?php if($file == 'ouderschap'){?> class="active" <?php } ?>>
                         <a href="ouderschap.php"><span class="glyphicon glyphicon-magnet"></span> Ouderschap</a>
                     </li>
                     <!-- <li <?php if($file == 'lease_article'){?> class="active" <?php } ?>>
