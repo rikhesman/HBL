@@ -85,9 +85,11 @@ class accountManagement
 		$parent  	= Input::get('parent');
 		
 		if ($register->setParenthood($child,$parent)) {
-			echo "Gebruiker succesvol opgeslagen";
+			 $_SESSION['alert'] = true; 
+             $_SESSION['message'] = '<div class="alert alert-success">Kind aan Ouder gekoppeld!</div>';
 		} else {
-			echo "error";
+			 $_SESSION['alert'] = true; 
+             $_SESSION['message'] = '<div class="alert alert-danger">Error!</div>';
 		}			
 	}
 	
