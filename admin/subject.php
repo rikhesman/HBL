@@ -11,7 +11,7 @@ include ('build/header.php');
 					
 					<div class="form-group">
 						Kind
-						<select required class="form-control" name="parent">
+						<select required class="form-control" name="username">
 							<?php
 							foreach (accountManagement::getChild() as $child) {
 								echo'
@@ -23,16 +23,16 @@ include ('build/header.php');
 						
 						<div class="form-group">
 						Vak
-						<select required class="form-control" name="child">
+						<select required class="form-control" name="subject">
 							<?php
-							foreach (accountManagement::getSubject() as $subject) {
+							foreach (accountManagement::Subject() as $subject) {
 								echo'
 								<option value="'.$subject['name'].'">'.$subject['name'].'</option>';
 							}
 							?>
 						</select>
 						</div>
-						<input type="submit" class="btn btn-primary" name="save_parentship" value="Koppelen">
+						<input type="submit" class="btn btn-primary" name="save_subject" value="Koppelen">
 					</form>
 					
 	</body>

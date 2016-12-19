@@ -62,7 +62,7 @@ class dataAccountManagement extends connection {
 		return $q->fetchAll();
 	}
 	
-	public function getSubject(){
+	public function Subject(){
 		$sql = "SELECT * FROM subject";
 		$q = $this->conn->prepare($sql);
 		$q -> execute();
@@ -79,11 +79,11 @@ class dataAccountManagement extends connection {
 		return true;
 	}
 	
-	public function setUserSubject($child, $subject) {
+	public function setUserSubject($username, $subject) {
 		$sql = "INSERT INTO user_subject (username, subject)
-		VALUES (:child, :subject)";
-		$q -> $this -> conn -> prepare($sql);
-		$q -> bindValue(':child', $child, PDO::PARAM_STR);
+		VALUES (:username, :subject)";
+		$q = $this -> conn -> prepare($sql);
+		$q -> bindValue(':username', $username, PDO::PARAM_STR);
 		$q -> bindValue(':subject', $subject, PDO::PARAM_STR);
 		$q -> execute();
 		return true;

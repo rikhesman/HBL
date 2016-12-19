@@ -76,11 +76,6 @@ class accountManagement
 		$getKind = new dataAccountManagement;
 		return $getKind->getChild();
 	}
-	public static function getSubject(){
-		$getVak = new dataAccountManagement;
-		return $getVak->getSubject();
-	}
-	
 	
 	public static function parenthood()
 	{
@@ -95,4 +90,22 @@ class accountManagement
 		}			
 	}
 	
+	//Vakken
+	public static function Subject(){
+		$subject = new dataAccountManagement;
+		return $subject->Subject();
+	}
+	
+	public static function setUserSubject()
+	{
+		$register	= new dataAccountManagement;
+		$username	= Input::get('username');
+		$subject	= Input::get('subject');
+		
+		if ($register->setUserSubject($username, $subject)) {
+			echo "Vak succesvol gekoppeled";
+		} else {
+			echo "error;";
+		}
+	}
 }
