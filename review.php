@@ -1,6 +1,5 @@
 <?php
 include('includes/autoloader.php'); 
-
 ?>
 
 <!DOCTYPE html>
@@ -37,11 +36,9 @@ include('includes/autoloader.php');
     
     	<label for="review">Review</label>
     	<textarea name="review" placeholder="Geef ons uw mening" rows="8" cols="40"></textarea>	
-
     	<input type="submit" value="Plaats Review" name="save_review">
 	
 </form>
-
   ';}
         ?>
         
@@ -62,5 +59,3 @@ include('includes/autoloader.php');
 
 </body>
 </html>
-
-
