@@ -76,6 +76,10 @@ class accountManagement
 		$getKind = new dataAccountManagement;
 		return $getKind->getChild();
 	}
+	public static function getSubject(){
+		$getVak = new dataAccountManagement;
+		return $getVak->getSubject();
+	}
 	
 	
 	public static function parenthood()
