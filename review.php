@@ -62,8 +62,23 @@ include('includes/autoloader.php');
 			echo'
 			<div class="review_block">
 				<h2>Gebruiker: '.$review['username'].'</h2>
-				<p>Rating: '.$review['rating'].'/5</p>
-				<p>Review:<br>'.$review['review'].'</p>
+				
+				<fieldset class="rating-show form-control">
+				Rating:
+					<label class="full '.($review['rating'] >= 5.0 ? 'show' : '') .'"></label>
+					<label class="half '.($review['rating'] >= 4.5 ? 'show' : '') .'"></label>
+					<label class="full '.($review['rating'] >= 4.0 ? 'show' : '') .'"></label>
+					<label class="half '.($review['rating'] >= 3.5 ? 'show' : '') .'"></label>
+					<label class="full '.($review['rating'] >= 3.0 ? 'show' : '') .'"></label>
+					<label class="half '.($review['rating'] >= 2.5 ? 'show' : '') .'"></label>
+					<label class="full '.($review['rating'] >= 2.0 ? 'show' : '') .'"></label>
+					<label class="half '.($review['rating'] >= 1.5 ? 'show' : '') .'"></label>
+					<label class="full '.($review['rating'] >= 1.0 ? 'show' : '') .'"></label>
+					<label class="half '.($review['rating'] >= 0.5 ? 'show' : '') .'"></label>				
+				</fieldset>
+				<div class="form-group">
+				<p><br>Review:<br>'.$review['review'].'</p>
+				</div>
 			</div>';
 		}
 		?>
