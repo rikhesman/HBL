@@ -20,7 +20,7 @@ include('includes/autoloader.php');
                 ben ik &ldquo;dyslexie specialist&rdquo;.<br>
                 Ik help graag kinderen, in een 1 op 1 situatie, met hun problemen en/of
                 hiaten op het gebied van o.a. rekenen, spelling en begrijpend lezen.<br>
-                De kinderen krijgen door de vakkundige hulp vaak meer zelfvertrouwen.
+                Naast het beter begrijpen van de stof krijgen de kinderen vaak meer zelfvertrouwen.
             </p>
             <h3>Werkwijze en vakken:</h3>
             <p>
@@ -31,6 +31,16 @@ include('includes/autoloader.php');
                 Vaak vindt er een gesprek plaats met de groepsleerkracht, indien ouders
                 hier toestemming voor geven.<br>
                 Het uurtarief is &euro;25,00 (na 4 lessen factuur)
+            </p>
+            <h3>Intake gesprek</h3>
+            <p>
+            	Nadat er een afspraak is gemaakt via mail of telefoon, zie eventueel 'contact', 
+            	wordt alle informatie genoteerd die nodig is van kind en ouder/verzorger. Hierna 
+            	krijgen kind en ouder/verzorger een gebruikersnaam en wachtwoord. Hiermee kan
+            	thuis ingelogd worden, hierdoor worden verschillende extra functies vrijgegeven. 
+            	De ouders/verzorgers kunnen afspraken bekijken en/of afzeggen en een review schrijven. 
+            	Kinderen kunnen afspraken bekijken en eventueel extra oefeningen downloaden.
+            	Nieuwe afspraken worden alleen via telefoon, email of persoon gemaakt.
             </p>
 
             <ul><br>Vakken:
@@ -48,12 +58,10 @@ include('includes/autoloader.php');
             <h3>Beschikbaarheid van &ldquo;De Bijlesjuf&rdquo;</h3>
             
             <table class="table">
-                <thead>
                     <tr>
                         <th>Dag</th>
                         <th>Tijd</th>
                     </tr>
-                </thead>
                 <tbody>
                     <tr>
                     <td>Maandag</td>
