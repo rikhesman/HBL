@@ -8,7 +8,11 @@ include ('build/header.php');
 			<div class="col-md-6">
 				<h1>Ouderschap koppelen</h1>
 				<form method="post" accept-charset="utf-8">
-					
+					      <?php
+        if($_SESSION['alert']) {
+           echo $_SESSION['message']; 
+        }
+                ?>
 					<div class="form-group">
 						Ouder
 						<select required class="form-control" name="parent">
