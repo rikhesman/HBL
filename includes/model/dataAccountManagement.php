@@ -63,7 +63,7 @@ class dataAccountManagement extends connection {
 	}
 	
 	public function getSubject(){
-		$sql = "SELECT * FROM subject"
+		$sql = "SELECT * FROM subject";
 		$q = $this->conn->prepare($sql);
 		$q -> execute();
 		return $q->fetchAll();
