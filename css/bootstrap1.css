@@ -29,9 +29,8 @@
    	background-color: #F1F1F1;
    }
    
-    
-    
-    /* Add a gray background color and some padding to the footer */
+
+    /* Add a gray background color and some padding to the footer  */
     footer {
 
       background-color: #f2f2f2;
@@ -40,13 +39,15 @@
     }
     
 .carousel{
-    max-height:600px;  
+    height:500px;
+    
 }
 .carousel.slide{
     
    
     margin-left:25%;
-    width:50%;
+    margin-right:25%;
+    width:auto;
     overflow:hidden;
     
 }
@@ -63,6 +64,22 @@
       position:absolute;  
          
   }
+      
+    @media (max-height:768px) and (min-height:512px){
+        .carousel{
+                height:200px;
+            }
+    }
+    @media (max-height:512px){
+        .carousel{
+                display:none;
+            }
+    }
+    @media (max-height:1152px) and (min-height:768px){
+        .carousel{
+                height:500px;
+            }
+    }
 
   .carousel-control.left, .carousel-control.right{
       height:100%; 
