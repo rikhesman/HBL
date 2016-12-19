@@ -23,11 +23,12 @@ class accountManagement
 	
 		if ($register->setRegister($username,$password,$fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date)) {
 			 $_SESSION['alert'] = true; 
-             $_SESSION['message'] = '<div class="alert alert-danger">Gebruiker succesvol opgeslagen!</div>';
+             $_SESSION['message'] = '<div class="alert alert-success">Gebruiker succesvol opgeslagen!</div>';
             //echo "Gebruiker succesvol opgeslagen";
 		} else {
             
-			echo "error";
+			$_SESSION['alert'] = true; 
+             $_SESSION['message'] = '<div class="alert alert-danger">Error!</div>';
 		}			
 		
 	}
