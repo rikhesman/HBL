@@ -6,7 +6,7 @@ include ('build/header.php');
 				<!--Linker kant-->
 			</div>
 			<div class="col-md-6">
-				<h1>Klas koppelen</h1>
+				<h1>Vak koppelen</h1>
 				<form method="post" accept-charset="utf-8">
 					
 					<div class="form-group">
