@@ -1,6 +1,5 @@
 <?php
 include('includes/autoloader.php'); 
-
 ?>
 
 <!DOCTYPE html>
@@ -48,5 +47,3 @@ include('includes/autoloader.php');
 
 </body>
 </html>
-
-
