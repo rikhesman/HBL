@@ -137,5 +137,9 @@ position: relative; padding-bottom: 75%; height: 0; overflow: hidden;
 	margin-top: -5px;
 }
 
+.row {
+	margin:0;
+}
+
 
 
