@@ -10,6 +10,11 @@ include('build/header.php');
     <!--laat zien dat * betekent verplicht veld -->
     <p><span class="error">* Verplicht</span></p>
         <form method='post'>
+              <?php
+        if($_SESSION['alert']) {
+           echo $_SESSION['message']; 
+        }
+        ?>
             <div class="form-group">
                 Gebruikersnaam
                 <span class="error">* </span>
