@@ -18,18 +18,23 @@ class reviewManagement
 				if (Input::has('review')){
 					$rtext = $rtext;
 					if ($register->setRegister($username,$rating,$rtext)) {
-						echo 'Succesvol aangemaakt';
+						 $_SESSION['alert'] = true; 
+             			 $_SESSION['message'] = '<div class="alert alert-success form-group">Review is aangemaakt!</div>';
 					} else {
-						echo "error";
+						$_SESSION['alert'] = true; 
+             			$_SESSION['message'] = '<div class="alert alert-danger form-group">Database error!</div>';
 					}
 				} else {
-					echo "Review tekst mag niet leeg zijn<br>";
+					$_SESSION['alert'] = true; 
+             		$_SESSION['message'] = '<div class="alert alert-danger form-group">Review tekst mag niet leeg zijn!</div>';
 				}
 			} else {
-				echo "Rating mag niet leeg zijn<br>";
+				$_SESSION['alert'] = true; 
+             	$_SESSION['message'] = '<div class="alert alert-danger form-group">Er moet een rating gegeven worden</div>';
 			}		
 		} else {
-			echo 'vul velden in.';
+			$_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger form-group">Alle velden moeten worden ingevuld!</div>';
 		}
 		
 	}
