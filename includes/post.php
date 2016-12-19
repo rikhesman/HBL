@@ -19,3 +19,5 @@ $_SESSION['message'] = "";
  if (Input::has('save_review')) reviewManagement::reviewRegister();
  if (Input::has('tocontact')) contactManagement::contactform2();
  
+// Slideshow
+if (Input::has('submit_image')) imageManagement::addImage();
