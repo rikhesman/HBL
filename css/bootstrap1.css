@@ -142,7 +142,15 @@ position: relative; padding-bottom: 75%; height: 0; overflow: hidden;
 }
 
 .p1 {
+	font-size: 20px;	
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.p1bold {
 	font-size: 20px;
-		
+	font-weight: bold;
 }
 

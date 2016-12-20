@@ -13,7 +13,7 @@ $_SESSION['message'] = "";
  if (Input::has('save_user')) accountManagement::register();
  if (Input::has('login')) accountManagement::login();	
  if (Input::has('save_parentship')) accountManagement::parenthood(); 
- if (Input::has('save_subject')) accountManagement::setUserSubject();
+ 
  
 // Review
  if (Input::has('save_review')) reviewManagement::reviewRegister();

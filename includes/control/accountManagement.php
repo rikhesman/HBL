@@ -160,4 +160,12 @@ class accountManagement
 			echo "error;";
 		}
 	}
+	
+	//Database zoekfunctie
+	public static function userInfo(){
+		$userInfo = new dataAccountManagement;
+		return $userInfo->getInfo();
+	}
 }
+
+	

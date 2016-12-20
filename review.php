@@ -18,11 +18,7 @@ include('includes/autoloader.php');
 	        if($_SESSION['alert']) {
 	           echo $_SESSION['message']; 
 	        } 
-	        ?><?php if($_SESSION['user']['role'] == 'gast' ){      
-	        	echo '<h4>U moet ingelogd zijn om een review te schrijven!</h4>';
-			}
 	        ?>
-	        
 	       
 	        <?php if($_SESSION['user']['role'] == 'Ouder' ){        
 	      	 echo ' 
@@ -56,7 +52,11 @@ include('includes/autoloader.php');
 	  	</form>    
 	  </div>
    <div class="col-md-8">		
-
+<?php if($_SESSION['user']['role'] == 'gast' ){      
+	        	echo '<h4>U moet ingelogd zijn om een review te schrijven!</h4>';
+			}
+	        ?>
+	        
 <?php
 		 foreach (reviewMAnagement::getReview() as $review) {
 			echo'
