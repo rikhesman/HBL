@@ -5,7 +5,7 @@ include('build/header.php');
 
 <div class="row">
         <div class="col-md-2"><!--Linker kant--></div>
-  <div class="col-md-6">
+  <div class="col-md-8">
     <h1>Afbeeldingen uploaden</h1>
      <?php
 	    if($_SESSION['alert']) {
