@@ -15,7 +15,7 @@ public function setRegister($username, $rating, $rtext){
 	}
 
 public function getReview(){
-		$sql = "SELECT * FROM review";
+		$sql = "SELECT * FROM review ORDER BY rev_date DESC";
 		$q = $this->conn->prepare($sql);
 		$q -> execute();
 		return $q->fetchAll();

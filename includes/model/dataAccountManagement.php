@@ -79,6 +79,13 @@ class dataAccountManagement extends connection {
 		return true;
 	}
 	
+	public function getInfo(){
+		$sql = "SELECT * from users WHERE rol = 'Ouder' OR rol = 'Kind'";
+		$q = $this->conn->prepare($sql);
+		$q -> execute();
+		return $q->fetchAll();
+	}
+	
 	public function setUserSubject($username, $subject) {
 		$sql = "INSERT INTO user_subject (username, subject)
 		VALUES (:username, :subject)";

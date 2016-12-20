@@ -13,9 +13,24 @@ include ('build/header.php');
            echo $_SESSION['message']; 
         }
                 ?>
+                
+                <div class="form-group">
+						Kind
+						<select required class="form-control" name="child">
+							<option value="" disabled Selected>Kies een kind</option>
+							<?php
+							foreach (accountManagement::getChild() as $child) {
+								echo'
+								<option value="'.$child['username'].'">'.$child['username'].'</option>';
+							}
+							?>
+						</select>
+						</div>
+						
 					<div class="form-group">
 						Ouder
 						<select required class="form-control" name="parent">
+							<option value="" disabled Selected>Kies een ouder</option>
 							<?php
 							foreach (accountManagement::getParents() as $parent) {
 								echo'
@@ -25,17 +40,8 @@ include ('build/header.php');
 						</select>
 						</div>
 						
-						<div class="form-group">
-						Kind
-						<select required class="form-control" name="child">
-							<?php
-							foreach (accountManagement::getChild() as $child) {
-								echo'
-								<option value="'.$child['username'].'">'.$child['username'].'</option>';
-							}
-							?>
-						</select>
-						</div>
+						
+							
 						<input type="submit" class="btn btn-primary" name="save_parentship" value="Koppelen">
 					</form>
 					

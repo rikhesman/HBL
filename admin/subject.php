@@ -12,6 +12,7 @@ include ('build/header.php');
 					<div class="form-group">
 						Kind
 						<select required class="form-control" name="username">
+							<option value="" disabled Selected>Kies een kind</option>
 							<?php
 							foreach (accountManagement::getChild() as $child) {
 								echo'
@@ -24,6 +25,7 @@ include ('build/header.php');
 						<div class="form-group">
 						Vak
 						<select required class="form-control" name="subject">
+							<option value="" disabled Selected>Kies een vak</option>
 							<?php
 							foreach (accountManagement::Subject() as $subject) {
 								echo'

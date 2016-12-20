@@ -13,7 +13,7 @@ include('includes/autoloader.php');
         <div class="col-md-3"><!--Linker kant--></div>
         <div class="col-md-6">
         	<br>
-            <h3>Wie is &ldquo;De Bijlesjuf&rdquo;?</h3><br>
+            <h2 class="bold">Wie is &ldquo;De Bijlesjuf&rdquo;?</h3><br>
 
             <p class="p1">
                 Mijn naam is Marjan Sonnega. Ik heb ruim 30 jaar gewerkt als groepsleerkracht
@@ -23,7 +23,7 @@ include('includes/autoloader.php');
                 hiaten op het gebied van o.a. rekenen, spelling en begrijpend lezen.
                 Naast het beter begrijpen van de stof krijgen de kinderen vaak meer zelfvertrouwen.
             </p><br>
-            <h3>Werkwijze en vakken:</h3>
+            <h3 class="bold">Werkwijze en vakken:</h3>
             <p class="p1">
                 De bijlessen worden gegeven in de R.T. kamer op de 1 e verdieping aan
                 de Harlingerstraatweg 6a te Leeuwarden, dichtbij het centrum.<br>
@@ -33,18 +33,18 @@ include('includes/autoloader.php');
                 hier toestemming voor geven.<br>
                 Het uurtarief is &euro;25,00 (na 4 lessen factuur)
             </p><br>
-            <h3>Intake gesprek</h3>
+            <h3 class="bold">Intake gesprek</h3>
             <p class="p1">
             	Nadat er een afspraak is gemaakt via mail of telefoon, zie eventueel 'contact', 
             	wordt alle informatie genoteerd die nodig is van kind en ouder/verzorger. Hierna 
             	krijgen kind en ouder/verzorger een gebruikersnaam en wachtwoord. Hiermee kan
             	thuis ingelogd worden, hierdoor worden verschillende extra functies vrijgegeven. 
-            	De ouders/verzorgers kunnen afspraken bekijken en/of afzeggen en een review schrijven. 
+            	De ouders/verzorgers kunnen afspraken bekijken en een review schrijven. 
             	Kinderen kunnen afspraken bekijken en eventueel extra oefeningen downloaden.
             	Nieuwe afspraken worden alleen via telefoon, email of persoon gemaakt.
             </p><br>
 
-            <ul class="p1"><br>Vakken:
+            <ul class="p1"><br><b>Vakken:</b>
                 <li>Spelling ( regels en werkwoord spelling )</li>
                 <li>Begrijpend Lezen</li>
                 <li>Woordenschat ontwikkeling</li>
@@ -52,11 +52,11 @@ include('includes/autoloader.php');
                 <li>Cito eindtoets oefening</li>
                 <li>Dyslexie begeleiding</li>
             </ul>
-            <ul class="p1"><br>Voor wie?
+            <ul class="p1"><br><b>Voor wie?</b>
                 <li>basischoolleerlingen</li>
                 <li>kinderen met dyslexie</li>
             </ul><br>
-            <h3>Beschikbaarheid van &ldquo;De Bijlesjuf&rdquo;</h3>
+            <h3 class="bold">    Beschikbaarheid van &ldquo;De Bijlesjuf&rdquo;</h3>
             
             <table class="table">
                     <tr>
