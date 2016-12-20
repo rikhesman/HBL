@@ -25,6 +25,30 @@ include('build/header.php');
 	     	<input class="btn btn-primary" type="submit" name="submit_image" value="upload">
     	</div>
     </form>
+    
+    <table class="table">
+    	<tr>
+    		<th>Naam afbeelding</th>
+    		<th>Bestandsnaam</th>
+    		<th>Verwijderen</th>
+    	</tr>
+    <?php 
+    foreach(imageManagement::getImg() as $img) {
+    	echo '
+    	<tr>
+    		<td>'.$img['alt'].'</td>
+    		<td>'.$img['file'].'</td>
+    		<td>
+    		<form method="post" enctype="multipart/form-data">				
+				<input type="hidden" name="imgfile" value="'. $img['file'] .'">
+				<button type="submit" name="deleteImg" value="Verwijder" class="btn-cms btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+			</form>
+			</td>
+    	</tr>
+    	';
+    }
+    ?>
+    </table>
   </div>
   <div class="col-md-4"><!--Rechter kant--></div>  
   </div>    
