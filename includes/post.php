@@ -9,7 +9,7 @@ $_SESSION['message'] = "";
  * 
  */
  
-// account 
+// Account 
  if (Input::has('save_user')) accountManagement::register();
  if (Input::has('login')) accountManagement::login();	
  if (Input::has('save_parentship')) accountManagement::parenthood(); 
@@ -20,4 +20,7 @@ $_SESSION['message'] = "";
  if (Input::has('tocontact')) contactManagement::contactform2();
  
 // Slideshow
-if (Input::has('submit_image')) imageManagement::addImage();
+ if (Input::has('submit_image')) imageManagement::addImage();
+
+// Question
+ if (Input::has('toquestion')) questionManagement::questionForm();

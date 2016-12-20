@@ -8,8 +8,10 @@ class questionManagement {
                 if (!empty(input::get("content"))) {
                     if(input::get("content")) {
                         $message=
-                            'Onderwerp:	'.$_POST['subject'].'<br />
-                            Bericht:	'.$_POST['content'];
+                            'Gebruikersnaam: ' . $_SESSION['user']['username'] . '<br />' .
+                            'Onderwerp: ' . $subject . '<br />' .
+                            'Bericht: ' . $content
+                        ;
                         require "phpmailer/class.phpmailer.php"; //include phpmailer class
 
                         // Instantiate Class  
