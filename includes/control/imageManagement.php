@@ -18,4 +18,16 @@ class imageManagement {
             $_SESSION['message'] = '<div class="alert alert-danger">Vul naam afbeelding in!</div>';
 		}
 	}
+	
+	public static function deleteImage() {
+		$img = new dataImage;		
+		if($img -> deleteImage(Input::get('imgfile'))) {
+			unlink('../foto/Slideshow/' . Input::get('imgfile'));
+		}
+	}
+	
+	public static function getImg() {
+		$img = new dataImage;
+		return $img -> getImg();
+	}
 }
