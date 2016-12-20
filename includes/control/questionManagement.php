@@ -10,7 +10,7 @@ class questionManagement {
                         $message=
                             'Gebruikersnaam: ' . $_SESSION['user']['username'] . '<br />' .
                             'Onderwerp: ' . $subject . '<br />' .
-                            'Bericht: ' . $content
+                            'Bericht: <br/>' . $content
                         ;
                         require "phpmailer/class.phpmailer.php"; //include phpmailer class
 
@@ -30,9 +30,7 @@ class questionManagement {
                         $mail->Password   = "DitisheelGeheim!"; //  Gmail Wachtwoord
 
                         // Samenstellen
-                        $mail->SetFrom($_POST['email'], $_POST['name']);
-                        $mail->AddReplyTo($_POST['email'], $_POST['lastname']);
-                        $mail->Subject = "Contactformulier via de website!";      
+                        $mail->Subject = $_SESSION['user']['username'] . " stelt een vraag";      
                         $mail->MsgHTML($message);
 
                         // Verzenden naar 
