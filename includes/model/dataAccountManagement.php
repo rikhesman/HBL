@@ -22,7 +22,7 @@ class dataAccountManagement extends connection {
 		$q -> bindValue(':comment', $comment, PDO::PARAM_STR);	
 		$q -> bindValue(':join_date', $date, PDO::PARAM_STR);				
 		$q -> execute();
-		
+        
 		return true;
 	}
 	
@@ -62,6 +62,13 @@ class dataAccountManagement extends connection {
 		return $q->fetchAll();
 	}
 	
+	public function Subject(){
+		$sql = "SELECT * FROM subject";
+		$q = $this->conn->prepare($sql);
+		$q -> execute();
+		return $q->fetchAll();
+	}
+	
 	public function setParenthood($child, $parent) {
 		$sql = "INSERT INTO parent (user_child, user_parent)
 		VALUES (:child, :parent)";
@@ -69,6 +76,16 @@ class dataAccountManagement extends connection {
 		$q -> bindValue(':child', $child, PDO::PARAM_STR);
 		$q -> bindValue(':parent', $parent, PDO::PARAM_STR);
 		$q -> execute();	
+		return true;
+	}
+	
+	public function setUserSubject($username, $subject) {
+		$sql = "INSERT INTO user_subject (username, subject)
+		VALUES (:username, :subject)";
+		$q = $this -> conn -> prepare($sql);
+		$q -> bindValue(':username', $username, PDO::PARAM_STR);
+		$q -> bindValue(':subject', $subject, PDO::PARAM_STR);
+		$q -> execute();
 		return true;
 	}
 }
