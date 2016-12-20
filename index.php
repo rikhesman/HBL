@@ -68,13 +68,14 @@
             </a>
         </div>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <!--Linker kant-->
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
+            	<br>
                 <h3>Welkom op de website van &ldquo;De Bijlesjuf&rdquo;.</h3>
                 <br>
-                <p>
+                <p class="p1">
                     &ldquo;De Bijlesjuf&rdquo; verzorgt bijlessen in rekenen,
                     spelling en begrijpend lezen aan basisschoolleerlingen.<br>
                     Zij kan dyslectische kinderen begeleiden bij hun lees- en/of
@@ -88,7 +89,7 @@
                     om weer aan te sluiten bij de groep.
                 </p>
                 <h3>Waarom bijles:</h3>
-                <p>
+                <p class="p1">
                     Sommige kinderen krijgen de instructie in de groep niet mee,
                     wat kan komen door de groepsgrootte, het te snelle tempo, een
                     leerachterstand, concentratieproblemen of het niet begrijpen
@@ -100,9 +101,11 @@
                     Door tijdelijk hulp van buitenaf te geven, in een 1 op 1
                     situatie, komt deze instructie beter over en zal uw kind met
                     meer plezier naar school toe gaan.
+                    <br>
+                    <br>
                 </p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <!--Rechter kant-->
         </div>
         </div>
