@@ -17,27 +17,27 @@ include('build/header.php');
             <div class="form-group">
                 Gebruikersnaam
                 <span class="error">* </span>
-                <input type="text" class="form-control" placeholder="Vul hier in" name="username"  	value="" required="Gebruikersnaam is verplicht">
+                <input type="text" class="form-control" placeholder="Vul hier in" name="username"  	value="<?php echo (isset($_POST['username']) ? $_POST['username'] : '') ?>">
                 </div><div class="form-group">
                 Wachtwoord
                 <span class="error">*</span>
-                <input type="password" class="form-control" placeholder="Vul hier in" name="password"  	value="" required="Wachtwoord is verplicht">
+                <input type="password" class="form-control" placeholder="Vul hier in" name="password"  	value="<?php echo (isset($_POST['password']) ? $_POST['password'] : '') ?>" >
                 </div><div class="form-group">
                 Voornaam
                 <span class="error">*</span>
-                <input type="text" class="form-control" placeholder="Vul hier in" name="f_name"    value="" required="Voornaam is verplicht">
+                <input type="text" class="form-control" placeholder="Vul hier in" name="f_name"    value="<?php echo (isset($_POST['f_name']) ? $_POST['f_name'] : '') ?>" >
                 </div><div class="form-group">
                 Tussenvoegsel
                 <input type="text" class="form-control" placeholder="Vul hier in" name="insertion"    value="">
                 </div><div class="form-group">
                 Achternaam
                 <span class="error">*</span>
-                <input type="text" class="form-control" placeholder="Vul hier in" name="l_name"  		value="" required="Achternaam is verplicht">
+                <input type="text" class="form-control" placeholder="Vul hier in" name="l_name"  		value="<?php echo (isset($_POST['l_name']) ? $_POST['l_name'] : '') ?>">
                 </div><div class="form-group">
                 Rol
                 <span class="error">*</span>
-                <select required class="form-control" name="rol" required="Rol is verplicht">
-                	<option value="choose">Kies een rol</option>
+                <select required class="form-control" name="rol">
+                	<option value="">Kies een rol</option>
                 	<option value="Kind">Kind</option>
                 	<option value="Ouder">Ouder</option>
                 </select>
@@ -54,7 +54,7 @@ include('build/header.php');
                 </div><div class="form-group">
                 Inschrijfdatum
                 <span class="error">*</span>
-                <input type="date" class="form-control" placeholder="dd/mm/jjjj" name="join_date" 	value="" required="Inschrijfdatum is verplicht">
+                <input type="date" required class="form-control" placeholder="dd/mm/jjjj" name="join_date" 	value="">
                 </div><div class="form-group">
                 Extra opmerkingen 
                 <textarea rows="5" class="form-control" placeholder="Vul hier in" cols="22" name="comment"></textarea>
