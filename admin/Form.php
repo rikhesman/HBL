@@ -37,7 +37,7 @@ include('build/header.php');
                 Rol
                 <span class="error">*</span>
                 <select required class="form-control" name="rol">
-                	<option value="">Kies een rol</option>
+                	<option value="" disabled Selected>Kies een rol</option>
                 	<option value="Kind">Kind</option>
                 	<option value="Ouder">Ouder</option>
                 </select>
