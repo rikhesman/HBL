@@ -95,7 +95,7 @@
 
   /* Hide the carousel text when the screen is less than 600 pixels wide */
 
-.table thead tr th {
+.table thead tr th{
     text-align: center;
 }
 .error {
@@ -141,5 +141,8 @@ position: relative; padding-bottom: 75%; height: 0; overflow: hidden;
 	margin:0;
 }
 
-
+.p1 {
+	font-size: 20px;
+		
+}
 
