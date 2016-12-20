@@ -111,12 +111,12 @@ class accountManagement
         $role = Input::get('rol');
         
        
-		if ($rol->login($username,$role)) {
-			$_SESSION[$role] === "admin";
+		//if ($rol->login($username,$role)) {
+			//$_SESSION[$role] === "admin";
             //header("location: home.php");
-		} else {
-			echo "error";
-		}			
+		//} else {
+			//echo "error";
+		//}			
 	}
 	public static function getParents(){
 		$getOuder = new dataAccountManagement;
