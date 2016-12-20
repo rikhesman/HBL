@@ -13,7 +13,9 @@ include('build/header.php');
         if($_SESSION['alert']) {
            echo $_SESSION['message']; 
         }
+        $_POST['rol'] = '';
         ?>
+            
             <div class="form-group">
                 Gebruikersnaam
                 <span class="error">* </span>
@@ -28,25 +30,31 @@ include('build/header.php');
                 <input type="text" class="form-control" placeholder="Vul hier in" name="f_name"    value="<?php echo (isset($_POST['f_name']) ? $_POST['f_name'] : '') ?>" >
                 </div><div class="form-group">
                 Tussenvoegsel
-                <input type="text" class="form-control" placeholder="Vul hier in" name="insertion"    value="">
+                <input type="text" class="form-control" placeholder="Vul hier in" name="insertion"    value="<?php echo (isset($_POST['insertion']) ? $_POST['insertion'] : '') ?>">
                 </div><div class="form-group">
                 Achternaam
                 <span class="error">*</span>
                 <input type="text" class="form-control" placeholder="Vul hier in" name="l_name"  		value="<?php echo (isset($_POST['l_name']) ? $_POST['l_name'] : '') ?>">
                 </div><div class="form-group">
+                Klas
+                <input type="text" class="form-control" placeholder="Vul hier in" name="class"  		value="<?php echo (isset($_POST['class']) ? $_POST['class'] : '') ?>">
+                </div><div class="form-group">
+                School
+                <input type="text" class="form-control" placeholder="Vul hier in" name="school"  		value="<?php echo (isset($_POST['school']) ? $_POST['school'] : '') ?>">
+                </div><div class="form-group">
                 Rol
                 <span class="error">*</span>
                 <select required class="form-control" name="rol">
-                	<option value="" disabled Selected>Kies een rol</option>
-                	<option value="Kind">Kind</option>
-                	<option value="Ouder">Ouder</option>
+                	<option  value="" disabled Selected>Kies een rol</option>
+                	<option <?php echo ($_POST['rol']=='Kind'  ? 'selected': '') ?> value="Kind">Kind</option>
+                	<option <?php echo ($_POST['rol']=='Ouder'  ? 'selected': '') ?> value="Ouder">Ouder</option>
                 </select>
                 </div><div class="form-group">
                 Email
-                <input type="text" class="form-control" placeholder="Vul hier in" name="email"		value="">
+                <input type="text" class="form-control" placeholder="Vul hier in" name="email"		value="<?php echo (isset($_POST['email']) ? $_POST['email'] : '') ?>">
                 </div><div class="form-group">
                 Telefoonnummer
-                <input type="text" class="form-control" placeholder="Vul hier in" name="tel"		value="">
+                <input type="text" class="form-control" placeholder="Vul hier in" name="tel"		value="<?php echo (isset($_POST['tel']) ? $_POST['tel'] : '') ?>">
                 </div><div class="form-group">
                 Dyslexie
                 <input type="radio" name="dys"     value="ja"> Ja
@@ -54,7 +62,7 @@ include('build/header.php');
                 </div><div class="form-group">
                 Inschrijfdatum
                 <span class="error">*</span>
-                <input type="date" required class="form-control" placeholder="dd/mm/jjjj" name="join_date" 	value="">
+                <input type="date" required class="form-control" placeholder="dd/mm/jjjj" name="join_date" 	value="<?php echo (isset($_POST['join_date']) ? $_POST['join_date'] : '') ?>">
                 </div><div class="form-group">
                 Extra opmerkingen 
                 <textarea rows="5" class="form-control" placeholder="Vul hier in" cols="22" name="comment"></textarea>

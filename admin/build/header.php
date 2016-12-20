@@ -73,7 +73,7 @@ if($_SESSION['user']['role'] == 'admin') {
                         <a href="upload.php"><span class="glyphicon glyphicon-upload"></span> Slideshow</a>
                     </li>
                     <li <?php if($file == 'userInfo'){?> class="active" <?php } ?>>
-                        <a href="userInfo.php"><span class="glyphicon glyphicon-upload"></span> Gebruikers</a>
+                        <a href="userInfo.php"><span class="glyphicon glyphicon-apple"></span> Gebruikers</a>
                     </li>
                      <li <?php if($file == 'download'){?> class="active" <?php } ?>>
                         <a href="download.php"><span class="glyphicon glyphicon-upload"></span> Download</a>
