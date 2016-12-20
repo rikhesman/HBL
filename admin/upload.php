@@ -5,7 +5,7 @@ include('build/header.php');
 
 <div class="row">
         <div class="col-md-2"><!--Linker kant--></div>
-  <div class="col-md-6">
+  <div class="col-md-8">
     <h1>Afbeeldingen uploaden</h1>
      <?php
 	    if($_SESSION['alert']) {
@@ -18,7 +18,7 @@ include('build/header.php');
     	</div>
     	<div class="form-group">
 	    	<label>Selecteer bestand:</label>
-	    	<input type="file" name="file" id="image">
+	    	<input required type="file" name="file" id="image">
     	</div>
     	<div class="divider"></div>
     	<div class="form-group">

@@ -23,6 +23,9 @@ class imageManagement {
 		$img = new dataImage;		
 		if($img -> deleteImage(Input::get('imgfile'))) {
 			unlink('../foto/Slideshow/' . Input::get('imgfile'));
+		} else {
+			$_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Er is iets fout gegaan!</div>';
 		}
 	}
 	
