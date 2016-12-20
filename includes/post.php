@@ -26,3 +26,7 @@ if (Input::has('deleteImg')) imageManagement::deleteImage();
 
 
 
+
+
+
+if (Input::has('deleteUser')) accountManagement::deleteUser();
