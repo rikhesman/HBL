@@ -25,3 +25,4 @@ if (Input::has('submit_image')) imageManagement::addImage();
 if (Input::has('deleteImg')) imageManagement::deleteImage();
 
 
+
