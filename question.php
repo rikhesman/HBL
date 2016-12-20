@@ -1,49 +1,28 @@
-<?php
-include('includes/autoloader.php');
-?>
-
+<?php include('includes/autoloader.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <?php include('build/head.php');?>
-</head>
-<body>
-<?php include('build/navbar.php'); ?>
-
-   <div class="row"> 
-  <div class="col-md-4"><!--Linker kant--></div>
-    <div class="col-md-4">
- 
-        <?php
-// Alle variables worden hier leeg gemaakt
-$message = $nameErr = $lastnameErr = $emailErr = $subjectErr = $commentErr = $captchaErr =  "";
-$name = $lastname = $email = $subject = $comment  = $secret = "";
-
-?>
-
-        <h3>Vragen formulier "De bijlesjuf"</h3>
-<p><span class="error">* Verplicht veld.</span></p>
-        <h3 class="error"><?php echo $message;?></h3>
-<form method="post" action="question.php">
-    <div class="form-group">Naam:  <span class="error">* <?php echo $nameErr;?></span><input type="text" class="form-control" placeholder="Automatisch uit de database" name="name" value="<?php echo $name;?>"></div>
-    <div class="form-group">Achternaam:  <span class="error">* <?php echo $lastnameErr;?></span><input type="text" class="form-control" placeholder="Automatisch uit de database" name="lastname" value="<?php echo $lastname;?>"></div>
-    <div class="form-group">Email:  <span class="error">* <?php echo $emailErr;?></span><input type="text" class="form-control" placeholder="Automatisch uit de database" name="email" value="<?php echo $email;?>"></div>
-    <div class="form-group">Onderwerp:  <span class="error">* <?php echo $subjectErr;?></span><input type="text" class="form-control" placeholder="Vul hier in" name="subject" value="<?php echo $subject;?>"></div>
-    <div class="form-group">Bericht:  <span class="error">* <?php echo $commentErr;?></span><textarea rows="5" class="form-control" placeholder="Vul hier in" cols="22" name="comment"><?php print($comment)?></textarea></div>
-    <br>
-     <div class="form-group"><input type="submit" name="submit" value="Verstuur bericht"></div>
-
-     
-</form>
-
-    
-</div>
-    
-    <div class="col-md-4"><!--Rechter kant--></div> 
-    </div>
-
-
-</body>
+    <head>
+        <?php include('build/head.php'); ?>
+    </head>
+    <body>
+        <?php include('build/navbar.php'); ?>
+        <div class="row"> 
+            <div class="col-md-4"><!--Linker kant--></div>
+            <div class="col-md-4">
+                <h3>Vragen formulier "De Bijlesjuf"</h3>
+                <p><span class="error">* Verplicht veld.</span></p>
+                <?php
+                if($_SESSION['alert']) {
+                    echo $_SESSION['message']; 
+                } ?>
+                <form method="post" action="question.php">
+                    <div class="form-group">Onderwerp:  <span class="error">*</span><input type="text" class="form-control" placeholder="Vul hier in" name="subject" value="<?php echo (isset($_POST['subject']) ? $_POST['subject'] : '') ?>"></div>
+                    <div class="form-group">Bericht:  <span class="error">*</span><textarea rows="5" class="form-control" placeholder="Vul hier in" cols="22" name="content"><?php echo (isset($_POST['comment']) ? $_POST['content'] : '') ?></textarea></div>
+                    <br>
+                    <div class="form-group"><input type="submit" name="toquestion" value="Verstuur vraag"></div>
+                </form>
+            </div>
+            <div class="col-md-4"><!--Rechter kant--></div> 
+        </div>
+    </body>
 </html>
-
-
