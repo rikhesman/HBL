@@ -10,7 +10,7 @@ class dataAccountManagement extends connection {
 		$sql = "INSERT INTO users (username, password, f_name, insertion, l_name, rol, email, tel, dys, comment, join_date) 
 		VALUES (:username,:password, :f_name, :insertion, :l_name, :rol, :email, :tel, :dys, :comment, :join_date)"; 		
 		$q = $this -> conn -> prepare($sql);
-		$q -> bindValue(':username', $username, PDO::PARAM_STR);		
+		$q -> bindValue(':username', $username, PDO::CASE_LOWER);		
 		$q -> bindValue(':password', $password, PDO::PARAM_STR);		
 		$q -> bindValue(':f_name', $fname, PDO::PARAM_STR);
 		$q -> bindValue(':insertion', $insertion, PDO::PARAM_STR);	

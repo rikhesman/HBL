@@ -29,7 +29,7 @@ class accountManagement
                           if(preg_match("/^[a-zA-Z ]*$/",$lname)) {
                                 if ($register->setRegister($username,$password,$fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date)) {
 			                     $_SESSION['alert'] = true; 
-                                $_SESSION['message'] = '<div class="alert alert-success">Gebruiker succesvol opgeslagen!</div>';}
+                                 $_SESSION['message'] = '<div class="alert alert-success">Gebruiker succesvol opgeslagen!</div>';}
   
                           } else {
                             $_SESSION['alert'] = true; 

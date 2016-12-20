@@ -10,6 +10,21 @@ class dataImage extends connection {
 		return true;		
 	}
 	
+	public function getImg() {		
+		$sql = "SELECT * FROM image";	
+		$q = $this -> conn -> prepare($sql);		
+		$q -> execute();
+		return $q->fetchAll();	
+	}
+	
+	public function deleteImage($file) {
+		$sql = "DELETE FROM image WHERE file = :file";
+		$q = $this->conn->prepare($sql);
+		$q->bindValue(':file', $file, PDO::PARAM_INT);
+		$q->execute();
+		return true;
+	}
+	
 	
 	
 }

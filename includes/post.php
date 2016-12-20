@@ -22,3 +22,6 @@ $_SESSION['message'] = "";
 // Slideshow
 if (Input::has('submit_image')) imageManagement::addImage();
 
+if (Input::has('deleteImg')) imageManagement::deleteImage();
+
+
