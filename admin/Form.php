@@ -12,11 +12,10 @@ include('build/header.php');
               <?php
         if($_SESSION['alert']) {
            echo $_SESSION['message']; 
-        }
-        $_POST['rol'] = '';
+        }        
         ?>
             
-            <div class="form-group">
+            	<div class="form-group">
                 Gebruikersnaam
                 <span class="error">* </span>
                 <input type="text" class="form-control" placeholder="Vul hier in" name="username"  	value="<?php echo (isset($_POST['username']) ? $_POST['username'] : '') ?>">
@@ -47,15 +46,19 @@ include('build/header.php');
            
                 
     
- 
-                <?php
-
-                echo '
-                <select name="rol">
-                <option  '. ($_POST['rol']==='' ? 'selected' : '') .' disabled value="">Kies een rol</option>
-                <option '. ($_POST['rol']==='Kind' ? 'selected' : '') .'  value="Kind">Kind</option>
-                <option '. ($_POST['rol']==='Ouder' ? 'selected' : '') .'  value="Ouder">Ouder</option>
-                </select>';
+ 				<?php 
+				
+					
+			
+                   echo '
+                   <select name="rol" required="required" class="form-control">
+						<option '. (Input::get('rol') == '' ? 'selected' : '') .' value="">Kies rol</option>
+						<option '. (Input::get('rol') == 'Kind' ? 'selected' : '') .' value="Kind">Kind</option>
+						<option '. (Input::get('rol') == 'Ouder' ? 'selected' : '') .' value="Ouder">Ouder</option>						
+					</select>		
+                   ';  
+                
+				
                      
                  ?>
             
@@ -80,7 +83,7 @@ include('build/header.php');
                 
                 
                 <input type="submit" class="btn btn-primary" name="save_user" value="Opslaan">
-            </div>
+            	</div>
     </form>
   </div>
   <div class="col-md-4"><!--Rechter kant--></div>  
