@@ -9,28 +9,41 @@
                     <div class="form-group">
                         Kind
                         <select required class="form-control" name="username">
-                            <option value="" disabled Selected>Kies een kind</option>
+                            <option value="username" disabled Selected>Kies een kind</option>
                             <?php
                             foreach (accountManagement::getChild() as $child) {
-                                echo'
-                                <option value="'.$child['username'].'">'.$child['username'].'</option>';
+                                echo'<option value="' . $child['username'] . '">' . $child['username'] . '</option>';
                             }
                             ?>
                         </select>
                     </div>
-                    <input type="submit" class="btn btn-primary" name="get_child_subject" value="Vakken van kind ophalen">
+                    <input type="submit" class="btn btn-primary" name="subject_user" value="Vakken van kind ophalen">
                 </form>
+                <br>
+                <?php if (empty($_SESSION['subjectUser'])) { ?>
+                <p>Selecteer een kind.</p>
+                <?php
+                } else {
+                ?>               
                 <form method="post" accept-charset="utf-8">
                     <div class="form-group">
-                        Vakken:<br>
+                        Vakken van <?php echo $_SESSION['subjectUser']; ?>:<br>
                         <?php
-                        foreach (accountManagement::Subject() as $subject) {
-                            echo'<input type="checkbox" name="' . $subject['name'] . '" value="' . $subject['name'] . '" checked> ' . $subject['name'];
+                        foreach (subjectManagement::subject() as $subject) {
+                            echo '<input type="checkbox" name="' . $subject['name'] . '" value="' . $subject['name'] . '"';
+                            foreach (subjectManagement::getUserSubject($_SESSION['userSubject']) as $check) {
+                                if ($subject['name'] == $check['subject']) {
+                                    echo ' checked';
+                                }
+                            }
+                            echo '> ' . $subject['name'] . '<br>';
                         }
                         ?>
                     </div>
-                    <input type="submit" class="btn btn-primary" name="save_subject" value="Koppelen">
+                    <input type="hidden" name="username" value="<?php echo $_SESSION['subjectUser']; ?>">
+                    <input type="submit" class="btn btn-primary" name="save_subject" value="Opslaan">
                 </form>
+                <?php } ?>
             </div>
         </div>
     </body>

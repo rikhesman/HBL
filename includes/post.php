@@ -26,8 +26,11 @@ $_SESSION['message'] = "";
 
 // Question
  if (Input::has('toquestion')) questionManagement::questionForm();
- 
- // Download
+
+// Download
  if (Input::has('submit_download')) downloadManagement::addDownload();
  if (Input::has('delete_download')) downloadManagement::deleteDownload();
 
+// Subject
+ if (Input::has('subject_user')) subjectManagement::subjectUser();
+ if (Input::has('save_subject')) subjectManagement::setUserSubject();
