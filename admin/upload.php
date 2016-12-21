@@ -18,7 +18,7 @@ include('build/header.php');
     	</div>
     	<div class="form-group">
 	    	<label>Selecteer bestand:</label>
-	    	<input type="file" name="file" id="image">
+	    	<input required type="file" name="file" id="image">
     	</div>
     	<div class="divider"></div>
     	<div class="form-group">

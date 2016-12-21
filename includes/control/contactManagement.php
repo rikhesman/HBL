@@ -145,7 +145,7 @@ class contactManagement
                                                     unset($mail);
                                                          $_SESSION['alert'] = true;
                                                           $_SESSION['message'] = '<div class="alert alert-success">Bericht is verzonden!</div>';
-
+                                                         $_POST['name'] = $_POST['lastname'] = $_POST['email'] = $_POST['subject'] = $_POST['comment'] = "";   
                                               } else {
                                                 $_SESSION['alert'] = true; 
                       $_SESSION['message'] = '<div class="alert alert-danger">Captcha is verplicht</div>';   
