@@ -13,6 +13,7 @@
                 //}
             //}
 //</style>');
+//echo date("Y-m-d");
         ?>
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
