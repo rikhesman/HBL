@@ -94,6 +94,13 @@ class dataAccountManagement extends connection {
 		$q -> execute();
 		return $q->fetchAll();
 	}
+    
+      public function vakInfo(){
+		$sql = "SELECT * from user_subject";
+		$q = $this->conn->prepare($sql);
+		$q -> execute();
+		return $q->fetchAll();
+	}
 	
 	public function setUserSubject($username, $subject) {
 		$sql = "INSERT INTO user_subject (username, subject)
@@ -118,6 +125,15 @@ class dataAccountManagement extends connection {
 		$q = $this->conn->prepare($sql);
         $q->bindValue(':user_child', $child, PDO::PARAM_STR);
         $q->bindValue(':user_parent', $parent, PDO::PARAM_STR);
+		$q->execute();
+		return true;
+	}
+    
+    public function delVak($username,$subject) {
+		$sql = "DELETE FROM user_subject WHERE username = :username AND subject = :subject";
+		$q = $this->conn->prepare($sql);
+        $q->bindValue(':username', $username, PDO::PARAM_STR);
+        $q->bindValue(':subject', $subject, PDO::PARAM_STR);
 		$q->execute();
 		return true;
 	}
