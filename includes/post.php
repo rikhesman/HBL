@@ -14,7 +14,7 @@ $_SESSION['message'] = "";
  if (Input::has('login')) accountManagement::login();	
  if (Input::has('save_parentship')) accountManagement::parenthood(); 
  if (Input::has('deleteUser')) accountManagement::deleteUser();
- 
+  if (Input::has('deleteParent')) accountManagement::deleteParent();
 // Review
  if (Input::has('save_review')) reviewManagement::reviewRegister();
  if (Input::has('tocontact')) contactManagement::contactform2();

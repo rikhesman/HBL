@@ -82,7 +82,14 @@ class dataAccountManagement extends connection {
 	}
 	
 	public function getInfo(){
-		$sql = "SELECT * from users WHERE rol = 'Ouder' OR rol = 'Kind'";
+		$sql = "SELECT * from users WHERE rol = 'Ouder' OR rol = 'Kind' ORDER BY l_name";
+		$q = $this->conn->prepare($sql);
+		$q -> execute();
+		return $q->fetchAll();
+	}
+    
+    public function kindInfo(){
+		$sql = "SELECT * from parent ORDER BY 'user_child'";
 		$q = $this->conn->prepare($sql);
 		$q -> execute();
 		return $q->fetchAll();
@@ -102,6 +109,15 @@ class dataAccountManagement extends connection {
 		$sql = "DELETE FROM users WHERE username = :username";
 		$q = $this->conn->prepare($sql);
 		$q->bindValue(':username', $user, PDO::PARAM_STR);
+		$q->execute();
+		return true;
+	}
+    
+	public function delParent($child,$parent) {
+		$sql = "DELETE FROM parent WHERE user_child = :user_child AND user_parent = :user_parent";
+		$q = $this->conn->prepare($sql);
+        $q->bindValue(':user_child', $child, PDO::PARAM_STR);
+        $q->bindValue(':user_parent', $parent, PDO::PARAM_STR);
 		$q->execute();
 		return true;
 	}
