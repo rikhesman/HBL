@@ -70,13 +70,13 @@ if($_SESSION['user']['role'] == 'admin') {
                         <a href="subject.php"><span class="glyphicon glyphicon-list-alt"></span> Vakken</a>
                     </li>
                     <li <?php if($file == 'upload'){?> class="active" <?php } ?>>
-                        <a href="upload.php"><span class="glyphicon glyphicon-upload"></span> Slideshow</a>
+                        <a href="upload.php"><span class="glyphicon glyphicon-picture"></span> Slideshow</a>
                     </li>
                     <li <?php if($file == 'userInfo'){?> class="active" <?php } ?>>
-                        <a href="userInfo.php"><span class="glyphicon glyphicon-apple"></span> Gebruikers</a>
+                        <a href="userInfo.php"><span class="glyphicon glyphicon-user"></span> Gebruikers</a>
                     </li>
                      <li <?php if($file == 'download'){?> class="active" <?php } ?>>
-                        <a href="download.php"><span class="glyphicon glyphicon-upload"></span> Download</a>
+                        <a href="download.php"><span class="glyphicon glyphicon-download-alt"></span> Download</a>
                     </li>
                     <!-- <li <?php if($file == 'lease_article'){?> class="active" <?php } ?>>
                         <a href="lease_article.php"><i class="fa fa-fw fa-shopping-cart"></i> Verhuur beheer</a>
