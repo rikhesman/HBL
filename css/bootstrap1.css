@@ -1,4 +1,4 @@
-﻿
+
 /* Remove the navbar's default margin-bottom and rounded borders */
 body {
 	padding-top: 50px;
@@ -97,7 +97,7 @@ body {
 
   }
 
-  /* Hide the carousel text when the screen is less than 600 pixels wide    
+   Hide the carousel text when the screen is less than 600 pixels wide    
 
 .table thead tr th{
     text-align: center;
