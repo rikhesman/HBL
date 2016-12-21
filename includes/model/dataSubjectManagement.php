@@ -29,4 +29,18 @@ class dataSubjectManagement extends connection {
         $q -> execute();
         return true;
     }
+    
+    public function removeUserSubject($username, $subjects) {
+        $query = "DELETE FROM user_subject
+        WHERE username = '" . $username;
+        foreach ($subjects as $subject) {
+            $query .= "' AND subject <> '" . $subject;
+        }
+        $query .= "'";
+        
+        $sql = $query;
+        $q = $this -> conn -> prepare($sql);
+        $q -> execute();
+        return true;
+    }
 }

@@ -27,7 +27,8 @@ class subjectManagement
             $register = new dataSubjectManagement;
             $register->addUserSubject($username, $subject);
         }
-        //$register = new dataSubjectManagement;
+        $register = new dataSubjectManagement;
+        $register->removeUserSubject($username, $subjects);
 
     }
 }
