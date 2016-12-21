@@ -44,11 +44,21 @@ include('build/header.php');
                 </div><div class="form-group">
                 Rol
                 <span class="error">*</span>
-                <select required class="form-control" name="rol">
-                	<option  value="" disabled Selected>Kies een rol</option>
-                	<option <?php echo ($_POST['rol']=='Kind'  ? 'selected': '') ?> value="Kind">Kind</option>
-                	<option <?php echo ($_POST['rol']=='Ouder'  ? 'selected': '') ?> value="Ouder">Ouder</option>
-                </select>
+           
+                
+    
+ 
+                <?php
+
+                echo '
+                <select name="rol">
+                <option  '. ($_POST['rol']==='' ? 'selected' : '') .' disabled value="">Kies een rol</option>
+                <option '. ($_POST['rol']==='Kind' ? 'selected' : '') .'  value="Kind">Kind</option>
+                <option '. ($_POST['rol']==='Ouder' ? 'selected' : '') .'  value="Ouder">Ouder</option>
+                </select>';
+                     
+                 ?>
+            
                 </div><div class="form-group">
                 Email
                 <input type="text" class="form-control" placeholder="Vul hier in" name="email"		value="<?php echo (isset($_POST['email']) ? $_POST['email'] : '') ?>">

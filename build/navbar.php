@@ -24,6 +24,7 @@ if(empty($_SESSION['user']['role'])) {
                 <?php if($_SESSION['user']['role'] == 'Ouder' || $_SESSION['user']['role'] == 'Kind'){ ?>
       	        <li <?php if($file == 'calendar'){?> class="active" <?php } ?>><a href="calendar.php">Agenda</a></li>
       	         <li <?php if($file == 'download'){?> class="active" <?php } ?>><a href="download.php">Downloads</a></li>
+                <li <?php if($file == 'question'){?> class="active" <?php } ?>><a href="question.php">Vraag</a></li>
       	        <?php } ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
