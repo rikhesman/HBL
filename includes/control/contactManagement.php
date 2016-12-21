@@ -152,43 +152,43 @@ class contactManagement
                                               }
                                            } else {
                                                 $_SESSION['alert'] = true; 
-                    $_SESSION['message'] = '<div class="alert alert-danger">Comment is verplicht</div>';  
+                    $_SESSION['message'] = '<div class="alert alert-danger">Bericht mag niet leeg zijn</div>';  
                                            }
                                        } else {
                                          $_SESSION['alert'] = true; 
-                    $_SESSION['message'] = '<div class="alert alert-danger">Comment is verplicht</div>'; 
+                    $_SESSION['message'] = '<div class="alert alert-danger">Bericht mag niet leeg zijn</div>'; 
                                        }
                                    } else {
                                       $_SESSION['alert'] = true; 
-                      $_SESSION['message'] = '<div class="alert alert-danger">Subject is verplicht</div>';  
+                      $_SESSION['message'] = '<div class="alert alert-danger">Onderwerp mag niet leeg zijn</div>';  
                                    }
                                 } else {
                                    $_SESSION['alert'] = true; 
-                      $_SESSION['message'] = '<div class="alert alert-danger">Subject is verplicht</div>';  
+                      $_SESSION['message'] = '<div class="alert alert-danger">Onderwerp mag niet leeg zijn</div>';  
                                 }
                             } else {
                                  $_SESSION['alert'] = true; 
-                  $_SESSION['message'] = '<div class="alert alert-danger">Email is verplicht</div>'; 
+                  $_SESSION['message'] = '<div class="alert alert-danger">Email mag niet leeg zijn</div>'; 
                             }
                         } else {
                            $_SESSION['alert'] = true; 
-                  $_SESSION['message'] = '<div class="alert alert-danger">Email is verplicht</div>'; 
+                  $_SESSION['message'] = '<div class="alert alert-danger">Email mag niet leeg zijn</div>'; 
                         }
                     } else {
                         $_SESSION['alert'] = true; 
-                $_SESSION['message'] = '<div class="alert alert-danger">Achternaam is verplicht</div>';
+                $_SESSION['message'] = '<div class="alert alert-danger">Achternaam mag niet leeg zijn</div>';
                     }
                 } else {
                     $_SESSION['alert'] = true; 
-                $_SESSION['message'] = '<div class="alert alert-danger">Achternaam is verplicht</div>';
+                $_SESSION['message'] = '<div class="alert alert-danger">Achternaam mag niet leeg zijn</div>';
                 }
             } else {
                  $_SESSION['alert'] = true; 
-            $_SESSION['message'] = '<div class="alert alert-danger">Naam is verplicht!</div>'; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Naam mag niet leeg zijn</div>'; 
             }
         } else {
             $_SESSION['alert'] = true; 
-            $_SESSION['message'] = '<div class="alert alert-danger">Naam is verplicht</div>'; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Naam mag niet leeg zijn</div>'; 
         }
     }
 
