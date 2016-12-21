@@ -30,7 +30,7 @@
                         Vakken van <?php echo $_SESSION['subjectUser']; ?>:<br>
                         <?php
                         foreach (subjectManagement::subject() as $subject) {
-                            echo '<input type="checkbox" name="' . $subject['name'] . '" value="' . $subject['name'] . '"';
+                            echo '<input type="checkbox" name="subject[]" value="' . $subject['name'] . '"';
                             foreach (subjectManagement::getUserSubject($_SESSION['userSubject']) as $check) {
                                 if ($subject['name'] == $check['subject']) {
                                     echo ' checked';

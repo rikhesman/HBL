@@ -18,9 +18,13 @@ class subjectManagement
     }
 
     public static function setUserSubject() {
-        $register = new dataSubjectManagement;
         $username = Input::get('username');
-        $subject = Input::get('subject');
+        $subjects = Input::get('subject[]');
+        foreach ($subjects as $subject) {
+            $register = new dataSubjectManagement;
+            $register->setUserSubject($username, $subject);
+        }
+        $register = new dataSubjectManagement;
 
         if ($register->setUserSubject($username, $subject)) {
             echo "Vak succesvol gekoppeled";
