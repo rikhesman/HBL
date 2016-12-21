@@ -66,8 +66,17 @@ if($_SESSION['user']['role'] == 'admin') {
                     <li <?php if($file == 'ouderschap'){?> class="active" <?php } ?>>
                         <a href="ouderschap.php"><span class="glyphicon glyphicon-magnet"></span> Ouderschap</a>
                     </li>
-                    <li <?php if($file == 'form'){?> class="active" <?php } ?>>
-                        <a href="subject.php"><span class="glyphicon glyphicon-magnet"></span> Vakken</a>
+                    <li <?php if($file == 'subject'){?> class="active" <?php } ?>>
+                        <a href="subject.php"><span class="glyphicon glyphicon-list-alt"></span> Vakken</a>
+                    </li>
+                    <li <?php if($file == 'upload'){?> class="active" <?php } ?>>
+                        <a href="upload.php"><span class="glyphicon glyphicon-upload"></span> Slideshow</a>
+                    </li>
+                    <li <?php if($file == 'userInfo'){?> class="active" <?php } ?>>
+                        <a href="userInfo.php"><span class="glyphicon glyphicon-apple"></span> Gebruikers</a>
+                    </li>
+                     <li <?php if($file == 'download'){?> class="active" <?php } ?>>
+                        <a href="download.php"><span class="glyphicon glyphicon-upload"></span> Download</a>
                     </li>
                     <!-- <li <?php if($file == 'lease_article'){?> class="active" <?php } ?>>
                         <a href="lease_article.php"><i class="fa fa-fw fa-shopping-cart"></i> Verhuur beheer</a>

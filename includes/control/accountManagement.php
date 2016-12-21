@@ -17,21 +17,71 @@ class accountManagement
 		$dys       = Input::get('dys');
 		$comment   = Input::get('comment');
 		$date      = Input::get('join_date');
-
-			
-		$password = password_hash($password, PASSWORD_DEFAULT);
-	
-		if ($register->setRegister($username,$password,$fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date)) {
-			 $_SESSION['alert'] = true; 
-             $_SESSION['message'] = '<div class="alert alert-success">Gebruiker succesvol opgeslagen!</div>';
-            //echo "Gebruiker succesvol opgeslagen";
-		} else {
+        $class     = Input::get('class');
+        $school    = Input::get('school');
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        
+        if(!empty(input::get("username"))) {
+            if(preg_match("/^[a-zA-Z ]*$/",$username)) {
+                if (!empty(input::get("password"))) {
+                   if(!empty(input::get("f_name"))) {
+                     if(preg_match("/^[a-zA-Z ]*$/",$fname)) {
+                       if(!empty(input::get("l_name"))) {
+                          if(preg_match("/^[a-zA-Z ]*$/",$lname)) {
+                                if ($register->setRegister($username,$password,$fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date,$class,$school)) {
+			                     $_SESSION['alert'] = true; 
+                                 $_SESSION['message'] = '<div class="alert alert-success">Gebruiker succesvol opgeslagen!</div>';}
+                                $_POST['username'] = $_POST['password'] = $_POST['f_name'] = $_POST['l_name'] = $_POST['insertion'] = $_POST['rol'] = $_POST['email'] = $_POST['tel'] = $_POST['dys'] = $_POST['comment'] = $_POST['class'] = $_POST['school'] = $_POST['join_date'] = "";
+                          } else {
+                            $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Achternaam is verplicht</div>';  
+                          }
+                       } else {
+                        $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Achternaam is verplicht</div>';  
+                       }
+                     } else {
+                    $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Voornaam is verplicht</div>'; 
+                     }
+                   } else {
+                      $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Voornaam is verplicht</div>'; 
+                   }
+                } else {
+                   $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Wachtwoord is verplicht</div>';  
+                }
+            } else {
+               $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Gebruikersnaam is verplicht</div>';   
+            }
+        } else {
+            $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Gebruikersnaam is verplicht</div>'; 
+        }
+        
+        
+        
+         /*if ($register->setRegister($username,$password,$fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date)) {
+			                     $_SESSION['alert'] = true; 
+                                $_SESSION['message'] = '<div class="alert alert-success">!!!!!!Gebruiker succesvol opgeslagen!</div>';
+  
+		                          } else {
             
-			$_SESSION['alert'] = true; 
-             $_SESSION['message'] = '<div class="alert alert-danger">Error!</div>';
-		}			
-		
-	}
+			                             $_SESSION['alert'] = true; 
+                                        $_SESSION['message'] = '<div class="alert alert-danger">Error!</div>';
+				} */
+        
+		//if ($register->setRegister($username,$password,$fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date)) {
+		//	 $_SESSION['alert'] = true; 
+          // $_SESSION['message'] = '<div class="alert alert-success">!!!!!!Gebruiker succesvol opgeslagen!</div>';
+  
+		//} else {
+            
+			//$_SESSION['alert'] = true; 
+             //$_SESSION['message'] = '<div class="alert alert-danger">Error!</div>';
+				}
 	
 	public static function login()
 	{
@@ -48,6 +98,7 @@ class accountManagement
 			header('Location: admin/index.php');			
 
 		} else {
+            
              $_SESSION['alert'] = true; 
              $_SESSION['message'] = '<div class="alert alert-danger">Gebruikersnaam of wachtwoord verkeerd!</div>';
             
@@ -61,12 +112,12 @@ class accountManagement
         $role = Input::get('rol');
         
        
-		if ($rol->login($username,$role)) {
-			$_SESSION[$role] === "admin";
+		//if ($rol->login($username,$role)) {
+			//$_SESSION[$role] === "admin";
             //header("location: home.php");
-		} else {
-			echo "error";
-		}			
+		//} else {
+			//echo "error";
+		//}			
 	}
 	public static function getParents(){
 		$getOuder = new dataAccountManagement;
@@ -84,9 +135,11 @@ class accountManagement
 		$parent  	= Input::get('parent');
 		
 		if ($register->setParenthood($child,$parent)) {
-			echo "Gebruiker succesvol opgeslagen";
+			 $_SESSION['alert'] = true; 
+             $_SESSION['message'] = '<div class="alert alert-success">Kind aan Ouder gekoppeld!</div>';
 		} else {
-			echo "error";
+			 $_SESSION['alert'] = true; 
+             $_SESSION['message'] = '<div class="alert alert-danger">Error!</div>';
 		}			
 	}
 	
@@ -108,4 +161,20 @@ class accountManagement
 			echo "error;";
 		}
 	}
-}
+	
+	//Database zoekfunctie
+	public static function userInfo(){
+		$userInfo = new dataAccountManagement;
+		return $userInfo->getInfo();
+	}
+
+
+public static function deleteUser() {
+		$userDel = new dataAccountManagement;
+            if($userDel->delUser(Input::get('username'))) {
+                 $_SESSION['alert'] = true; 
+                 $_SESSION['message'] = '<div class="alert alert-success">Succesvol verwijderd!</div>';
+            }
+		}
+	}
+

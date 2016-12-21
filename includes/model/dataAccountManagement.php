@@ -6,11 +6,11 @@
 class dataAccountManagement extends connection {
 	
 	// Registreren
-	public function setRegister($username, $password, $fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date) {
-		$sql = "INSERT INTO users (username, password, f_name, insertion, l_name, rol, email, tel, dys, comment, join_date) 
-		VALUES (:username,:password, :f_name, :insertion, :l_name, :rol, :email, :tel, :dys, :comment, :join_date)"; 		
+	public function setRegister($username, $password, $fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date,$class,$school) {
+		$sql = "INSERT INTO users (username, password, f_name, insertion, l_name, rol, email, tel, dys, comment, join_date, class, school) 
+		VALUES (:username,:password, :f_name, :insertion, :l_name, :rol, :email, :tel, :dys, :comment, :join_date ,:class, :school)";
 		$q = $this -> conn -> prepare($sql);
-		$q -> bindValue(':username', $username, PDO::PARAM_STR);		
+		$q -> bindValue(':username', $username, PDO::CASE_LOWER);		
 		$q -> bindValue(':password', $password, PDO::PARAM_STR);		
 		$q -> bindValue(':f_name', $fname, PDO::PARAM_STR);
 		$q -> bindValue(':insertion', $insertion, PDO::PARAM_STR);	
@@ -20,9 +20,11 @@ class dataAccountManagement extends connection {
 		$q -> bindValue(':tel', $tel, PDO::PARAM_STR);	
 		$q -> bindValue(':dys', $dys, PDO::PARAM_STR);	
 		$q -> bindValue(':comment', $comment, PDO::PARAM_STR);	
-		$q -> bindValue(':join_date', $date, PDO::PARAM_STR);				
+		$q -> bindValue(':join_date', $date, PDO::PARAM_STR);
+        $q -> bindValue(':class', $class, PDO::PARAM_STR);
+        $q -> bindValue(':school', $school, PDO::PARAM_STR);
 		$q -> execute();
-		
+        
 		return true;
 	}
 	
@@ -79,6 +81,13 @@ class dataAccountManagement extends connection {
 		return true;
 	}
 	
+	public function getInfo(){
+		$sql = "SELECT * from users WHERE rol = 'Ouder' OR rol = 'Kind'";
+		$q = $this->conn->prepare($sql);
+		$q -> execute();
+		return $q->fetchAll();
+	}
+	
 	public function setUserSubject($username, $subject) {
 		$sql = "INSERT INTO user_subject (username, subject)
 		VALUES (:username, :subject)";
@@ -86,6 +95,14 @@ class dataAccountManagement extends connection {
 		$q -> bindValue(':username', $username, PDO::PARAM_STR);
 		$q -> bindValue(':subject', $subject, PDO::PARAM_STR);
 		$q -> execute();
+		return true;
+	}
+
+	public function delUser($user) {
+		$sql = "DELETE FROM users WHERE username = :username";
+		$q = $this->conn->prepare($sql);
+		$q->bindValue(':username', $user, PDO::PARAM_STR);
+		$q->execute();
 		return true;
 	}
 }
