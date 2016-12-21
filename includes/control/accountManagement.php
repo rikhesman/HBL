@@ -264,10 +264,24 @@ class accountManagement
 		return $userInfo->getInfo();
 	}
 
+    
+	public static function kindInfo(){
+		$kindInfo = new dataAccountManagement;
+		return $kindInfo->kindInfo();
+	}
 
 public static function deleteUser() {
 		$userDel = new dataAccountManagement;
             if($userDel->delUser(Input::get('username'))) {
+                 $_SESSION['alert'] = true; 
+                 $_SESSION['message'] = '<div class="alert alert-success">Succesvol verwijderd!</div>';
+            }
+		}
+    
+    public static function deleteParent() {
+		$parentDel = new dataAccountManagement;
+        //var_dump()
+            if($parentDel->delParent(Input::get('child'),Input::get('parent'))) {
                  $_SESSION['alert'] = true; 
                  $_SESSION['message'] = '<div class="alert alert-success">Succesvol verwijderd!</div>';
             }
