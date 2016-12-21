@@ -21,6 +21,105 @@ class accountManagement
         $school    = Input::get('school');
         $password = password_hash($password, PASSWORD_DEFAULT);
         
+        //var_dump(input::get('rol'));
+        //exit;
+        if(!empty(input::get("username"))) {
+          if(preg_match("/^[a-zA-Z ]*$/",$username)){
+            if(!empty(input::get("password"))) {
+                if (!empty(input::get("f_name"))){
+                   if(preg_match("/^[a-zA-Z ]*$/",$fname)) {
+                     if(preg_match("/^[a-zA-Z ]*$/",$insertion)) {
+                      if(!empty(input::get("l_name"))) {
+                        if(preg_match("/^[a-zA-Z ]*$/",$lname)) {
+                          if (preg_match("/^[a-zA-Z0-9 ]*$/",$class)) {
+                           if(preg_match("/^[a-zA-Z ]*$/",$school)) {
+                              if(filter_var($email, FILTER_VALIDATE_EMAIL) || empty(input::get("email")))  {
+                                //$_SESSION['alert'] = true; 
+                                //$_SESSION['message'] = '<div class="alert alert-danger">email is goed</div>';
+                                   if(preg_match("/^[0-9]*$/",$tel)) {
+                                      if ($register->setRegister($username,$password,$fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date,$class,$school)) {
+			                                         $_SESSION['alert'] = true; 
+                                                    $_SESSION['message'] = '<div class="alert alert-success">Gebruiker succesvol opgeslagen!</div>';}
+                                       
+                                   } else {
+                                    $_SESSION['alert'] = true; 
+                                $_SESSION['message'] = '<div class="alert alert-danger">telnr is verkeerd</div>'; 
+                                   }
+                               } else {
+                                 $_SESSION['alert'] = true; 
+                                $_SESSION['message'] = '<div class="alert alert-danger">email is verkeerd</div>';  
+                               } 
+                           } else {
+                    $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">School is verkeerd</div>';
+                           }  
+                          }  else {
+                               $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">klas is verkeerd</div>'; 
+                          }
+                        }  else {
+                             $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Achternaam is verkeerd</div>';   
+                        }
+                      } else {
+                       $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Achternaam is verplicht</div>';    
+                      }
+                     }  else {
+                       $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Tussenvoegsel is verkeerd</div>';  
+                     }
+                   } else {
+                     $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Voornaam is verkeerd</div>';  
+                   }
+                } else {
+                   $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Voornaam is verplicht</div>'; 
+                }
+            }  else {
+              $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Wachtwoord is verplicht</div>';  
+            }
+          } else {
+           $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Gebruikersnaam is verkeerd</div>';   
+          }
+        } else {
+         $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Gebruikersnaam is verplicht</div>';   
+        }
+        
+        /*
+        
+        if(preg_match("/^[a-zA-Z ]*$/",$insertion)) {
+           if (preg_match("/^[a-zA-Z ]*$/",$class)) {
+              if(preg_match("/^[a-zA-Z ]*$/",$school)) {
+                 if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    if (preg_match("/^[a-zA-Z ]*$/",$tel)) {
+                        
+                    } else {
+                        $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">telis verplicht</div>';  
+                    }
+                 } else {
+                   $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">email is verplicht</div>';    
+                 }
+              } else {
+                 $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">school is verplicht</div>';  
+              }
+           } else {
+             $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">klas is verplicht</div>';    
+           }
+        } else {
+            $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">tussenvoegsel is verplicht</div>'; 
+        }
+        
+        
         if(!empty(input::get("username"))) {
             if(preg_match("/^[a-zA-Z ]*$/",$username)) {
                 if (!empty(input::get("password"))) {
@@ -28,10 +127,7 @@ class accountManagement
                      if(preg_match("/^[a-zA-Z ]*$/",$fname)) {
                        if(!empty(input::get("l_name"))) {
                           if(preg_match("/^[a-zA-Z ]*$/",$lname)) {
-                                if ($register->setRegister($username,$password,$fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date,$class,$school)) {
-			                     $_SESSION['alert'] = true; 
-                                 $_SESSION['message'] = '<div class="alert alert-success">Gebruiker succesvol opgeslagen!</div>';}
-                                $_POST['username'] = $_POST['password'] = $_POST['f_name'] = $_POST['l_name'] = $_POST['insertion'] = $_POST['rol'] = $_POST['email'] = $_POST['tel'] = $_POST['dys'] = $_POST['comment'] = $_POST['class'] = $_POST['school'] = $_POST['join_date'] = "";
+                                
                           } else {
                             $_SESSION['alert'] = true; 
             $_SESSION['message'] = '<div class="alert alert-danger">Achternaam is verplicht</div>';  
@@ -168,6 +264,16 @@ class accountManagement
 		return $userInfo->getInfo();
 	}
 
+    
+	public static function kindInfo(){
+		$kindInfo = new dataAccountManagement;
+		return $kindInfo->kindInfo();
+	}
+    
+    public static function vakInfo(){
+		$vakInfo = new dataAccountManagement;
+		return $vakInfo->vakInfo();
+	}
 
 public static function deleteUser() {
 		$userDel = new dataAccountManagement;
@@ -176,5 +282,26 @@ public static function deleteUser() {
                  $_SESSION['message'] = '<div class="alert alert-success">Succesvol verwijderd!</div>';
             }
 		}
+    
+    public static function deleteParent() {
+		$parentDel = new dataAccountManagement;
+        //var_dump()
+            if($parentDel->delParent(Input::get('child'),Input::get('parent'))) {
+                 $_SESSION['alert'] = true; 
+                 $_SESSION['message'] = '<div class="alert alert-success">Succesvol verwijderd!</div>';
+            }
+		}
+    
+     public static function deleteVak() {
+		$vakDel = new dataAccountManagement;
+        //var_dump()
+            if($vakDel->delVak(Input::get('username'),Input::get('subject'))) {
+                 $_SESSION['alert'] = true; 
+                 $_SESSION['message'] = '<div class="alert alert-success">Succesvol verwijderd!</div>';
+            }
+		}
+    
 	}
+
+
 

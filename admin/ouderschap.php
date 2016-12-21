@@ -37,6 +37,44 @@
                     </div>
                     <input type="submit" class="btn btn-primary" name="save_parentship" value="Koppelen">
                 </form>
+                
+                
+                
+          <table class="table">
+        <thead>
+        <th>Gebruikersnaam Kind</th>
+        <th>Gebruikersnaam Ouder</th>
+        <th>Verwijderen</th>
+        </thead>
+      <tbody>
+<?php	
+
+	    
+ foreach(accountManagement::kindInfo() as $user)
+{
+	echo'
+    <tr>
+    <td>'.$user['user_child'].'</td>
+    <td>'.$user['user_parent'].'</td>  
+
+        <td>
+    		<form method="post">				
+				<input type="hidden" name="child" value="'. $user['user_child'] .'">
+                <input type="hidden" name="parent" value="'. $user['user_parent'] .'">
+				<button type="submit" name="deleteParent" value="Verwijder" class="btn-cms btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+			</form>
+			</td>
+       </tr> 
+        ';
+      
+}
+?>
+
+ 
+</tbody>
+</table>        
+                
+                
             </div>
         </div>				
     </body>

@@ -20,12 +20,12 @@ class dataSubjectManagement extends connection {
         return $q->fetchAll();
     }
     
-    public function setUserSubject($username, $subject) {
+    public function addUserSubject($username, $subject) {
         $sql = "INSERT INTO user_subject (username, subject)
-        VALUES (:username, :subject)";
+        VALUES ('" . $username . "', '" . $subject . "'";
         $q = $this -> conn -> prepare($sql);
-        $q -> bindValue(':username', $username, PDO::PARAM_STR);
-        $q -> bindValue(':subject', $subject, PDO::PARAM_STR);
+        //$q -> bindValue(':username', $username, PDO::PARAM_STR);
+        //$q -> bindValue(':subject', $subject, PDO::PARAM_STR);
         $q -> execute();
         return true;
     }
