@@ -23,9 +23,11 @@ class subjectManagement
     public static function setUserSubject() {
         $username = Input::get('username');
         $subjects = Input::get('subject');
-        foreach ($subjects as $subject) {
-            $register = new dataSubjectManagement;
-            $register->addUserSubject($username, $subject);
+        if (!empty($subjects)) {
+            foreach ($subjects as $subject) {
+                $register = new dataSubjectManagement;
+                $register->addUserSubject($username, $subject);
+            }
         }
         $register = new dataSubjectManagement;
         $register->removeUserSubject($username, $subjects);

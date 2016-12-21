@@ -33,8 +33,10 @@ class dataSubjectManagement extends connection {
     public function removeUserSubject($username, $subjects) {
         $query = "DELETE FROM user_subject
         WHERE username = '" . $username;
-        foreach ($subjects as $subject) {
-            $query .= "' AND subject <> '" . $subject;
+        if (!empty($subjects)) {
+            foreach ($subjects as $subject) {
+                $query .= "' AND subject <> '" . $subject;
+            }
         }
         $query .= "'";
         
