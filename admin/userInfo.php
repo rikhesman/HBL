@@ -4,7 +4,7 @@ include('build/header.php');
 
 
 <div class="row">
-        <div class="col-md-2"><!--Linker kant--></div>
+        <div class="col-md-1"><!--Linker kant--></div>
   <div class="col-md-6">
     
     <h1>Informatie Gebruikers</h1>
