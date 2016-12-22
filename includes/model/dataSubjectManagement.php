@@ -27,7 +27,6 @@ class dataSubjectManagement extends connection {
         $q -> bindValue(':username', $username, PDO::PARAM_STR);
         $q -> bindValue(':subject', $subject, PDO::PARAM_STR);
         $q -> execute();
-        return true;
     }
     
     public function removeUserSubject($username, $subjects) {
@@ -43,6 +42,5 @@ class dataSubjectManagement extends connection {
         $sql = $query;
         $q = $this -> conn -> prepare($sql);
         $q -> execute();
-        return true;
     }
 }
