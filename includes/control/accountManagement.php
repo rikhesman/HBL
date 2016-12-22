@@ -20,9 +20,14 @@ class accountManagement
         $class     = Input::get('class');
         $school    = Input::get('school');
         $password = password_hash($password, PASSWORD_DEFAULT);
+        $check = true;
+       foreach (accountManagement::userInfo() as $user) {
+            if ($user['username'] == $username) {
+                $check = FALSE;
+            }
+            }
         
-        //var_dump(input::get('rol'));
-        //exit;
+        if ($check) {
         if(!empty(input::get("username"))) { // kijkt of gebruikersnaam niet leeg is
           if(preg_match("/^[a-zA-Z ]*$/",$username)){ // kijkt of er geen rare tekens in gebruikersnaam staan
             if(!empty(input::get("password"))) { // kijkt of wachtwoord leeg is
@@ -39,9 +44,9 @@ class accountManagement
                                    if(preg_match("/^[0-9]*$/",$tel)) { // kijkt of telefoonnummer wel uit cijfers bestaan
                                       if ($register->setRegister($username,$password,$fname,$insertion,$lname,$rol,$email,$tel,$dys,$comment,$date,$class,$school)) {
 			                                         $_SESSION['alert'] = true; 
-                                                    $_SESSION['message'] = '<div class="alert alert-success">Gebruiker succesvol opgeslagen!</div>';}
+                                                    $_SESSION['message'] = '<div class="alert alert-success">Gebruiker succesvol opgeslagen!</div>';
                                        // maakt alle variablen leeg nadat de gebruiker succesvol is opgeslagen
-                                       $_POST['username'] = $_POST['password'] = $_POST['f_name'] = $_POST['insertion'] = $_POST['l_name'] = $_POST['rol'] = $_POST['email'] = $_POST['tel'] = $_POST['dys'] = $_POST['comment'] = $_POST['join_date'] = $_POST['class'] = $_POST['school'] = "";
+                                       $_POST['username'] = $_POST['password'] = $_POST['f_name'] = $_POST['insertion'] = $_POST['l_name'] = $_POST['rol'] = $_POST['email'] = $_POST['tel'] = $_POST['dys'] = $_POST['comment'] = $_POST['join_date'] = $_POST['class'] = $_POST['school'] = "";}
                                        
                                    } else { // plaatst alert over verkeerd ingevuld
                                     $_SESSION['alert'] = true; 
@@ -91,9 +96,13 @@ class accountManagement
          $_SESSION['alert'] = true; 
             $_SESSION['message'] = '<div class="alert alert-danger">Gebruikersnaam is verplicht</div>';   
         }
-        
-   
-				}
+        } else {
+             $_SESSION['alert'] = true;
+            $_SESSION['message'] = '<div class="alert alert-danger form-group">Gebruikersnaam is al in gebruik</div>';
+        }
+
+    }
+
 	
 	public static function login()
 	{
@@ -161,9 +170,11 @@ class accountManagement
 		$subject	= Input::get('subject');
 		// geeft alert als vak goed is gekoppeld 
 		if ($register->setUserSubject($username, $subject)) {
-			echo "Vak succesvol gekoppeled";
+			$_SESSION['alert'] = true; 
+             $_SESSION['message'] = '<div class="alert alert-success">Vak succesvol gekoppeld!</div>';
 		} else {
-			echo "error;";
+			$_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-danger">Error!</div>';
 		}
 	}
 	
