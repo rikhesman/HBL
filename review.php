@@ -15,7 +15,9 @@ include('includes/autoloader.php');
 	  <div class="col-md-4 center">
 	  	<form method="post" accept-charset="utf-8">		
 	        <?php
-	        if($_SESSION['alert']) { 
+            // laad het review voor de ouders als ze ingelogd zijn.
+	        if($_SESSION['alert']) {
+
 	           echo $_SESSION['message']; 
 	        } 
 	        ?>
@@ -53,7 +55,9 @@ include('includes/autoloader.php');
 	  	</form>    
 	  </div>
    <div class="col-md-8">		
-<?php if($_SESSION['user']['role'] == 'gast' ){      
+<?php 
+       // laad de reviews van de ouders op de review pagina zien als je bezoeker van de website bent
+       if($_SESSION['user']['role'] == 'gast' ){      
 	        	echo '<h4>U moet ingelogd zijn om een review te schrijven!</h4>';
 			}
 	        ?>
