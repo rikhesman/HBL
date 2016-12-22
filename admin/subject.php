@@ -30,7 +30,7 @@
                 <?php } else { ?>               
                 <form method="post" accept-charset="utf-8">
                         <h4>Vakken van <?php echo $_SESSION['subjectUser']; ?>:</h4>
-                    <div class="form-group checkbox">
+                    <div class="form-group">
                         <?php
                         $userSubject = subjectManagement::getUserSubject($_SESSION['subjectUser']);
                         foreach (subjectManagement::subject() as $subject) {
