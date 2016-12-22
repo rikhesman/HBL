@@ -22,9 +22,7 @@
                 <br>
                 <?php if (empty($_SESSION['subjectUser'])) { ?>
                 <p>Selecteer een kind.</p>
-                <?php
-                } else {
-                ?>               
+                <?php } else { ?>               
                 <form method="post" accept-charset="utf-8">
                     <div class="form-group">
                         Vakken van <?php echo $_SESSION['subjectUser']; ?>:<br>
@@ -37,7 +35,7 @@
                                     echo ' checked';
                                 }
                             }
-                            echo '> ' . $subject['name'] . '<br>';
+                            echo '> ' . $subject['name'] . ' <br>';
                         }
                         ?>
                     </div>
