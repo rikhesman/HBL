@@ -269,6 +269,11 @@ class accountManagement
 		$kindInfo = new dataAccountManagement;
 		return $kindInfo->kindInfo();
 	}
+    
+    public static function vakInfo(){
+		$vakInfo = new dataAccountManagement;
+		return $vakInfo->vakInfo();
+	}
 
 public static function deleteUser() {
 		$userDel = new dataAccountManagement;
@@ -286,5 +291,17 @@ public static function deleteUser() {
                  $_SESSION['message'] = '<div class="alert alert-success">Succesvol verwijderd!</div>';
             }
 		}
+    
+     public static function deleteVak() {
+		$vakDel = new dataAccountManagement;
+        //var_dump()
+            if($vakDel->delVak(Input::get('username'),Input::get('subject'))) {
+                 $_SESSION['alert'] = true; 
+                 $_SESSION['message'] = '<div class="alert alert-success">Succesvol verwijderd!</div>';
+            }
+		}
+    
 	}
+
+
 

@@ -36,6 +36,42 @@ include ('build/header.php');
 						</div>
 						<input type="submit" class="btn btn-primary" name="save_subject" value="Koppelen">
 					</form>
-					
+                
+                
+                
+                <table class="table">
+        <thead>
+        <th>Gebruikersnaam Kind</th>
+        <th>Vak</th>
+        <th>Verwijderen</th>
+        </thead>
+      <tbody>
+          
+<?php	
+
+	    
+ foreach(accountManagement::vakInfo() as $user)
+{
+	echo'
+    <tr>
+    <td>'.$user['username'].'</td>
+    <td>'.$user['subject'].'</td>  
+
+        <td>
+    		<form method="post">				
+				<input type="hidden" name="username" value="'. $user['username'] .'">
+                <input type="hidden" name="subject" value="'. $user['subject'] .'">
+				<button type="submit" name="deleteVak" value="Verwijder" class="btn-cms btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+			</form>
+			</td>
+       </tr> 
+        ';
+      
+}
+?>
+
+
+</tbody>
+</table>  				
 	</body>
 </html>
