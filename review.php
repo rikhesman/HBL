@@ -68,10 +68,13 @@ include('includes/autoloader.php');
 <?php 
 
        // laad de reviews van de ouders op de review pagina zien als je bezoeker van de website bent
-       if($_SESSION['user']['role'] == 'gast' ){      
+       if($_SESSION['user']['role'] == 'gast'){      
 
 	        	echo '<h4>U moet ingelogd zijn om een review te schrijven!</h4>';
 			}
+                        elseif ($_SESSION['user']['role'] == 'kind' ) {
+                            echo '<h4>Je moet een ouder zijn om een review te schrijven!</h4>';
+}
 	        ?>
 	        
 <?php
