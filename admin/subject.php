@@ -21,11 +21,11 @@
                 </form>
                 <br>
                 <?php if (empty($_SESSION['subjectUser'])) { ?>
-                <p>Selecteer een kind.</p>
+                <h4>Selecteer een kind.</h4>
                 <?php } else { ?>               
                 <form method="post" accept-charset="utf-8">
+                        <h4>Vakken van <?php echo $_SESSION['subjectUser']; ?>:</h4>
                     <div class="form-group checkbox">
-                        Vakken van <?php echo $_SESSION['subjectUser']; ?>:<br>
                         <?php
                         $userSubject = subjectManagement::getUserSubject($_SESSION['subjectUser']);
                         foreach (subjectManagement::subject() as $subject) {
