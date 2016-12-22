@@ -15,7 +15,9 @@ include('includes/autoloader.php');
 	  <div class="col-md-4 center">
 	  	<form method="post" accept-charset="utf-8">		
 	        <?php
+            // laad het review voor de ouders als ze ingelogd zijn.
 	        if($_SESSION['alert']) {
+
 	           echo $_SESSION['message']; 
 	        } 
 	        ?>
@@ -24,6 +26,7 @@ include('includes/autoloader.php');
 	      	 echo ' 
 	      	         
 	    	<h3>Schrijf hier uw review</h3>	
+                <p><span class="error">* Verplicht veld.</span></p>
 	    	<!-- Rating -->  	
 	    	
 	    	<fieldset class="rating form-control">
@@ -38,10 +41,10 @@ include('includes/autoloader.php');
 			    <input type="radio" id="star1half" name="rating" value="1.5" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
 			    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
 			    <input type="radio" id="starhalf" name="rating" value="0.5" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-			</fieldset>
+			<span class="error">*</span></fieldset>
 	    	 	
 	    	<div class="form-group">    
-		    	Review
+		    	<p>Review<span class="error">*</span></p>
 		    	<textarea name="review" class="form-control" placeholder="Geef ons uw mening" rows="8" cols="40"></textarea>	
 		    </div>
 		    <div class="form-group">
@@ -52,7 +55,9 @@ include('includes/autoloader.php');
 	  	</form>    
 	  </div>
    <div class="col-md-8">		
-<?php if($_SESSION['user']['role'] == 'gast' ){      
+<?php 
+       // laad de reviews van de ouders op de review pagina zien als je bezoeker van de website bent
+       if($_SESSION['user']['role'] == 'gast' ){      
 	        	echo '<h4>U moet ingelogd zijn om een review te schrijven!</h4>';
 			}
 	        ?>

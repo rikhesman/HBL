@@ -3,9 +3,9 @@ class questionManagement {
     public static function questionform() {
         $subject = input::get("subject");
         $content = input::get("content");
-        if(!empty(input::get("subject"))) {
-            if (preg_match("/^[a-zA-Z ]*$/",$subject)) {
-                if (!empty(input::get("content"))) {
+        if(!empty(input::get("subject"))) { // kijkt of onderwerp is ingevuld
+            if (preg_match("/^[a-zA-Z ]*$/",$subject)) { // kijkt of het onderwerp goed is ingevuld
+                if (!empty(input::get("content"))) { // kijkt of conent is ingevuld
                     if(input::get("content")) {
                         $message=
                             'Gebruikersnaam: ' . $_SESSION['user']['username'] . '<br />' .
@@ -38,21 +38,21 @@ class questionManagement {
                         $result = $mail->Send();		// zenden!  
                         $message = $result ? 'Successfully Sent!' : 'Sending Failed!';      
                         unset($mail);
-                        $_SESSION['alert'] = true;
+                        $_SESSION['alert'] = true; // mail is verstuurd alert word in het form weergegeven
                         $_SESSION['message'] = '<div class="alert alert-success">Bericht is verzonden!</div>';
-                    } else {
+                    } else { // plaatst een alert als het niet goed is ingevuld
                         $_SESSION['alert'] = true; 
                         $_SESSION['message'] = '<div class="alert alert-danger">Bericht is verplicht</div>';  
                     }
-                } else {
+                } else { // plaatst een alert als het leeg is
                     $_SESSION['alert'] = true; 
                     $_SESSION['message'] = '<div class="alert alert-danger">Bericht is verplicht</div>'; 
                 }
-            } else {
+            } else { // plaatst een alert als het niet goed in is ingevuld
                 $_SESSION['alert'] = true; 
                 $_SESSION['message'] = '<div class="alert alert-danger">Onderwerp is verplicht</div>';  
             }
-        } else {
+        } else { // plaatst een alert als het leeg is
             $_SESSION['alert'] = true; 
             $_SESSION['message'] = '<div class="alert alert-danger">Onderwerp is verplicht</div>';  
         }

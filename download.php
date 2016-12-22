@@ -16,7 +16,9 @@ include('includes/autoloader.php');
 	  
 	  </div>
    <div class="col-md-8">		
-<?php if($_SESSION['user']['role'] == 'Ouder' OR 'Kind'){      
+<?php 
+       // laad alle downloads zien die de beheerder plaats op de website
+       if($_SESSION['user']['role'] == 'Ouder' OR 'Kind'){      
 	        	
 ?>		
 	<table class="table">

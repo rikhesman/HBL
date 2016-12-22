@@ -11,7 +11,7 @@
             <div class="col-md-4">
                 <h3>Contact formulier "De bijlesjuf"</h3>
                 <p><span class="error">* Verplicht veld.</span></p>
-                <?php
+                <?php // laad de errors in het contactformulier zien
                 if($_SESSION['alert']) {
                     echo $_SESSION['message']; 
                 } ?>
