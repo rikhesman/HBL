@@ -18,7 +18,9 @@ if(empty($_SESSION['user']['role'])) {
             	<?php $file = basename($_SERVER['PHP_SELF'] , '.php'); ?>
                 <li <?php if($file == 'index'){?> class="active" <?php } ?>><a href="index.php">Home</a></li>
                 <li <?php if($file == 'information'){?> class="active" <?php } ?>><a href="information.php">Informatie</a></li>
+                <?php if($_SESSION['user']['role'] == 'gast'){ ?>
                 <li <?php if($file == 'contact'){?> class="active" <?php } ?>><a href="contact.php">Contact</a></li>
+                <?php } ?>
                 <li <?php if($file == 'review'){?> class="active" <?php } ?>><a href="review.php">Review</a></li>
 
                 <?php if($_SESSION['user']['role'] == 'Ouder' || $_SESSION['user']['role'] == 'Kind'){ ?>

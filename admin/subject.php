@@ -5,6 +5,11 @@
             </div>
             <div class="col-md-6">
                 <h1>Vak koppelen</h1>
+                <?php
+                if($_SESSION['alert']) {
+                    echo $_SESSION['message']; 
+                }
+                ?>    
                 <form method="post" accept-charset="utf-8">
                     <div class="form-group">
                         Kind

@@ -56,12 +56,12 @@ if($_SESSION['user']['role'] == 'admin') {
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <?php $file = basename($_SERVER['PHP_SELF'] , '.php'); ?>
-                    <li <?php if($file == 'index'){?> class="active" <?php } ?>>
-                        <a href="index.php"><span class="glyphicon glyphicon-home"></span> Startpagina</a>
-                    </li>
+                    <?php $file = basename($_SERVER['PHP_SELF'] , '.php'); ?>                    
+                    <li <?php if($file == 'userInfo'){?> class="active" <?php } ?>>
+                        <a href="userInfo.php"><span class="glyphicon glyphicon-home"></span> Gebruikers informatie</a>
+                    </li>                    
                     <li <?php if($file == 'form'){?> class="active" <?php } ?>>
-                        <a href="form.php"><span class="glyphicon glyphicon-user"></span> Inschrijven</a>
+                        <a href="form.php"><span class="glyphicon glyphicon-user"></span> Account aanmaken</a>
                     </li>
                     <li <?php if($file == 'ouderschap'){?> class="active" <?php } ?>>
                         <a href="ouderschap.php"><span class="glyphicon glyphicon-magnet"></span> Ouderschap</a>
@@ -71,10 +71,7 @@ if($_SESSION['user']['role'] == 'admin') {
                     </li>
                     <li <?php if($file == 'upload'){?> class="active" <?php } ?>>
                         <a href="upload.php"><span class="glyphicon glyphicon-picture"></span> Slideshow</a>
-                    </li>
-                    <li <?php if($file == 'userInfo'){?> class="active" <?php } ?>>
-                        <a href="userInfo.php"><span class="glyphicon glyphicon-user"></span> Gebruikers</a>
-                    </li>
+                    </li>                    
                      <li <?php if($file == 'download'){?> class="active" <?php } ?>>
                         <a href="download.php"><span class="glyphicon glyphicon-download-alt"></span> Download</a>
                     </li>

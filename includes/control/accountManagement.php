@@ -116,7 +116,7 @@ class accountManagement
 			$_SESSION['user']['username'] = Input::get('username');
 			$role = $login->getRole(Input::get('username'));				
 			$_SESSION['user']['role'] = $role[0]['rol'];				
-			header('Location: admin/index.php');			
+			header('Location: admin/userinfo.php');			
 
 		} else {
             
