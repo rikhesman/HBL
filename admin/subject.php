@@ -1,3 +1,4 @@
+
 <?php
 include ('build/header.php');
 ?>
@@ -8,7 +9,11 @@ include ('build/header.php');
 			<div class="col-md-6">
 				<h1>Vak koppelen</h1>
 				<form method="post" accept-charset="utf-8">
-					
+					<?php
+                    if($_SESSION['alert']) {
+                       echo $_SESSION['message']; 
+                    }
+                    ?>
 					<div class="form-group">
 						Kind
 						<select required class="form-control" name="username">
