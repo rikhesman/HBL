@@ -13,9 +13,9 @@ include('includes/autoloader.php');
 <div class="container-fluid">
   <div class="row"> 
 	 <?php 
-	 if($_SESSION['user']['role'] == 'gast' ){      
+	 if($_SESSION['user']['role'] == 'gast'|| $_SESSION['user']['role'] == 'Kind' ){      
 	        	echo '<div class="col-md-2 center">'; 
-			} else if($_SESSION['user']['role'] == 'Ouder' || $_SESSION['user']['role'] == 'Kind') {
+			} else if($_SESSION['user']['role'] == 'Ouder') {
 				echo '<div class="col-md-4 center">'; 
 			}
 	 
