@@ -12,7 +12,17 @@ include('includes/autoloader.php');
 <?php include('build/navbar.php'); ?>
 <div class="container-fluid">
   <div class="row"> 
-	  <div class="col-md-4 center">
+	 <?php 
+	 if($_SESSION['user']['role'] == 'gast' ){      
+	        	echo '<div class="col-md-2 center">'; 
+			} else if($_SESSION['user']['role'] == 'Ouder' || $_SESSION['user']['role'] == 'Kind') {
+				echo '<div class="col-md-4 center">'; 
+			}
+	 
+	 
+	 	
+	 	
+	 	?>
 	  	<form method="post" accept-charset="utf-8">		
 	        <?php
 	        if($_SESSION['alert']) {
@@ -52,7 +62,10 @@ include('includes/autoloader.php');
 	  	</form>    
 	  </div>
    <div class="col-md-8">		
-<?php if($_SESSION['user']['role'] == 'gast' ){      
+<?php 
+
+
+if($_SESSION['user']['role'] == 'gast' ){      
 	        	echo '<h4>U moet ingelogd zijn om een review te schrijven!</h4>';
 			}
 	        ?>
