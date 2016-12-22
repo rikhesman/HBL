@@ -72,7 +72,7 @@ include('includes/autoloader.php');
 
 	        	echo '<h4>U moet ingelogd zijn om een review te schrijven!</h4>';
 			}
-                        elseif ($_SESSION['user']['role'] == 'kind' ) {
+                        elseif ($_SESSION['user']['role'] == 'Kind' ) {
                             echo '<h4>Je moet een ouder zijn om een review te schrijven!</h4>';
 }
 	        ?>
