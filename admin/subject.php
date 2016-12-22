@@ -4,6 +4,9 @@
                 <!--Linker kant-->
             </div>
             <div class="col-md-6">
+            <?php if($_SESSION['alert']) {
+           			echo $_SESSION['message']; 
+			}?>    
                 <h1>Vak koppelen</h1>
                 <form method="post" accept-charset="utf-8">
                     <div class="form-group">
@@ -24,8 +27,8 @@
                 <p>Selecteer een kind.</p>
                 <?php } else { ?>               
                 <form method="post" accept-charset="utf-8">
-                    <div class="form-group checkbox">
-                        Vakken van <?php echo $_SESSION['subjectUser']; ?>:<br>
+                    <div class="form-group">
+                        <h4>Vakken van <?php echo $_SESSION['subjectUser']; ?>:</h4><br>
                         <?php
                         $userSubject = subjectManagement::getUserSubject($_SESSION['subjectUser']);
                         foreach (subjectManagement::subject() as $subject) {
