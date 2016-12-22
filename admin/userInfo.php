@@ -6,11 +6,12 @@ include('build/header.php');
 <div class="row">
         <div class="col-md-2"><!--Linker kant--></div>
   <div class="col-md-6">
-       <?php
+    
+    <h1>Informatie Gebruikers</h1>
+        <?php
 	    if($_SESSION['alert']) {
 	        echo $_SESSION['message']; 
 	    } ?>
-    <h1>Informatie Gebruikers</h1>
     <table class="table">
         <thead>
         <th>Gebruikersnaam</th>

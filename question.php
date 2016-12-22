@@ -11,7 +11,7 @@
             <div class="col-md-4">
                 <h3>Vragen formulier "De Bijlesjuf"</h3>
                 <p><span class="error">* Verplicht veld.</span></p>
-                <?php
+                <?php // laad de errors in het vragen formulier
                 if($_SESSION['alert']) {
                     echo $_SESSION['message']; 
                 } ?>

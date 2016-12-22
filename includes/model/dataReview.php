@@ -13,7 +13,7 @@ class dataReview extends connection {
 
        return true;
     }
-
+    // functie om het ophalen van de reviews voor de bezoekers en ouders
     public function getReview() {
         $sql = "SELECT * FROM review ORDER BY rev_date DESC";
         $q = $this->conn->prepare($sql);

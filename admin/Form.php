@@ -78,7 +78,7 @@ include('build/header.php');
                 <input type="date" required class="form-control" placeholder="dd/mm/jjjj" name="join_date" 	value="<?php echo (isset($_POST['join_date']) ? $_POST['join_date'] : '') ?>">
                 </div><div class="form-group">
                 Extra opmerkingen 
-                <textarea rows="5" class="form-control" placeholder="Vul hier in" cols="22" name="comment"></textarea>
+                <textarea rows="5" class="form-control" placeholder="Vul hier in" cols="22" name="comment"><?php echo (isset($_POST['comment']) ? $_POST['comment'] : '') ?></textarea>
                 </div><div class="form-group">
                 
                 

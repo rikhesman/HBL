@@ -31,6 +31,8 @@ class downloadManagement {
 		$file = new dataDownload;		
 		if($file -> deleteDownload(Input::get('file'))) {
 			unlink('../data/' . Input::get('file'));
+            $_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-success">Bestand succesvol verwijderd</div>';
 		} else {
 			$_SESSION['alert'] = true; 
             $_SESSION['message'] = '<div class="alert alert-danger">Er is iets fout gegaan!</div>';
