@@ -16,7 +16,7 @@ include('includes/autoloader.php');
     <div class="col-md-4">
     	<div class="panel panel-default login">
     	<div class="panel-body">
-             <h3>Inloggen op de website van HBL</h3>
+             <h3>Inloggen op "De Bijlesjuf"</h3>
             <p><span class="error">* Verplicht veld.</span></p>
              <?php // laad de errors in het inlogscherm
         if($_SESSION['alert']) {

@@ -27,7 +27,10 @@ class subjectManagement
             foreach ($subjects as $subject) {
                 $register = new dataSubjectManagement;
                 $register->addUserSubject($username, $subject);
-            }
+            } 
+        } else {
+        	$_SESSION['alert'] = true; 
+            $_SESSION['message'] = '<div class="alert alert-success">Er is een fout opgetreden!</div>';
         }
         $register = new dataSubjectManagement;
         $register->removeUserSubject($username, $subjects);
