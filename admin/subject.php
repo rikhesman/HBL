@@ -24,7 +24,7 @@
                 <p>Selecteer een kind.</p>
                 <?php } else { ?>               
                 <form method="post" accept-charset="utf-8">
-                    <div class="form-group">
+                    <div class="form-group checkbox">
                         Vakken van <?php echo $_SESSION['subjectUser']; ?>:<br>
                         <?php
                         $userSubject = subjectManagement::getUserSubject($_SESSION['subjectUser']);
