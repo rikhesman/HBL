@@ -1,4 +1,6 @@
-<?php include('includes/autoloader.php'); ?> 
+<?php include('includes/autoloader.php');
+if($_SESSION['user']['role'] == 'Ouder' || $_SESSION['user']['role'] == 'Kind' ) {
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,3 +25,10 @@
 
 </body>
 </html>
+
+<?php	
+} else {
+	header('location: ./index.php');
+}
+
+?>
