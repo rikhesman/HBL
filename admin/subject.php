@@ -4,10 +4,12 @@
                 <!--Linker kant-->
             </div>
             <div class="col-md-6">
-            <?php if($_SESSION['alert']) {
-           			echo $_SESSION['message']; 
-			}?>    
                 <h1>Vak koppelen</h1>
+                <?php
+                if($_SESSION['alert']) {
+                    echo $_SESSION['message']; 
+                }
+                ?>    
                 <form method="post" accept-charset="utf-8">
                     <div class="form-group">
                         Kind
@@ -24,11 +26,11 @@
                 </form>
                 <br>
                 <?php if (empty($_SESSION['subjectUser'])) { ?>
-                <p>Selecteer een kind.</p>
+                <h4>Selecteer een kind.</h4>
                 <?php } else { ?>               
                 <form method="post" accept-charset="utf-8">
+                        <h4>Vakken van <?php echo $_SESSION['subjectUser']; ?>:</h4>
                     <div class="form-group">
-                        <h4>Vakken van <?php echo $_SESSION['subjectUser']; ?>:</h4><br>
                         <?php
                         $userSubject = subjectManagement::getUserSubject($_SESSION['subjectUser']);
                         foreach (subjectManagement::subject() as $subject) {

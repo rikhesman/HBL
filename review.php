@@ -13,9 +13,9 @@ include('includes/autoloader.php');
 <div class="container-fluid">
   <div class="row"> 
 	 <?php 
-	 if($_SESSION['user']['role'] == 'gast' ){      
+	 if($_SESSION['user']['role'] == 'gast'|| $_SESSION['user']['role'] == 'Kind' ){      
 	        	echo '<div class="col-md-2 center">'; 
-			} else if($_SESSION['user']['role'] == 'Ouder' || $_SESSION['user']['role'] == 'Kind') {
+			} else if($_SESSION['user']['role'] == 'Ouder') {
 				echo '<div class="col-md-4 center">'; 
 			}
 	 
@@ -68,10 +68,13 @@ include('includes/autoloader.php');
 <?php 
 
        // laad de reviews van de ouders op de review pagina zien als je bezoeker van de website bent
-       if($_SESSION['user']['role'] == 'gast' ){      
+       if($_SESSION['user']['role'] == 'gast'){      
 
 	        	echo '<h4>U moet ingelogd zijn om een review te schrijven!</h4>';
 			}
+                        elseif ($_SESSION['user']['role'] == 'Kind' ) {
+                            echo '<h4>Je moet een ouder zijn om een review te schrijven!</h4>';
+}
 	        ?>
 	        
 <?php
